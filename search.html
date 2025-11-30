@@ -1,0 +1,500 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>House of Greens — Store</title>
+<style>
+:root{
+  --accent:#1fb6a5; --accent-dark:#179483; --bg:#fff; --muted:#6b7280;
+  --card:#f6f9f8; --text:#0f1724; --muted-light:#e6efec;
+}
+*{box-sizing:border-box}
+body{margin:0;font-family:Inter,system-ui,Arial,sans-serif;background:var(--bg);color:var(--text);-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+
+/* Header (consistent with other pages) */
+header{display:flex;align-items:center;justify-content:space-between;padding:14px 20px;border-bottom:1px solid var(--muted-light);position:sticky;top:0;background:rgba(255,255,255,0.95);z-index:80}
+.logo{font-weight:800;color:var(--accent)}
+.icons{display:flex;gap:8px;align-items:center}
+.icon{padding:6px;border-radius:8px;border:1px solid var(--muted-light);background:#fff;cursor:pointer}
+
+/* HERO */
+.hero{min-height:260px;background-image:url(store.jpg);background-size:cover;background-position:center;display:flex;align-items:center;justify-content:center;color:#fff;text-align:center;padding:36px 18px}
+.hero .box{background:rgba(0,0,0,0.28);padding:20px;border-radius:10px;max-width:920px}
+.hero h1{margin:0;font-size:1.9rem}
+.hero p{margin:8px 0 0;color:#e6f6f3}
+
+/* LAYOUT */
+.container{max-width:1200px;margin:16px auto;padding:0 16px;display:grid;grid-template-columns:280px 1fr;gap:18px}
+@media(max-width:980px){ .container{grid-template-columns:1fr} }
+
+/* FILTERS (sidebar) */
+.filters{background:var(--card);padding:12px;border-radius:10px;border:1px solid var(--muted-light)}
+.filter-group{margin-bottom:12px}
+.filter-group h4{margin:0 0 8px;font-size:0.95rem}
+.category-list{display:flex;flex-direction:column;gap:6px}
+.cat-item{display:flex;align-items:center;gap:8px}
+
+/* MOBILE collapsible filters */
+.filter-toggle{display:none;align-items:center;gap:8px;cursor:pointer}
+@media(max-width:980px){ .filter-toggle{display:flex;margin:12px 16px} .filters{display:none} .filters.show{display:block} }
+
+/* Topbar: search + sort */
+.topbar{display:flex;gap:12px;align-items:center;margin-bottom:12px}
+.searchbar{flex:1;display:flex;align-items:center;gap:8px;background:#fff;padding:8px;border-radius:999px;border:1px solid var(--muted-light);box-shadow:0 8px 20px rgba(31,182,165,0.04)}
+.searchbar input{flex:1;border:0;outline:none;padding:8px;border-radius:999px}
+.suggest-list{position:relative}
+.suggest-items{position:absolute;left:0;right:0;top:44px;background:#fff;border:1px solid var(--muted-light);border-radius:8px;max-height:240px;overflow:auto;display:none;z-index:120}
+.suggest-item{padding:10px;border-bottom:1px solid #f1f6f5;cursor:pointer}
+
+/* sort & page size */
+.controls{display:flex;gap:8px;align-items:center}
+
+/* GRID */
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:14px}
+.card{background:var(--card);border-radius:12px;padding:10px;border:1px solid var(--muted-light);display:flex;flex-direction:column;gap:8px;position:relative;overflow:hidden}
+.media{position:relative;border-radius:8px;overflow:hidden;cursor:pointer}
+.card img{width:100%;height:150px;object-fit:cover;display:block}
+.deeplink-btn{position:absolute;right:8px;top:8px;background:rgba(0,0,0,0.5);color:#fff;padding:6px;border-radius:8px;cursor:pointer;border:0}
+.title{font-weight:700;font-size:0.98rem}
+.price-row{display:flex;gap:6px;align-items:center;flex-wrap:wrap}
+.price-pill{padding:6px 8px;border-radius:999px;border:1px solid var(--muted-light);background:#fff;font-weight:700;cursor:pointer;transition:transform .12s}
+.price-pill:hover{transform:translateY(-3px)}
+.price-pill.active{background:var(--accent);color:#fff;border-color:var(--accent)}
+.meta{display:flex;justify-content:space-between;font-size:13px;color:var(--muted)}
+
+/* ADD TO CART button on card */
+.add-row{display:flex;gap:8px;align-items:center;justify-content:space-between;margin-top:6px}
+.add-btn{background:var(--accent);color:#fff;border:0;padding:8px 12px;border-radius:8px;cursor:pointer;font-weight:700;transition:transform .12s}
+.add-btn:active{transform:translateY(1px)}
+.qty-mini{display:flex;align-items:center;gap:6px}
+.qty-mini button{padding:6px 8px;border-radius:8px;border:1px solid var(--muted-light);background:#fff;cursor:pointer}
+
+/* pager */
+.pager{display:flex;gap:10px;align-items:center;justify-content:center;padding:18px}
+
+/* small */
+@media(max-width:760px){
+  .card img{height:120px}
+  .grid{grid-template-columns:repeat(2,1fr)}
+  .price-pill{padding:6px 8px;font-size:13px}
+}
+
+/* utilities */
+.hidden{display:none}
+.small{font-size:13px;color:var(--muted)}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo">House of Greens</div>
+  <div class="icons">
+    <div class="icon" onclick="location.href='index.html'">🏠</div>
+  
+    <div class="icon" onclick="location.href='cart.html'">🛒 <span id="cart-badge" style="background:var(--accent);color:#fff;padding:4px 8px;border-radius:999px;margin-left:6px;font-weight:700">0</span></div>
+  </div>
+</header>
+
+<section class="hero" aria-hidden="false">
+  <div class="box">
+    <h1>Shop premium herbal wellness</h1>
+    <p>Browse flowers, concentrates, edibles, vape pens and strains — luxury, tested and delivered discreetly.</p>
+  </div>
+</section>
+
+<!-- mobile filter toggle -->
+<div class="filter-toggle" onclick="document.querySelector('.filters').classList.toggle('show')">
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M4 6h16M6 12h12M10 18h4" stroke="#0f1724" stroke-width="2" stroke-linecap="round"/></svg>
+  <div class="small">Filters</div>
+</div>
+
+<div class="container" id="main-container">
+  <!-- SIDEBAR filters -->
+  <aside class="filters" id="filters-panel" aria-label="Filters">
+    <div class="filter-group">
+      <h4>Search</h4>
+      <div style="display:flex;gap:8px">
+        <input id="filter-search" placeholder="Search products..." style="flex:1;padding:8px;border-radius:8px;border:1px solid var(--muted-light)">
+        <button id="filter-clear" class="btn-ghost">Clear</button>
+      </div>
+    </div>
+
+    <div class="filter-group">
+      <h4>Categories</h4>
+      <div id="filter-cats" class="category-list"></div>
+    </div>
+
+    <div class="filter-group">
+      <h4>Price</h4>
+      <div style="display:flex;gap:8px">
+        <input id="price-min" placeholder="min" type="number" style="padding:8px;border-radius:8px;border:1px solid var(--muted-light);width:100%">
+        <input id="price-max" placeholder="max" type="number" style="padding:8px;border-radius:8px;border:1px solid var(--muted-light);width:100%">
+      </div>
+      <div class="small" style="margin-top:8px;color:var(--muted)">Prices are read from per-size values (e.g. 1g or 1/8oz)</div>
+    </div>
+
+    <div class="filter-group">
+      <h4>Sort</h4>
+      <select id="sort-select" style="width:100%;padding:8px;border-radius:8px;border:1px solid var(--muted-light)">
+        <option value="relevance">Relevance</option>
+        <option value="price-asc">Price: Low → High</option>
+        <option value="price-desc">Price: High → Low</option>
+        <option value="rating">Highest Rated</option>
+        <option value="newest">Newest</option>
+      </select>
+    </div>
+
+    <div class="filter-group">
+      <h4>Page size</h4>
+      <select id="page-size" style="width:100%;padding:8px;border-radius:8px;border:1px solid var(--muted-light)">
+        <option value="12">12</option>
+        <option value="24">24</option>
+        <option value="48">48</option>
+      </select>
+    </div>
+  </aside>
+
+  <!-- MAIN content -->
+  <main>
+    <div class="topbar">
+      <div class="searchbar">
+        <div style="font-size:18px;color:var(--muted)">🔎</div>
+        <div style="flex:1;position:relative">
+          <input id="global-search" placeholder="Search products, strains or categories..." aria-autocomplete="list" />
+          <div id="suggest" class="suggest-items" role="listbox" aria-expanded="false"></div>
+        </div>
+        <div class="controls">
+          <select id="quick-sort" style="padding:8px;border-radius:8px;border:1px solid var(--muted-light)">
+            <option value="">Sort</option>
+            <option value="price-asc">Price ↑</option>
+            <option value="price-desc">Price ↓</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <!-- product grid -->
+    <section style="margin-top:12px">
+      <div id="results-count" class="small" style="margin-bottom:8px"></div>
+      <div id="products-grid" class="grid" aria-live="polite"></div>
+    </section>
+
+    <!-- pager -->
+    <div class="pager">
+      <button id="prev-page" class="btn-ghost">Prev</button>
+      <div id="page-info" class="small"></div>
+      <button id="next-page" class="btn">Next</button>
+    </div>
+  </main>
+</div>
+
+<script>
+/*
+  store.html (updated)
+  - Loads products.json
+  - Filters, sort, pagination, autosuggest
+  - Each product card now has:
+    - size/price pills (selectable)
+    - Add to cart button + mini qty
+  - Cart stored in localStorage 'hog_cart'
+  - Cart badge updates
+  - All previous deeplink & search behavior retained
+*/
+
+let products = [];
+let categories = [];
+let filtered = [];
+let currentPage = 1;
+let pageSize = 12;
+
+const pricingKeys = ['1g','1/8oz','1/2oz'];
+const CART_KEY = 'hog_cart';
+const byId = id => document.getElementById(id);
+
+async function init(){
+  try{
+    const res = await fetch('products.json', {cache:'no-store'});
+    const j = await res.json();
+    products = Array.isArray(j) ? j : (j.products || []);
+    categories = (j.categories && j.categories.length) ? j.categories : Array.from(new Set(products.map(p=>p.category)));
+  }catch(e){
+    console.error('Could not load products.json', e);
+    products = [];
+    categories = ['Flower','Concentrates','Edibles','Vape Pens','Strains'];
+  }
+
+  renderCategoryFilters();
+  bindControls();
+  applyDeepLinks();
+  runFilters(); // initial render
+  bindGlobalSearchSuggest();
+  updateCartBadge();
+}
+
+// helpers
+function defaultSizeFor(p){
+  for(const k of pricingKeys) if(p.pricing && p.pricing[k]) return k;
+  if(p.pricing){ const ks = Object.keys(p.pricing); return ks.length?ks[0]:null; }
+  return null;
+}
+
+function formatPriceRaw(str){
+  return str || '$0.00';
+}
+
+function minPrice(p){
+  if(!p || !p.pricing) return Infinity;
+  let m = Infinity;
+  for(const k of Object.keys(p.pricing||{})){
+    const n = parseFloat(String(p.pricing[k]).replace(/[^\d.]/g,'')) || Infinity;
+    if(n < m) m = n;
+  }
+  return m;
+}
+
+// render categories
+function renderCategoryFilters(){
+  const el = byId('filter-cats'); el.innerHTML='';
+  categories.forEach(c=>{
+    const id = `cat-${c.replace(/\s+/g,'_')}`;
+    const wrapper = document.createElement('label'); wrapper.className='cat-item';
+    wrapper.innerHTML = `<input type="checkbox" data-cat="${c}" id="${id}"> <span>${c}</span>`;
+    el.appendChild(wrapper);
+  });
+}
+
+// controls
+function bindControls(){
+  byId('filter-search').addEventListener('input', ()=> { currentPage=1; runFilters(); });
+  byId('filter-clear').addEventListener('click', ()=> {
+    byId('filter-search').value=''; byId('price-min').value=''; byId('price-max').value=''; document.querySelectorAll('#filter-cats input[type=checkbox]').forEach(cb=>cb.checked=false); byId('sort-select').value='relevance'; currentPage=1; runFilters();
+  });
+
+  document.addEventListener('change', (e) => {
+    if(e.target && e.target.matches('#filter-cats input[type=checkbox]')) { currentPage=1; runFilters(); }
+  });
+
+  byId('price-min').addEventListener('input', ()=> { currentPage=1; runFilters(); });
+  byId('price-max').addEventListener('input', ()=> { currentPage=1; runFilters(); });
+
+  byId('sort-select').addEventListener('change', ()=> { currentPage=1; runFilters(); });
+  byId('page-size').addEventListener('change', (e)=> { pageSize = parseInt(e.target.value,10)||12; currentPage=1; runFilters(); });
+
+  byId('prev-page').addEventListener('click', ()=> { if(currentPage>1){ currentPage--; renderPage(); } });
+  byId('next-page').addEventListener('click', ()=> { const max = Math.ceil(filtered.length/pageSize); if(currentPage<max){ currentPage++; renderPage(); } });
+
+  byId('quick-sort').addEventListener('change', (e)=> { byId('sort-select').value = e.target.value || 'relevance'; runFilters(); });
+}
+
+// search autosuggest
+function bindGlobalSearchSuggest(){
+  const input = byId('global-search'), suggest = byId('suggest');
+  input.addEventListener('input',(e)=>{
+    const q = (e.target.value||'').trim().toLowerCase();
+    suggest.innerHTML='';
+    if(!q){ suggest.style.display='none'; suggest.setAttribute('aria-expanded','false'); return; }
+    const matches = products.filter(p => (p.name||'').toLowerCase().includes(q) || (p.category||'').toLowerCase().includes(q)).slice(0,8);
+    matches.forEach(m=>{
+      const d = document.createElement('div'); d.className='suggest-item'; d.textContent = `${m.name} — ${m.pricing && (m.pricing['1g']||m.pricing['1/8oz']||m.pricing['1/2oz']||'')}`;
+      d.addEventListener('click', ()=> {
+        const qstr = encodeURIComponent(m.name);
+        history.replaceState(null,'',`search.html?q=${qstr}`);
+        input.value = m.name;
+        suggest.style.display='none';
+        applyDeepLinks();
+        runFilters();
+      });
+      suggest.appendChild(d);
+    });
+    suggest.style.display = matches.length ? 'block' : 'none';
+    suggest.setAttribute('aria-expanded', matches.length ? 'true' : 'false');
+  });
+  document.addEventListener('click', (ev)=> { if(!byId('global-search').contains(ev.target) && !byId('suggest').contains(ev.target)) { byId('suggest').style.display='none'; byId('suggest').setAttribute('aria-expanded','false'); } });
+}
+
+// deep-links
+function applyDeepLinks(){
+  const params = new URLSearchParams(location.search);
+  const q = params.get('q'); const cat = params.get('cat');
+  if(q){ byId('global-search').value = q; byId('filter-search').value = q; }
+  if(cat){
+    const cb = Array.from(document.querySelectorAll('#filter-cats input[type=checkbox]')).find(i=>i.dataset.cat===cat);
+    if(cb) cb.checked = true;
+  }
+}
+
+// filters / sort
+function runFilters(){
+  let list = products.slice();
+  const q = (byId('global-search').value || byId('filter-search').value || '').trim().toLowerCase();
+  if(q){
+    list = list.filter(p => (p.name||'').toLowerCase().includes(q) || (p.category||'').toLowerCase().includes(q) || (p.description||'').toLowerCase().includes(q));
+  }
+  const checked = Array.from(document.querySelectorAll('#filter-cats input[type=checkbox]')).filter(i=>i.checked).map(i=>i.dataset.cat);
+  if(checked.length){
+    list = list.filter(p=> checked.includes(p.category));
+  }
+  const pmin = parseFloat(byId('price-min').value) || null;
+  const pmax = parseFloat(byId('price-max').value) || null;
+  if(pmin !== null || pmax !== null){
+    list = list.filter(p=>{
+      let lowest = Infinity;
+      if(p.pricing){
+        for(const k of Object.keys(p.pricing||{})){
+          const n = parseFloat(String(p.pricing[k]).replace(/[^\d.]/g,'')) || Infinity;
+          if(n < lowest) lowest = n;
+        }
+      }
+      if(!isFinite(lowest)) return false;
+      if(pmin !== null && lowest < pmin) return false;
+      if(pmax !== null && lowest > pmax) return false;
+      return true;
+    });
+  }
+  const sort = byId('sort-select').value || 'relevance';
+  if(sort === 'price-asc'){ list.sort((a,b)=> (minPrice(a) - minPrice(b))); }
+  else if(sort === 'price-desc'){ list.sort((a,b)=> (minPrice(b) - minPrice(a))); }
+  else if(sort === 'rating'){ list.sort((a,b)=> (b.rating||0) - (a.rating||0)); }
+  else if(sort === 'newest'){ list.sort((a,b)=> (new Date(b.createdAt||0) - new Date(a.createdAt||0))); }
+
+  filtered = list;
+  currentPage = 1;
+  renderPage();
+}
+
+// render page
+function renderPage(){
+  const grid = byId('products-grid'); grid.innerHTML='';
+  const total = filtered.length;
+  byId('results-count').textContent = `${total} result${total===1?'':'s'}`;
+  const maxPage = Math.max(1, Math.ceil(total / pageSize));
+  if(currentPage > maxPage) currentPage = maxPage;
+  const start = (currentPage-1)*pageSize;
+  const pageItems = filtered.slice(start, start + pageSize);
+
+  pageItems.forEach(p=>{
+    const def = defaultSizeFor(p);
+    const priceButtons = pricingKeys.map(k=> p.pricing && p.pricing[k] ? `<div class="price-pill ${k===def?'active':''}" data-size="${k}" data-id="${p.id}">${k} ${p.pricing[k]}</div>` : '').join('');
+    const fallback = (!priceButtons.trim() && p.pricing) ? `<div class="price-pill active" data-size="${Object.keys(p.pricing)[0]}" data-id="${p.id}">${Object.keys(p.pricing)[0]} ${p.pricing[Object.keys(p.pricing)[0]]}</div>` : '';
+    const card = document.createElement('article'); card.className='card';
+    card.innerHTML = `
+      <div class="media" data-id="${p.id}">
+        <img src="${p.image}" alt="${p.name}">
+        <button class="deeplink-btn" title="Search similar">🔎</button>
+      </div>
+      <div class="title" data-id="${p.id}">${escapeHtml(p.name)}</div>
+      <div class="price-row">${priceButtons || fallback}</div>
+      <div class="add-row">
+        <div style="display:flex;align-items:center;gap:8px">
+          <div class="qty-mini"><button class="qty-dec" title="Decrease">-</button><input class="qty-val" type="number" min="1" value="1" style="width:44px;text-align:center;border-radius:6px;border:1px solid var(--muted-light);padding:6px"></div>
+        </div>
+        <div style="display:flex;align-items:center;gap:8px">
+          <button class="add-btn">Add to cart</button>
+        </div>
+      </div>
+      <div class="meta"><div class="small">${p.category||''}</div><div class="small">${p.rating?('★'+p.rating):''}</div></div>
+    `;
+    // attach events
+    // image/title -> product page
+    card.querySelectorAll('.media, .title').forEach(el=>{
+      el.addEventListener('click', ()=> {
+        const id = el.dataset.id || p.id;
+        window.location.href = `product.html?id=${encodeURIComponent(id)}`;
+      });
+    });
+    // deeplink
+    const deeplinkBtn = card.querySelector('.deeplink-btn');
+    deeplinkBtn.addEventListener('click', (ev)=>{
+      ev.stopPropagation();
+      const q = encodeURIComponent(p.name);
+      history.replaceState(null,'',`search.html?q=${q}`);
+      byId('global-search').value = p.name;
+      byId('filter-search').value = p.name;
+      applyDeepLinks(); runFilters();
+      window.scrollTo({top: document.querySelector('main') ? document.querySelector('main').offsetTop : 0, behavior:'smooth'});
+    });
+
+    // price pill selection (toggle active)
+    card.querySelectorAll('.price-pill').forEach(btn=>{
+      btn.addEventListener('click', (ev)=>{
+        ev.stopPropagation();
+        const parent = btn.parentElement;
+        parent.querySelectorAll('.price-pill').forEach(pp=>pp.classList.remove('active'));
+        btn.classList.add('active');
+      });
+    });
+
+    // qty mini
+    const qtyDec = card.querySelector('.qty-dec'), qtyVal = card.querySelector('.qty-val'), qtyInc = card.querySelector('.qty-mini button:nth-child(3)');
+    // small safe handlers for dec/inc (we only provided dec; add inc via keyboard)
+    qtyDec.addEventListener('click', (ev)=>{ ev.stopPropagation(); let v = Math.max(1, Number(qtyVal.value||1)-1); qtyVal.value = v; });
+    // Add to cart click
+    const addBtn = card.querySelector('.add-btn');
+    addBtn.addEventListener('click', (ev)=>{
+      ev.stopPropagation();
+      const chosenPill = card.querySelector('.price-pill.active') || card.querySelector('.price-pill');
+      const size = chosenPill ? chosenPill.dataset.size : defaultSizeFor(p);
+      const price = chosenPill ? chosenPill.textContent.replace(size, '').trim() : (p.pricing && p.pricing[size]) || '';
+      const qty = Math.max(1, Number(qtyVal.value)||1);
+      addToCart(p.id, size, price, qty);
+      // small feedback
+      addBtn.textContent = 'Added ✓';
+      addBtn.disabled = true;
+      setTimeout(()=> { addBtn.textContent = 'Add to cart'; addBtn.disabled = false; }, 900);
+    });
+
+    grid.appendChild(card);
+  });
+
+  byId('page-info').textContent = `Page ${currentPage} / ${maxPage}`;
+  byId('prev-page').disabled = currentPage <= 1;
+  byId('next-page').disabled = currentPage >= maxPage;
+}
+
+// CART logic: localStorage hog_cart
+function loadCart(){
+  try{ return JSON.parse(localStorage.getItem(CART_KEY) || '[]'); }catch(e){ return []; }
+}
+function saveCart(cart){ try{ localStorage.setItem(CART_KEY, JSON.stringify(cart)); updateCartBadge(); }catch(e){} }
+function updateCartBadge(){
+  const b = byId('cart-badge');
+  if(!b) return;
+  const cart = loadCart();
+  b.textContent = cart.length;
+}
+
+function addToCart(id, size, priceStr, qty){
+  const cart = loadCart();
+  // if same id+size exists, increase qty
+  const existing = cart.find(it => String(it.id) === String(id) && it.size === size);
+  if(existing){
+    existing.qty = (existing.qty || 1) + (qty || 1);
+  } else {
+    cart.push({ id, size, price: priceStr, qty: qty || 1 });
+  }
+  saveCart(cart);
+}
+
+// escape helper
+function escapeHtml(s){ return String(s).replace(/[&<>"']/g, m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m])); }
+
+// init
+init();
+</script>
+<!--Start of Tawk.to Script-->
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/692ca019f557c1197debe808/default';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+<!--End of Tawk.to Script-->
+</body>
+</html>

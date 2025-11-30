@@ -1,0 +1,2095 @@
+{
+  "categories": [
+    "Flower",
+    "Concentrates",
+    "Edibles",
+    "Vape Pens",
+    "Strains"
+  ],
+  "products": [
+    {
+      "id": "HOG0001",
+      "name": "Worner Brothers - Honey Banana",
+      "category": "Flower",
+      "description": "An artisanal selection, Lavender Haze provides a premium experience with careful cultivation and processing. Carefully lab-tested and packaged for freshness.",
+      "pricing": {
+        "1g": "$16",
+        "1/8oz": "$48",
+        "1/2oz": "$180"
+      },
+      "stock": 1563,
+      "rating": 4.23,
+      "reviewsCount": 152,
+      "image": "flo1.jpg"
+    },
+    {
+      "id": "HOG0002",
+      "name": "Flower Mountain Farms - Sherb Cream Pie Deli",
+      "category": "Flower",
+      "description": "Sherb Cream Pie is known for its distinctive aroma and balanced effects\u2014ideal for both novice and experienced users. Carefully lab-tested and packaged for freshness.",
+      "pricing": {
+        "1g": "$12",
+        "1/8oz": "$38",
+        "1/2oz": "$135"
+      },
+      "stock": 2209,
+      "rating": 4.4,
+      "reviewsCount": 40,
+      "image": "flo2.jpg"
+    },
+    {
+      "id": "HOG0003",
+      "name": "Tanana - GG#4 Deli",
+      "category": "Flower",
+      "description": "Tanana - GG#4 Deli, which is now called “Original Glue” due to the adhesive company’s license of the name, is an aromatic indica-dominant hybrid that originated in Nevada. GG Strains breeder Joesy Whales decided to call this strain Gorilla Glue because of how sticky the bud’s resin was",
+      "pricing": {
+        "1g": "$12",
+        "1/8oz": "$36",
+        "1/2oz": "$135"
+      },
+      "stock": 1407,
+      "rating": 4.68,
+      "reviewsCount": 728,
+      "image": "flo3.jpg"
+    },
+    {
+      "id": "HOG0004",
+      "name": "GOOD - Durban Poison Deli",
+      "category": "Flower",
+      "description": "Durban Poison has deep roots in the Sativa landrace gene pool. The strain’s historic phenotypes were first noticed in the late 1970s by one of America’s first International strain hunters, Ed Rosenthal. According to cultivation legend, Rosenthal was in South Africa in search of new genetics ",
+      "pricing": {
+        "1g": "$14",
+        "1/8oz": "$48",
+        "1/2oz": "$150"
+      },
+      "stock": 1013,
+      "rating": 4.72,
+      "reviewsCount": 173,
+      "image": "flo4.jpg"
+    },
+    {
+      "id": "HOG0005",
+      "name": "QHRONIQ - Malawi Deli",
+      "category": "Flower",
+      "description": "Malawi is a landrace sativa from Africa. It’s been standardized and propagated by Spain’s ACE Seeds.The top reported aromas of Malawi are wood, earth, and sour lemon.",
+      "pricing": {
+        "1g": "$14",
+        "1/8oz": "$40",
+        "1/2oz": "$150"
+      },
+      "stock": 1689,
+      "rating": 4.1,
+      "reviewsCount": 399,
+      "image": "flo5.jpg"
+    },
+    {
+      "id": "HOG0006",
+      "name": "AKO - Strawberry Banana Deli",
+      "category": "Flower",
+      "description": "Bred in Amsterdam by Reserva Privada -- a subdivision of DNA Genetics -- Strawberry Banana’s (also referred to as Strawnana) mother is a female Banana Kush from Crockett Family Farms crossed with a male Bubblegum selected from a pack of seeds originally bred by Serious Seeds.",
+      "pricing": {
+        "1g": "$10",
+        "1/8oz": "$30",
+        "1/2oz": "$105"
+      },
+      "stock": 1088,
+      "rating": 4.69,
+      "reviewsCount": 559,
+      "image": "flo6.jpg"
+    },
+    {
+      "id": "HOG0007",
+      "name": "DDIII - Wild OG Deli",
+      "category": "Flower",
+      "description": "Wild Express features a well-rounded profile with aromatic top notes and a pleasant finish. Carefully lab-tested and packaged for freshness.",
+      "pricing": {
+        "1g": "$14",
+        "1/8oz": "$42",
+        "1/2oz": "$155"
+      },
+      "stock": 2287,
+      "rating": 4.59,
+      "reviewsCount": 380,
+      "image": "flo7.jpg"
+    },
+    {
+      "id": "HOG0087",
+      "name": "Dreaming Tree - Pinezapple Deli",
+      "category": "Flower",
+      "description": "Royal Kush offers a flavorful profile and dependable effects, great for daytime or evening use depending on dosage. Carefully lab-tested and packaged for freshness.",
+      "pricing": {
+        "1g": "$10",
+        "1/8oz": "$30",
+        "1/2oz": "$130"
+      },
+      "stock": 1592,
+      "rating": 4.94,
+      "reviewsCount": 248,
+      "image": "flo8.jpg"
+    },
+    {
+      "id": "HOG0009",
+      "name": "Enlighten Gardens - Pink Certz Deli",
+      "category": "Flower",
+      "pricing": {
+        "1g": "$10",
+        "1/8oz": "$30",
+        "1/2oz": "$150"
+      },
+      "stock": 1747,
+      "rating": 4.15,
+      "reviewsCount": 373,
+      "image": "flo9.jpg"
+    },
+    {
+      "id": "HOG0010",
+      "name": "The Hangar - Citrus Crasher Deli",
+      "category": "Flower",
+      "description": "Honey Frost features a well-rounded profile with aromatic top notes and a pleasant finish. Sustainably grown and hand-trimmed.",
+      "pricing": {
+        "1g": "$14",
+        "1/8oz": "$42",
+        "1/2oz": "$150"
+      },
+      "stock": 1146,
+      "rating": 4.58,
+      "reviewsCount": 185,
+      "image": "flo10.jpg"
+    },
+    {
+      "id": "HOG0011",
+      "name": "Worner Brothers - Notorious THC Deli",
+      "category": "Flower",
+      "description": "An artisanal selection, Sunset Mango provides a premium experience with careful cultivation and processing. Carefully lab-tested and packaged for freshness.",
+      "pricing": {
+        "1g": "$14",
+        "1/8oz": "$42",
+        "1/2oz": "$155"
+      },
+      "stock": 2310,
+      "rating": 4.65,
+      "reviewsCount": 234,
+      "image": "flo11.jpg"
+    },
+    {
+      "id": "HOG0012",
+      "name": "Freedom 49 - Wedding Cake Deli",
+      "category": "Flower",
+      "description": "Aurora Grove delivers rich sensory notes and a gentle, long-lasting effect\u2014perfect for relaxation. Carefully lab-tested and packaged for freshness.",
+      "pricing": {
+        "1g": "$14",
+        "1/8oz": "$42",
+        "1/2oz": "$150"
+      },
+      "stock": 1065,
+      "rating": 4.76,
+      "reviewsCount": 420,
+      "image": "flo12.jpg"
+    },
+    {
+      "id": "HOG0013",
+      "name": "AK Legend Gardens - Devine Gelato",
+      "category": "Flower",
+      "description": "Crafted for quality, Sweet OG is sourced from trusted growers and offers exceptional potency and flavor. Sustainably grown and hand-trimmed.",
+      "pricing": {
+        "1g": "$12",
+        "1/8oz": "$36",
+        "1/2oz": "$135"
+      },
+      "stock": 1644,
+      "rating": 4.2,
+      "reviewsCount": 521,
+      "image": "flo13.jpg"
+    },
+    {
+      "id": "HOG0014",
+      "name": "AK Legend Gardens - Josh D OG Deli",
+      "category": "Flower",
+      "description": "Lavender Mango features a well-rounded profile with aromatic top notes and a pleasant finish. Carefully lab-tested and packaged for freshness.",
+      "pricing": {
+        "1g": "$12",
+        "1/8oz": "$36",
+        "1/2oz": "$135"
+      },
+      "stock": 1285,
+      "rating": 4.23,
+      "reviewsCount": 584,
+      "image": "flo14.jpg"
+    },
+    {
+      "id": "HOG0015",
+      "name": "AK Legend Gardens - Trop Cherry x Spritzer Deli",
+      "category": "Flower",
+      "description": "Mango Pine features a well-rounded profile with aromatic top notes and a pleasant finish. Carefully lab-tested and packaged for freshness.",
+      "pricing": {
+        "1g": "$12",
+        "1/8oz": "$36",
+        "1/2oz": "$135"
+      },
+      "stock": 1817,
+      "rating": 4.34,
+      "reviewsCount": 151,
+      "image": "flo15.jpg"
+    },
+    {
+      "id": "HOG0016",
+      "name": "AKO - Petrol Patties Deli",
+      "category": "Flower",
+      "description": "Crafted for quality, Aurora Kush is sourced from trusted growers and offers exceptional potency and flavor. Carefully lab-tested and packaged for freshness.",
+      "pricing": {
+        "1g": "$10",
+        "1/8oz": "$30",
+        "1/2oz": "$105"
+      },
+      "stock": 1313,
+      "rating": 4.6,
+      "reviewsCount": 706,
+      "image": "flo16.jpg"
+    },
+    {
+      "id": "HOG0017",
+      "name": "AKO - Vig Deli",
+      "category": "Flower",
+      "description": "Wild Jack offers a flavorful profile and dependable effects, great for daytime or evening use depending on dosage. Sustainably grown and hand-trimmed.",
+      "pricing": {
+        "1g": "$10",
+        "1/8oz": "$30",
+        "1/2oz": "$100"
+      },
+      "stock": 1958,
+      "rating": 4.5,
+      "reviewsCount": 576,
+      "image": "flo17.jpg"
+    },
+    {
+      "id": "HOG0018",
+      "name": "BAM - Tropical Orange Deli",
+      "category": "Flower",
+      "description": "An artisanal selection, Skylark Mint provides a premium experience with careful cultivation and processing. Carefully lab-tested and packaged for freshness.",
+      "pricing": {
+        "1g": "$15",
+        "1/8oz": "$45",
+        "1/2oz": "$180"
+      },
+      "stock": 2099,
+      "rating": 4.71,
+      "reviewsCount": 797,
+      "image": "flo18.jpg"
+    },
+    {
+      "id": "HOG0019",
+      "name": "DDIII - Lemon Ice Pucker Deli",
+      "category": "Flower",
+      "description": "Lemon Ice delivers rich sensory notes and a gentle, long-lasting effect\u2014perfect for relaxation. Sustainably grown and hand-trimmed.",
+      "pricing": {
+        "1g": "$14",
+        "1/8oz": "$40",
+        "1/2oz": "$150"
+      },
+      "stock": 1006,
+      "rating": 4.91,
+      "reviewsCount": 746,
+      "image": "flo19.jpg"
+    },
+    {
+      "id": "HOG0020",
+      "name": "Dreaming Tree - Gushmints Deli",
+      "category": "Flower",
+      "description": "Dreaming Tree offers a flavorful profile and dependable effects, great for daytime or evening use depending on dosage. Sustainably grown and hand-trimmed.",
+      "pricing": {
+        "1g": "$10",
+        "1/8oz": "$25",
+        "1/2oz": "$100"
+      },
+      "stock": 1217,
+      "rating": 4.83,
+      "reviewsCount": 315,
+      "image": "flo20.jpg"
+    },
+    {
+      "id": "HOG0021",
+      "name": "Dreaming Tree - Triple Burger Deli",
+      "category": "Flower",
+      "description": "Dreaming Tree - Triple Burger Deli is known for its distinctive aroma and balanced effects\u2014ideal for both novice and experienced users. Carefully lab-tested and packaged for freshness.",
+      "pricing": {
+        "1g": "$12",
+        "1/8oz": "$40",
+        "1/2oz": "$150"
+      },
+      "stock": 1330,
+      "rating": 4.51,
+      "reviewsCount": 553,
+      "image": "flo21.jpg"
+    },
+    {
+      "id": "HOG0022",
+      "name": "Dreaming Tree - Triple Burger Deli",
+      "category": "Flower",
+      "description": "Experience the smooth flavors of Gentle Dream, offering a reliable and consistent experience every time. Carefully lab-tested and packaged for freshness.",
+      "pricing": {
+        "1g": "$12",
+        "1/8oz": "$35",
+        "1/2oz": "$135"
+      },
+      "stock": 1743,
+      "rating": 4.83,
+      "reviewsCount": 324,
+      "image": "flo22.jpg"
+    },
+    {
+      "id": "HOG0023",
+      "name": "Mountain Farms - Back to Bananas Deli",
+      "category": "Flower",
+      "description": "Offers a flavorful profile and dependable effects, great for daytime or evening use depending on dosage. Carefully lab-tested and packaged for freshness.",
+      "pricing": {
+        "1g": "$12",
+        "1/8oz": "$36",
+        "1/2oz": "$135"
+      },
+      "stock": 1175,
+      "rating": 4.7,
+      "reviewsCount": 80,
+      "image": "flo23.jpg"
+    },
+    {
+      "id": "HOG0024",
+      "name": "Flower Mountain Farms - Bubble Bath Deli",
+      "category": "Flower",
+      "description": "This strand offers a flavorful profile and dependable effects, great for daytime or evening use depending on dosage. Sustainably grown and hand-trimmed.",
+      "pricing": {
+        "1g": "$12",
+        "1/8oz": "$35",
+        "1/2oz": "$130"
+      },
+      "stock": 2125,
+      "rating": 4.16,
+      "reviewsCount": 550,
+      "image": "flo24.jpg"
+    },
+    {
+      "id": "HOG0025",
+      "name": "Flower Mountain Farms - Cap Junky Deli",
+      "category": "Flower",
+      "description": "Cap Junky delivers rich sensory notes and a gentle, long-lasting effect\u2014perfect for relaxation. Carefully lab-tested and packaged for freshness.",
+      "pricing": {
+        "1g": "$12",
+        "1/8oz": "$36",
+        "1/2oz": "$130"
+      },
+      "stock": 2494,
+      "rating": 4.66,
+      "reviewsCount": 740,
+      "image": "flo25.jpg"
+    },
+    {
+      "id": "HOG0026",
+      "name": "Flower Mountain Farms - Chili Azul Deli",
+      "category": "Flower",
+      "description": "Experience the smooth flavors of Chili Azul, offering a reliable and consistent experience every time. Carefully lab-tested and packaged for freshness.",
+      "pricing": {
+        "1g": "$12",
+        "1/8oz": "$36",
+        "1/2oz": "$130"
+      },
+      "stock": 2059,
+      "rating": 4.43,
+      "reviewsCount": 263,
+      "image": "flo26.jpg"
+    },
+    {
+      "id": "HOG0027",
+      "name": "Flower Mountain Farms - Papaya Bomb Deli",
+      "category": "Flower",
+      "description": "An artisanal selection,  Papaya Bomb provides a premium experience with careful cultivation and processing. Sustainably grown and hand-trimmed.",
+      "pricing": {
+        "1g": "$14",
+        "1/8oz": "$42",
+        "1/2oz": "$155"
+      },
+      "stock": 2205,
+      "rating": 4.21,
+      "reviewsCount": 82,
+      "image": "flo27.jpg"
+    },
+    {
+      "id": "HOG0028",
+      "name": "Freedom 49 - Guillotine Deli",
+      "category": "Flower",
+      "description": "Freedom 49 - Guillotine Deli delivers rich sensory notes and a gentle, long-lasting effect\u2014perfect for relaxation. Sustainably grown and hand-trimmed.",
+      "pricing": {
+        "1g": "$12",
+        "1/8oz": "$36",
+        "1/2oz": "$135"
+      },
+      "stock": 1676,
+      "rating": 4.07,
+      "reviewsCount": 253,
+      "image": "flo28.jpg"
+    },
+    {
+      "id": "HOG0029",
+      "name": "Emerald Diesel",
+      "category": "Flower",
+      "description": "Emerald Diesel offers a flavorful profile and dependable effects, great for daytime or evening use depending on dosage. Carefully lab-tested and packaged for freshness.",
+      "pricing": {
+        "1g": "$12",
+        "1/8oz": "$36",
+        "1/2oz": "$130"
+      },
+      "stock": 2169,
+      "rating": 4.55,
+      "reviewsCount": 258,
+      "image": "flo29.jpg"
+    },
+    {
+      "id": "HOG0030",
+      "name": "Freedom 49 - Kunoichi Deli",
+      "category": "Flower",
+      "description": "Crafted for quality, Freedom 49 - Kunoichi Deli is sourced from trusted growers and offers exceptional potency and flavor. Carefully lab-tested and packaged for freshness.",
+      "pricing": {
+        "1g": "$12",
+        "1/8oz": "$36",
+        "1/2oz": "$130"
+      },
+      "stock": 2349,
+      "rating": 4.41,
+      "reviewsCount": 443,
+      "image": "flo28.jpg"
+    },
+    {
+      "id": "HOG0031",
+      "name": "Tangie Sugarwax",
+      "category": "Concentrates",
+      "description": "Our well known Tangie strain processed into Sugar Wax with an opaque, stable, fully crystallized extract, in which the strains fruity terpenes are concentrated into a robust experience. Tangie is a Hybrid with a citrus flavor that is sweet. It will give you a happy uplifting high. You will not be disappointed with its tangerine aroma. Winner of 2021 AK Leaf Cannabis Bowl Inspired by the popular ’90s strain Tangerine Dream, Tangie is a distinctly aromatic bud with strong, unmistakable notes of citrus and tangerine. Bred by Amsterdam’s DNA Genetics and available in both regular and feminized seeds, Tangie crosses a select cut of Crockett’s Farm Tangerine Dream with DNA Genetics’ select male Skunk to create a citrusy plant with high yields of resinous flowers. The original Tangerine Dream was a cross between Skunk #1 and California Orange (also known as Cali-O). Tangie inspired the creation of several citrusy hybrids, including Sour Tangie (East Coast Sour Diesel crossed with Tangie,) Tangie OG (Tangie and OG Kush) and Agent Tangie (Agent Orange plus Tangie).",
+      "pricing": {
+        "1g": "$50"
+      },
+      "stock": 2323,
+      "rating": 4.09,
+      "reviewsCount": 422,
+      "image": "con1.jpg"
+    },
+    {
+      "id": "HOG0032",
+      "name": "GMO Cookies Sugarwax",
+      "category": "Concentrates",
+      "description": "Contrary to what you might think, GMO Cookies is not a genetically modified organism but a cross between Chemdawg D and a (formerly Girl Scout Cookies) Forum cut. Also known as GMO or Garlic Cookies, GMO Cookies has been attributed to the breeder Mamiko Seeds, but this skunky phenotype has also been said to have been discovered by a breeder named skunkmasterflex.",
+      "pricing": {
+        "1g": "$50"
+      },
+      "stock": 1389,
+      "rating": 4.51,
+      "reviewsCount": 153,
+      "image": "con2.jpg"
+    },
+    {
+      "id": "HOG0033",
+      "name": "Pink Kush Terp Sugar",
+      "category": "Concentrates",
+      "description": "Pink Kush Terp Sugar is an Indica-hybrid with a sweet taste. Seriously great taste on this one! Grown by J & M Investments.",
+      "pricing": {
+        "1g": "$55"
+      },
+      "stock": 1154,
+      "rating": 4.42,
+      "reviewsCount": 573,
+      "image": "con3.jpg"
+    },
+    {
+      "id": "HOG0034",
+      "name": "Strawberry Gelato Terp Sugar",
+      "category": "Concentrates",
+      "description": "This Indica is sweet and fruity. The staff loved it. Highly recommended. Grown by The Noble Dudes.",
+      "pricing": {
+        "1g": "$55"
+      },
+      "stock": 1191,
+      "rating": 4.88,
+      "reviewsCount": 252,
+      "image": "con4.jpg"
+    },
+    {
+      "id": "HOG0035",
+      "name": "Drip Diamond wax",
+      "category": "Concentrates",
+      "description": "Crafted for quality, Drip Diamond wax is sourced from trusted growers and offers exceptional potency and flavor. Carefully lab-tested and packaged for freshness.",
+      "pricing": {
+        "single": "$220"
+      },
+      "stock": 1120,
+      "rating": 4.16,
+      "reviewsCount": 12,
+      "image": "con5.jpg"
+    },
+    {
+      "id": "HOG0036",
+      "name": "Green Mountain Extracts",
+      "category": "Concentrates",
+      "description": "Green Mountain Extracts offers a flavorful profile and dependable effects, great for daytime or evening use depending on dosage. Carefully lab-tested and packaged for freshness.",
+      "pricing": {
+        "small": "$200",
+        "medium": "$600",
+        "large": "$1000"
+      },
+      "stock": 1866,
+      "rating": 4.66,
+      "reviewsCount": 758,
+      "image": "con6.jpg"
+    },
+    {
+      "id": "HOG0037",
+      "name": "Persy Diamond THC wax",
+      "category": "Concentrates",
+      "description": "Persy Diamond THC wax features a well-rounded profile with aromatic top notes and a pleasant finish. Sustainably grown and hand-trimmed.",
+      "pricing": {
+        "1g": "$310"
+      },
+      "stock": 1607,
+      "rating": 4.21,
+      "reviewsCount": 69,
+      "image": "con7.jpg"
+    },
+    {
+      "id": "HOG0038",
+      "name": "Raw Garden live rosin",
+      "category": "Concentrates",
+      "description": "Raw Garden live rosin offers a flavorful profile and dependable effects, great for daytime or evening use depending on dosage. Carefully lab-tested and packaged for freshness.",
+      "pricing": {
+        "1g": "$65"
+      },
+      "stock": 1102,
+      "rating": 4.55,
+      "reviewsCount": 524,
+      "image": "con8.jpg"
+    },
+    {
+      "id": "HOG0039",
+      "name": "SugarRx Diamonds",
+      "category": "Concentrates",
+      "description": "An artisanal selection, SugarRx Diamonds provides a premium experience with careful cultivation and processing. Sustainably grown and hand-trimmed.",
+      "pricing": {
+        "single": "$200"
+      },
+      "stock": 1380,
+      "rating": 4.07,
+      "reviewsCount": 79,
+      "image": "con9.jpg"
+    },
+    {
+      "id": "HOG0040",
+      "name": "Whole Melt extracts crumbles",
+      "category": "Concentrates",
+      "description": "Whole Melt extracts is known for its distinctive aroma and balanced effects\u2014ideal for both novice and experienced users. Sustainably grown and hand-trimmed.",
+      "pricing": {
+        "single": "$290"
+      },
+      "stock": 2166,
+      "rating": 4.23,
+      "reviewsCount": 618,
+      "image": "con10.jpg"
+    },
+    {
+      "id": "HOG0041",
+      "name": "Whole Melt extracts live extracts",
+      "category": "Concentrates",
+      "description": "Experience the smooth flavors of Whole Melt extracts, offering a reliable and consistent experience every time. Sustainably grown and hand-trimmed.",
+      "pricing": {
+        "1g": "$325"
+      },
+      "stock": 2070,
+      "rating": 4.3,
+      "reviewsCount": 277,
+      "image": "con11.jpg"
+    },
+    {
+      "id": "HOG0042",
+      "name": "Zeus Concentrates",
+      "category": "Concentrates",
+      "description": "Crafted for quality, Zeus Concentrates is sourced from trusted growers and offers exceptional potency and flavor. Carefully lab-tested and packaged for freshness.",
+      "pricing": {
+        "small": "$70"
+      },
+      "stock": 1268,
+      "rating": 4.64,
+      "reviewsCount": 317,
+      "image": "con12.jpg"
+    },
+    {
+      "id": "HOG0043",
+      "name": "Buddah bear wax",
+      "category": "Concentrates",
+      "description": "Buddah bear wax is known for its distinctive aroma and balanced effects\u2014ideal for both novice and experienced users. Carefully lab-tested and packaged for freshness.",
+      "pricing": {
+        "1g": "$2.2",
+        "1/8oz": "$25",
+        "1/2oz": "$50"
+      },
+      "stock": 1938,
+      "rating": 4.59,
+      "reviewsCount": 586,
+      "image": "con13.jpg"
+    },
+    {
+      "id": "HOG0044",
+      "name": "Honey Banana Live Resin Badder",
+      "category": "Concentrates",
+      "description": "Honey Banana Live Resin Badder delivers rich sensory notes and a gentle, long-lasting effect\u2014perfect for relaxation. Carefully lab-tested and packaged for freshness.",
+      "pricing": {
+        "1g": "$60",
+        "1/8oz": "$200",
+        "1/2oz": "$800"
+      },
+      "stock": 1714,
+      "rating": 4.84,
+      "reviewsCount": 260,
+      "image": "con14.jpg"
+    },
+    {
+      "id": "HOG0045",
+      "name": "Strawberry Cough | Dab Dart",
+      "category": "Concentrates",
+      "description": "Strawberry Cough  features a well-rounded profile with aromatic top notes and a pleasant finish. Carefully lab-tested and packaged for freshness.",
+      "pricing": {
+        "1g": "$40",
+        "1/8oz": "$182.08",
+        "1/2oz": "$748.32"
+      },
+      "stock": 1619,
+      "rating": 4.58,
+      "reviewsCount": 679,
+      "image": "con15.jpg"
+    },
+    {
+      "id": "HOG0046",
+      "name": "White Widow | Kief ",
+      "category": "Concentrates",
+      "description": "White Widow | Kief  delivers rich sensory notes and a gentle, long-lasting effect\u2014perfect for relaxation. Carefully lab-tested and packaged for freshness.",
+      "pricing": {
+        "1g": "$20",
+        "1/8oz": "$74",
+        "1/2oz": "$290"
+      },
+      "stock": 2358,
+      "rating": 4.1,
+      "reviewsCount": 147,
+      "image": "con16.jpg"
+    },
+    {
+      "id": "HOG0047",
+      "name": "BYG - Kief jar 1g",
+      "category": "Concentrates",
+      "description": "An artisanal selection,  BYG provides a premium experience with careful cultivation and processing. Carefully lab-tested and packaged for freshness.",
+      "pricing": {
+        "1g": "$20",
+        "1/8oz": "$100",
+        "1/2oz": "$352"
+      },
+      "stock": 1557,
+      "rating": 4.27,
+      "reviewsCount": 225,
+      "image": "con17.jpg"
+    },
+    {
+      "id": "HOG0048",
+      "name": "Tangerine Dream - Sativa",
+      "category": "Concentrates",
+      "description": "SATIVA Hashish is the world’s oldest cannabis concentrate. Classic Hash is the best of both the new and the old. Our Classic Hash is made with strain specific, full spectrum bubble hash. It is produced by applying high pressure to the isolated resin glands.",
+      "pricing": {
+        "1g": "$25",
+        "1/8oz": "$110",
+        "1/2oz": "$450"
+      },
+      "stock": 2035,
+      "rating": 4.46,
+      "reviewsCount": 62,
+      "image": "con18.jpg"
+    },
+    {
+      "id": "HOG0049",
+      "name": "Apex | Cured Resin Badder ",
+      "category": "Concentrates",
+      "description": "Apex | Cured Resin Badder | 1gGlenna’s Apex Sauce is a terpene-rich cured resin concentrate delivering potent hybrid effects and deep flavor. Expect a balance of cerebral energy and physical ease, perfect for daytime focus or a mellow evening. With a dense terp profile, Apex Sauce leans into notes of citrus peel, pine, and a slightly funky sweetness.",
+      "pricing": {
+        "1g": "$28",
+        "1/8oz": "$90",
+        "1/2oz": "$358"
+      },
+      "stock": 1683,
+      "rating": 4.73,
+      "reviewsCount": 662,
+      "image": "con19.jpg"
+    },
+    {
+      "id": "HOG0050",
+      "name": "RYTHM Live Resin Animal Face",
+      "category": "Concentrates",
+      "description": "RYTHM is a national cannabis brand with a singular promise: to provide consistent, authentic experiences that empower consumers to live their best lives. ",
+      "pricing": {
+        "1g": "$53.81",
+        "1/8oz": "$200",
+        "1/2oz": "$800"
+      },
+      "stock": 2148,
+      "rating": 4.01,
+      "reviewsCount": 87,
+      "image": "con20.jpg"
+    },
+    {
+      "id": "HOG0051",
+      "name": "Candy Rain Live Resin Badde",
+      "category": "Concentrates",
+      "description": "MFNY’s Candy Rain is a premium concentrate made in house, using hydrocarbon extraction method. It starts with our best, in-house grown, bred, and fresh-frozen Candy Rain buds. We flash freeze our plants right after harvest to lock in all the trichome-and-terpene-rich goodness of the plant",
+      "pricing": {
+        "1g": "$70",
+        "1/8oz": "$230",
+        "1/2oz": "$972"
+      },
+      "stock": 2192,
+      "rating": 4.52,
+      "reviewsCount": 450,
+      "image": "con21.jpg"
+    },
+    {
+      "id": "HOG0052",
+      "name": "MFNY Yuzu Gold Live Resin Badder",
+      "category": "Concentrates",
+      "description": "MFNY’s Yuzu Gold badder is a premium concentrate made in house, using hydrocarbon extraction method. It starts with our best, in-house grown, bred, and fresh-frozen Yuzu Gold buds. We flash freeze our plants right after harvest to lock in all the trichome-and-terpene-rich goodness of the plant ",
+      "pricing": {
+        "1g": "$70",
+        "1/8oz": "$257",
+        "1/2oz": "$1048"
+      },
+      "stock": 1081,
+      "rating": 4.85,
+      "reviewsCount": 225,
+      "image": "con22.jpg"
+    },
+    {
+      "id": "HOG0053",
+      "name": "Sour Tangie | Dab Dartcon23",
+      "category": "Concentrates",
+      "description": "Perfect for starting your day with a boost, Sour Tangie delivers a bright burst of citrus flavor",
+      "pricing": {
+        "1g": "$67",
+        "1/8oz": "$227",
+        "1/2oz": "$930"
+      },
+      "stock": 1832,
+      "rating": 4.93,
+      "reviewsCount": 777,
+      "image": "con23.jpg"
+    },
+    {
+      "id": "HOG0054",
+      "name": "Hibernate 1g Live Badder",
+      "category": "Concentrates",
+      "description": "Hibernate is a potent indica strain meticulously crafted by the master breeders at Greenpoint Seeds, born from the cross of Shut Eye and Stardawg. This unique blend brings together an impressive lineage that includes Fire OG, Bubba Kush, Alien Technology, Purple Kush, and Chemdog.",
+      "pricing": {
+        "1g": "$33",
+        "1/8oz": "$113",
+        "1/2oz": "$467"
+      },
+      "stock": 1362,
+      "rating": 4.84,
+      "reviewsCount": 35,
+      "image": "con24.jpg"
+    },
+    {
+      "id": "HOG0055",
+      "name": "Animal Face Flower",
+      "category": "Concentrates",
+      "description": "Face Off OG x Animal Mints] is a potent indica-leaning strain with a complex flavor profile of sweet mint, citrus, and nuts with hints of pine and diesel",
+      "pricing": {
+        "1g": "$25",
+        "1/8oz": "$50",
+        "1/2oz": "$110"
+      },
+      "stock": 2371,
+      "rating": 4.82,
+      "reviewsCount": 264,
+      "image": "con25.jpg"
+    },
+    {
+      "id": "HOG0056",
+      "name": "RYTHM Energize Jack Herer Live Resin",
+      "category": "Concentrates",
+      "description": "Rythm concentrates are thoughtfully extracted from the finest hand-trimmed flower to preserve rich terpene profiles.",
+      "pricing": {
+        "1g": "$46",
+        "1/8oz": "$106",
+        "1/2oz": "$400"
+      },
+      "stock": 1079,
+      "rating": 4.82,
+      "reviewsCount": 237,
+      "image": "con26.jpg"
+    },
+    {
+      "id": "HOG0057",
+      "name": "Bruce Banner Live Resin Cartridge",
+      "category": "Concentrates",
+      "description": "The Strain - Bruce Banner is a potent hybrid strain expertly crafted by Dark Horse Genetics, born from the powerful cross of OG Kush and Strawberry Diesel. This homage to the comic book legend delivers a dynamic experience that could transform even the most reserved individual into a lively and energetic persona. With its Sativa-dominant genes, Bruce Banner offers a substantial dose of THC, providing an intensely euphoric head high combined with a boost in creativity and overall mood.",
+      "pricing": {
+        "1g": "$41",
+        "1/8oz": "$120",
+        "1/2oz": "$410"
+      },
+      "stock": 1466,
+      "rating": 4.21,
+      "reviewsCount": 685,
+      "image": "con27.jpg"
+    },
+    {
+      "id": "HOG0058",
+      "name": "Grape Bubblegum",
+      "category": "Concentrates",
+      "description": "Brittle in texture, colored in ambers and golds. Packed with potency in a glass-like appearance.",
+      "pricing": {
+        "1g": "$45",
+        "1/8oz": "$150",
+        "1/2oz": "$350"
+      },
+      "stock": 1571,
+      "rating": 4.33,
+      "reviewsCount": 531,
+      "image": "con28.jpg"
+    },
+    {
+      "id": "HOG0059",
+      "name": "Bubblegum Gelato",
+      "category": "Concentrates",
+      "description": "Introducing 1G Single Source Hash Rosin, curated so that you can fly HY with dab sourced from your favorite strains you already know and love. Come to where the flavor is and dab HY",
+      "pricing": {
+        "1g": "$43",
+        "1/8oz": "$100",
+        "1/2oz": "$250"
+      },
+      "stock": 1056,
+      "rating": 4.11,
+      "reviewsCount": 277,
+      "image": "con29.jpg"
+    },
+    {
+      "id": "HOG0060",
+      "name": "Gelato Cake Sugar",
+      "category": "Concentrates",
+      "description": "A cross of Wedding Cake x Gelato 33, bred by Seedjunky Genetics. Palate of grapes, sweet kerosene, and cognac. Utilized for pain relief, stress reduction, and mood elevation. Good for anytime use and suitable for novice or experienced consumers",
+      "pricing": {
+        "1g": "$30.96",
+        "1/8oz": "$100",
+        "1/2oz": "$410"
+      },
+      "stock": 1889,
+      "rating": 4.33,
+      "reviewsCount": 331,
+      "image": "con30.jpg"
+    },
+    {
+      "id": "HOG0061",
+      "name": "Peach 2:1 CBD + Hybrid Enhanced Gummies",
+      "category": "Edibles",
+      "description": "New to edibles? Our Peach 2:1 CBD:THC gummies are made with more CBD than THC, making them a great option for easing into edibles. They are made with real fruit and enhanced with a balanced Hybrid terpene profile that may assist in creating a sense of ease and overall well being.",
+      "pricing": {
+        "1g": "$20",
+        "1/8oz": "$55",
+        "1/2oz": "$200"
+      },
+      "stock": 2180,
+      "rating": 4.18,
+      "reviewsCount": 55,
+      "image": "edi1.jpg"
+    },
+    {
+      "id": "HOG0062",
+      "name": "Strawberry 20:1 CBD + Hybrid Enhanced Gummies",
+      "category": "Edibles",
+      "description": "Our Strawberry 20:1 CBD:THC gummies are made with real fruit, a Hybrid terpene blend, and enhanced with cannabis-derived CBD oil. Perfect for relaxing your body while keeping your mind sharp and alert. They are the go-to gummy if you are looking to decompress or take the edge off.",
+      "pricing": {
+        "1g": "$20",
+        "1/8oz": "$55",
+        "1/2oz": "$200"
+      },
+      "stock": 2406,
+      "rating": 4.68,
+      "reviewsCount": 769,
+      "image": "edi2.jpg"
+    },
+    {
+      "id": "HOG0063",
+      "name": "Pomegranate 1:1 CBD + Hybrid Enhanced Gummies",
+      "category": "Edibles",
+      "description": "We’ve taken the best of both worlds with our Pomegranate 1:1 THC:CBD gummies. They are a great compliment to any adventure by providing a balanced and enjoyable high for both mind and body using a Hybrid terpene blend.",
+      "pricing": {
+        "1g": "$22",
+        "1/8oz": "$65",
+        "1/2oz": "$240"
+      },
+      "stock": 2360,
+      "rating": 4.87,
+      "reviewsCount": 648,
+      "image": "edi3.jpg"
+    },
+    {
+      "id": "HOG0064",
+      "name": "Camino Yuzu Lemon Balance Gummies",
+      "category": "Edibles",
+      "description": "Dip your feet into the slow current of a cool river with Kiva’s Yuzu Lemon Camino gummies. Let its harmonizing blend of THC and CBD, sativa and indica-like terpenes, and sweet, subtly tart notes of citrus balance you from the inside out.",
+      "pricing": {
+        "1g": "$32.00",
+        "1/8oz": "$107.00",
+        "1/2oz": "$440.00"
+      },
+      "stock": 2038,
+      "rating": 4.29,
+      "reviewsCount": 428,
+      "image": "edi4.jpg"
+    },
+    {
+      "id": "HOG0065",
+      "name": "Pear 1:1 CBG + Hybrid Enhanced Gummies",
+      "category": "Edibles",
+      "description": "The restorative effects of CBG in combination with THC, alongside the terpenes found in Hybrid strains may provide greater rejuvenation than THC alone. This combination may be particularly useful when looking for balance.",
+      "pricing": {
+        "1g": "$22",
+        "1/8oz": "$65",
+        "1/2oz": "$240"
+      },
+      "stock": 1861,
+      "rating": 4.63,
+      "reviewsCount": 398,
+      "image": "edi5.jpg"
+    },
+    {
+      "id": "HOG0066",
+      "name": "Elderberry 2:1 CBN + Indica Enhanced Gummies",
+      "category": "Edibles",
+      "description": "The sedating effects of CBN in combination with THC alongside terpenes found in Indica strains may provide greater sedation than THC alone. This combination may be particularly useful when preparing for sleep.",
+      "pricing": {
+        "1g": "$22",
+        "1/8oz": "$74",
+        "1/2oz": "$304"
+      },
+      "stock": 1831,
+      "rating": 4.52,
+      "reviewsCount": 10,
+      "image": "edi6.jpg"
+    },
+    {
+      "id": "HOG0067",
+      "name": "Kiva Churro Milk Chocolate Bar",
+      "category": "Edibles",
+      "description": "Now you can eat your cake and feel it too! The Birthday Cake Kiva Bar tastes like gourmet lemon-vanilla cake topped with whipped buttercream frosting and celebratory sprinkles. Infused with cold water hash for a multi-layered experience, this bar is one delish birthday wish come true.",
+      "pricing": {
+        "1g": "$25",
+        "1/8oz": "$75",
+        "1/2oz": "$300"
+      },
+      "stock": 2340,
+      "rating": 4.31,
+      "reviewsCount": 462,
+      "image": "edi7.jpg"
+    },
+    {
+      "id": "HOG0068",
+      "name": "Lost Farm Juicy Peach x 'Mimosa' Gummies",
+      "category": "Edibles",
+      "description": "Lost Farm Fruit Chews and Gummies are strain-specific, plant-based confections made with 100% live resin. These edibles immortalize the fresh cannabis plant and harmoniously combine it with fruit flavors that enhance each strain’s unique profile. The result is a full-sensory, ultra-fresh, and extra-strength edible",
+      "pricing": {
+        "1g": "$31",
+        "1/8oz": "$97",
+        "1/2oz": "$399"
+      },
+      "stock": 1347,
+      "rating": 4.63,
+      "reviewsCount": 300,
+      "image": "edi8.jpg"
+    },
+    {
+      "id": "HOG0069",
+      "name": "Camino Sours 10:3 CBN Blackberry Dream Sleep Gummies",
+      "category": "Edibles",
+      "description": "Drift into dreamland by way of a whimsical woodland forest filled with fragrant blackberry bushes. Blackberry Dream Camino Sours combine THC and CBN with chamomile and lavender extracts for a tranquil effect enhanced by soothing, indica-like terpenes. Take one of these subtly sour gummies and call it a night.",
+      "pricing": {
+        "1g": "$30",
+        "1/8oz": "$100",
+        "1/2oz": "$350"
+      },
+      "stock": 1481,
+      "rating": 4.64,
+      "reviewsCount": 240,
+      "image": "edi9.jpg"
+    },
+    {
+      "id": "HOG0070",
+      "name": "Camino Watermelon Lemonade edBliss Gummies",
+      "category": "Edibles",
+      "description": "Find yourself on a blissful beach with our 'Bliss' Watermelon Lemonade gummies. Let sativa and indica terpenes alongside juicy watermelon and tart citrus welcome you to your happy place.",
+      "pricing": {
+        "1g": "$25",
+        "1/8oz": "$99",
+        "1/2oz": "$200"
+      },
+      "stock": 1973,
+      "rating": 4.58,
+      "reviewsCount": 796,
+      "image": "edi10.jpg"
+    },
+    {
+      "id": "HOG0071",
+      "name": "Boysenberry 1:1:1 CBD:CBN + Indica Enhanced Gummies",
+      "category": "Edibles",
+      "description": "Hit the snooze button. Boysenberry THC:CBD:CBN gummies are perfect for deep sleep. CBD helps the body relax, while CBN can provide a restorative rest for the mind. When combined with THC, Wyld's Boysenberry gummy activates the Entourage Effect to set the landscape for a relaxing, restorative sleep",
+      "pricing": {
+        "1g": "$25",
+        "1/8oz": "$79",
+        "1/2oz": "$350"
+      },
+      "stock": 2471,
+      "rating": 4.66,
+      "reviewsCount": 516,
+      "image": "edi11.jpg"
+    },
+    {
+      "id": "HOG0072",
+      "name": "Live Resin Belts - Strawberry",
+      "category": "Edibles",
+      "description": "Flav Strawberry Belts is one of the fan favorites when it comes to delicious edibles that are as effective as they are tasty. Sweet and sour strawberry flavored belts coated in sugar are infused with 10mgs of THC. 10 gummy belts in each package allow you to medicate at the amount you need to achieve the ultimate medicating experience. Bring your favorite flavors to the cannabis experience with Flav Strawberry Belts",
+      "pricing": {
+        "1g": "$22"
+      },
+      "stock": 1218,
+      "rating": 4.74,
+      "reviewsCount": 234,
+      "image": "edi12.jpg"
+    },
+    {
+      "id": "HOG0073",
+      "name": "Grapefruit 1:1:1 CBG:CBC + Sativa Enhanced Gummies",
+      "category": "Edibles",
+      "description": "Wyld's 1:1:1 THC:CBG:CBC + Sativa Enhanced Gummies offer a blissful + boosting nudge in the right direction. These gummies are a 1:1:1 ratio product featuring a balanced dose of three cannabinoids for an uplifting + energetic experience. Made sustainably using real fruit, botanical terpenes, and natural flavors.",
+      "pricing": {
+        "1g": "$24"
+      },
+      "stock": 2141,
+      "rating": 4.24,
+      "reviewsCount": 134,
+      "image": "edi13.jpg"
+    },
+    {
+      "id": "HOG0074",
+      "name": "Mango Sunrise | 1:1:1 | THC:CBG:CBD",
+      "category": "Edibles",
+      "description": "Let’s get Jaunty. These fast-acting gummies provide just the right amount of boost thanks to the carefully crafted blend of THC, CBG, CBD, and sativa effects-based terpenes. Experience a refreshing wave of energy and creativity that helps you stay focused and uplifted throughout the day",
+      "pricing": {
+        "1g": "$4"
+      
+      },
+      "stock": 2144,
+      "rating": 4.57,
+      "reviewsCount": 783,
+      "image": "edi14.jpg"
+    },
+    {
+      "id": "HOG0075",
+      "name": "Camino Sours 10mg Watermelon Spritz Uplifting Gummies",
+      "category": "Edibles",
+      "description": "Find yourself the life of the (pool) party with Kiva’s Watermelon Spritz Camino Sours. Energizing, sativa-like terpenes meet sharp, juicy watermelon flavors for a splashy sweet that will leave you feeling refreshingly enlivened.",
+      "pricing": {
+        "1g": "$25"
+        
+      },
+      "stock": 2122,
+      "rating": 4.42,
+      "reviewsCount": 172,
+      "image": "edi15.jpg"
+    },
+    {
+      "id": "HOG0076",
+      "name": "Camino Sours Raspberry Lemonade 'Bliss' Gummies",
+      "category": "Edibles",
+      "description": "For those moments when you want to make a great experience even more joyous—like hanging with friends at the beach or enjoying a comedy show— enter Camino Sours Raspberry Lemonade Bliss gummies. These delightful treats are designed to boost your mood and create a blissful experience no matter where you are and what you’re up to. Each delectable gummy is infused with 10MG of THC and a tailored blend of hybrid-like terpenes that marries perfectly with the sweet, tangy notes of ripe raspberries and the flavors of fresh, sugary lemonade. Welcome to your happy place!",
+      "pricing": {
+        "1g": "$30"
+
+      },
+      "stock": 2305,
+      "rating": 4.26,
+      "reviewsCount": 543,
+      "image": "edi16.jpg"
+    },
+    {
+      "id": "HOG0077",
+      "name": "Sour Jamberry 100mg CBN : 100mg THC 1:1 Fruit Chews - CA",
+      "category": "Edibles",
+      "description": "Each of our mouth watering fruit chews contain 10 mg of CBN and 10 mg of THC, and made with our high clarity cannabis distillate for great taste. There are 10 pieces per package with a total of 100 mg active CBN and 100 mg of active THC per package.",
+      "pricing": {
+        "1g": "$22"
+
+      },
+      "stock": 1585,
+      "rating": 4.22,
+      "reviewsCount": 353,
+      "image": "edi17.jpg"
+    },
+    {
+      "id": "HOG0078",
+      "name": "Camino Wild Berry Chill Gummies",
+      "category": "Edibles",
+      "description": "Relax and reset yourself. Calming, indica-like terpenes pair with notes of wild blackberry and fresh raspberry for a laid-back weekend vibe.",
+      "pricing": {
+        "1g": "$30"
+     
+      },
+      "stock": 1784,
+      "rating": 4.66,
+      "reviewsCount": 733,
+      "image": "edi18.jpg"
+    },
+    {
+      "id": "HOG0079",
+      "name": "Camino Midnight Blueberry Sleep CBN Gummies",
+      "category": "Edibles",
+      "description": "A physical road takes you to a physical place. Camino (“road” in Spanish) takes you to a state of mind. Settle in for a smooth slumber in a cozy lake cabin and let all your worries go. Our Midnight Blueberry gummies pair relaxing terpenes with a hint of chamomile and lavender for a soothing, restful effect that’s boosted by a key ingredient- CBN",
+      "pricing": {
+        "1g": "$28"
+      
+      },
+      "stock": 1851,
+      "rating": 4.06,
+      "reviewsCount": 440,
+      "image": "edi19.jpg"
+    },
+    {
+      "id": "HOG0080",
+      "name": "Camino Sours Strawberry Sunset 'Chill' Gummies",
+      "category": "Edibles",
+      "description": "Kick back dockside and relax to the rhythmic sounds of soft waves lapping against the shoreline. Indica-like terpenes meet a refreshing strawberry citrus flavor in this marvelously mellow edible. Take a deep breath in and chill out",
+      "pricing": {
+        "1g": "$25"
+    
+      },
+      "stock": 2179,
+      "rating": 4.36,
+      "reviewsCount": 16,
+      "image": "edi20.jpg"
+    },
+    {
+      "id": "HOG0081",
+      "name": "Kiwi 1:1 THCv + Sativa Enhanced Gummies",
+      "category": "Edibles",
+      "description": "Our Kiwi gummies are tailor-made with real fruit and THCv to unlock your next level. With a 1 to 1 blend of THC and THCv, these uplifting gummies open up a Sativa experience that brings a boost of energy and focus to the typical THC high. Feeling Fuzzy? Time for Wyld's Kiwi gummies.",
+      "pricing": {
+        "1g": "$24"
+  
+      },
+      "stock": 1858,
+      "rating": 4.51,
+      "reviewsCount": 762,
+      "image": "edi21.jpg"
+    },
+    {
+      "id": "HOG0082",
+      "name": "Camino Sours 'Energy' Tropical Burst Gummies",
+      "category": "Edibles",
+      "description": "Have you ever dealt with a demanding schedule, approaching deadlines, and a sense of fatigue creeping in? This is precisely when Camino Sours Tropical Burst Energy gummies step in to give you just the boost you need. Packed with 10MG of THC and 5MG of THCV with sativa-like terpenes, these gummies are your ticket to an enlivened experience.",
+      "pricing": {
+        "1g": "$30"
+    
+      },
+      "stock": 1558,
+      "rating": 4.41,
+      "reviewsCount": 39,
+      "image": "edi22.jpg"
+    },
+    {
+      "id": "HOG0083",
+      "name": "Camino Sours 5:5 CBD Orchard Peach 'Balance' Gummies",
+      "category": "Edibles",
+      "description": "Come back to center as the vivid rays of twilight hour sweep across rolling orchard hills. Orchard Peach Camino Sours are characterized by tart notes of lush, ripe peach with a balancing blend of CBD and THC with indica and sativa-like terpenes.",
+      "pricing": {
+        "1g": "$30"
+    
+      },
+      "stock": 1338,
+      "rating": 4.8,
+      "reviewsCount": 140,
+      "image": "edi23.jpg"
+    },
+    {
+      "id": "HOG0084",
+      "name": "Kiva Dark Chocolate Bar",
+      "category": "Edibles",
+      "description": "Our classic Dark Chocolate bar is uniquely complex with flavors of black coffee and dark cherry. Using a 57% sustainably-sourced dark chocolate infused with pure, clean cold water hash, this bar is sure to delight any true chocolate lover",
+      "pricing": {
+        "1g": "$30"
+
+      },
+      "stock": 2357,
+      "rating": 4.03,
+      "reviewsCount": 668,
+      "image": "edi24.jpg"
+    },
+    {
+      "id": "HOG0085",
+      "name": "Lost Farm Strawberry Lemonade x 'Super Lemon Haze' Gummies",
+      "category": "Edibles",
+      "description": "This sativa-dominant hybrid blend of Lemon Skunk and Super Silver Haze is characterized by a sweet, tart and earthy aroma that evokes the taste of fresh lemons.",
+      "pricing": {
+        "1g": "$30"
+      },
+      "stock": 1776,
+      "rating": 4.31,
+      "reviewsCount": 475,
+      "image": "edi25.jpg"
+    },
+    {
+      "id": "HOG0086",
+      "name": "Kiva Milk Chocolate Bar",
+      "category": "Edibles",
+      "description": "Meticulously crafted from the purest ingredients, Kiva’s classic milk chocolate bar has hints of brown butter and a silky, creamy finish. Like all Kiva chocolates, this bar is crafted from sustainably sourced, premium cacao infused with handmade, cold water hash. Ideal for those with a love for chocolate and a refined palate.",
+      "pricing": {
+        "1g": "$30"
+      },
+      "stock": 1863,
+      "rating": 4.24,
+      "reviewsCount": 93,
+      "image": "edi26.jpg"
+    },
+    {
+      "id": "HOG0087",
+      "name": "Kiva Dark Chocolate Bar",
+      "category": "Edibles",
+      "description": "Our classic Dark Chocolate bar is uniquely complex with flavors of black coffee and dark cherry. Using a 57% sustainably-sourced dark chocolate infused with pure, clean cold water hash, this bar is sure to delight any true chocolate lover.",
+      "pricing": {
+        "1g": "$30"
+      },
+      "stock": 1716,
+      "rating": 4.21,
+      "reviewsCount": 80,
+      "image": "edi27.jpg"
+    },
+    {
+      "id": "HOG0088",
+      "name": "Raspberry Sativa Enhanced Gummies",
+      "category": "Edibles",
+      "description": "Our Raspberry Sativa gummies are made with real fruit and enhanced with botanical terpenes that may assist in creating euphoric and energizing experiences. Ideal for keeping you focused on the task at hand, refining your creative endeavors, or even better, getting you out on your next expedition!",
+      "pricing": {
+        "1g": "$28"
+      },
+      "stock": 1506,
+      "rating": 4.19,
+      "reviewsCount": 30,
+      "image": "edi28.jpg"
+    },
+    {
+      "id": "HOG0089",
+      "name": "Lost Farm Raspberry x Wedding Cake",
+      "category": "Edibles",
+      "description": "Boasting the tart fruitiness of Cherry Pie and the creamy vanilla sweetness of GSC, Wedding Cake is a potent indica-dominant hybrid strain accented by a background of earthy, peppery flavors.",
+      "pricing": {
+        "1g": "$25"
+      },
+      "stock": 2155,
+      "rating": 4.9,
+      "reviewsCount": 486,
+      "image": "edi29.jpg"
+    },
+    {
+      "id": "HOG0090",
+      "name": "Jamberry 100mg CBN : 100mg THC 1:1 Fruit Chews",
+      "category": "Edibles",
+      "description": "Bursting with an assortment of the best fresh berries, these sweet Gummiez will make you want to spread them on your next PB&J- although we don’t recommend it. (Keep away from bears). These delicious fruit chews are a tasty and satisfying way for you to medicate!",
+      "pricing": {
+        "1g": "$25"
+      },
+      "stock": 2471,
+      "rating": 4.11,
+      "reviewsCount": 177,
+      "image": "edi30.jpg"
+    },
+    {
+      "id": "HOG0091",
+      "name": "Dream Cartridge | ROVE Classics",
+      "category": "Vape Pens",
+      "description": "This Blue Dream, Strawberry Cough cross is a sativa dominant hybrid. It balances full-body relaxation with gentle cerebral invigoration. With a sweet strawberry aroma, it delivers swift symptom relief without heavy sedative effects. The high THC content will awaken your senses and may relieve symptoms of pain, depression, and nausea.",
+      "pricing": {
+        "1g": "$50"
+      },
+      "stock": 2387,
+      "rating": 4.86,
+      "reviewsCount": 394,
+      "image": "vap1.jpg"
+    },
+    {
+      "id": "HOG0092",
+      "name": "Maui Waui | Melted Diamond Live Resin Vaporize",
+      "category": "Vape Pens",
+      "description": "Welcome to the next generation of vaping. Clocking in at up to 95% potency, our live resin melted diamonds pair perfectly with our new hardware, designed to create ultra big clouds and super smooth hits",
+      "pricing": {
+        "1g": "$70"
+      },
+      "stock": 2284,
+      "rating": 4.23,
+      "reviewsCount": 723,
+      "image": "vap2.jpg"
+    },
+    {
+      "id": "HOG0093",
+      "name": "Skywalker OG | Melted Diamond Live Resin Vaporize",
+      "category": "Vape Pens",
+      "description": "Welcome to the next generation of vaping. Clocking in at up to 95% potency, our live resin melted diamonds pair perfectly with our new hardware, designed to create ultra big clouds and super smooth hits",
+      "pricing": {
+        "1g": "$80"
+      },
+      "stock": 2159,
+      "rating": 4.74,
+      "reviewsCount": 365,
+      "image": "vap3.jpg"
+    },
+    {
+      "id": "HOG0094",
+      "name": "Vape Cartridge - BLUE DREAM",
+      "category": "Vape Pens",
+      "description": "Extracted from a variety of natural flora, STIIIZY’s naturally derived terpenes offer balanced aroma and taste to deliver a consistent experience every time. Our premium quality concentrates uphold a high level of purity, setting the industry standard to influence and inspire through innovative methods.",
+      "pricing": {
+        "1g": "$40"
+      },
+      "stock": 1698,
+      "rating": 4.01,
+      "reviewsCount": 440,
+      "image": "vap4.jpg"
+    },
+    {
+      "id": "HOG0095",
+      "name": "Vape Cartridge - STRAWBERRY COUGH",
+      "category": "Vape Pens",
+      "description": "Extracted from a variety of natural flora, STIIIZY’s naturally derived terpenes offer balanced aroma and taste to deliver a consistent experience every time. Our premium quality concentrates uphold a high level of purity, setting the industry standard to influence and inspire through innovative methods.",
+      "pricing": {
+        "1g": "$50"
+      },
+      "stock": 1941,
+      "rating": 4.67,
+      "reviewsCount": 455,
+      "image": "vap5.jpg"
+    },
+    {
+      "id": "HOG0096",
+      "name": "Vape Cartridge - WATERMELON",
+      "category": "Vape Pens",
+      "description": "Extracted from a variety of natural flora, STIIIZY’s naturally derived terpenes offer balanced aroma and taste to deliver a consistent experience every time. Our premium quality concentrates uphold a high level of purity, setting the industry standard to influence and inspire through innovative methods.",
+      "pricing": {
+        "1g": "$40"
+      },
+      "stock": 2102,
+      "rating": 4.74,
+      "reviewsCount": 486,
+      "image": "vap6.jpg"
+    },
+    {
+      "id": "HOG0097",
+      "name": "Pineapple Express | Melted Diamond Live Resin Vape",
+      "category": "Vape Pens",
+      "description": "Buckle up for a heady trip across the pacific. Pineapple Express provides a blast of energy, promotes focused awareness and increases that quintessentially-coastal feeling of creativity. Got a best friend (or maybe dealer) you wanna share with? This hybrid is a great group activity with the perfect amount of THC to make you feel buzzed, alert and ready for an adventure. A slightly tropical taste of pineapple gives this strain its sun-kissed sweetness. ",
+      "pricing": {
+        "1g": "$90"
+      },
+      "stock": 1502,
+      "rating": 4.79,
+      "reviewsCount": 98,
+      "image": "vap7.jpg"
+    },
+    {
+      "id": "HOG0098",
+      "name": "Jet Fuel Live Reserve ",
+      "category": "Vape Pens",
+      "description": "Jet Fuel is the legendary cross of the most famous Diesel strains. By combining Aspen OG and High Country Diesel, we are left with a sativa-dominant strain that stays true to its SFV OG Kush and East Coast Sour Diesel lineage. Jet Fuel portrays sweet, pungent aromas of diesel fumes, and offers a high-energy jolt of uplifting effects that eventually levels off to provide a dream-like state of relaxation",
+      "pricing": {
+        "1g": "$60"
+      },
+      "stock": 2249,
+      "rating": 4.63,
+      "reviewsCount": 354,
+      "image": "vap8.jpg"
+    },
+    {
+      "id": "HOG0099",
+      "name": "Vape Cartridge - SFV",
+      "category": "Vape Pens",
+      "description": "Extracted from a variety of natural flora, STIIIZY’s naturally derived terpenes offer balanced aroma and taste to deliver a consistent experience every time. Our premium quality concentrates uphold a high level of purity, setting the industry standard to influence and inspire through innovative methods",
+      "pricing": {
+        "1g": "$40"
+      },
+      "stock": 1726,
+      "rating": 4.76,
+      "reviewsCount": 358,
+      "image": "vap9.jpg"
+    },
+    {
+      "id": "HOG0100",
+      "name": "Granddaddy Purp",
+      "category": "Vape Pens",
+      "description": "Get ready to dive into a world of grape euphoria with Granddaddy Purp! This indica superstar delivers a relaxing experience that'll have you dancing on clouds.",
+      "pricing": {
+        "1g": "$82"
+      },
+      "stock": 1020,
+      "rating": 4.49,
+      "reviewsCount": 205,
+      "image": "vap10.jpg"
+    },
+    {
+      "id": "HOG0101",
+      "name": "Watermelon OG Live Reserve ",
+      "category": "Vape Pens",
+      "description": "﻿Watermelon OG is an Indica Dominant Strain producing relaxing effects. Consumers report using this strain as a sleep aid and are also known to help with anxiety. Watermelon OG has a unique fruity watermelon flavor profile, with a hint of grape, and hashy undertones. This strain is sought for its high THC content.",
+      "pricing": {
+        "1g": "$50"
+      },
+      "stock": 1492,
+      "rating": 4.66,
+      "reviewsCount": 671,
+      "image": "vap11.jpg"
+    },
+    {
+      "id": "HOG0102",
+      "name": "Fruit Punch",
+      "category": "Vape Pens",
+      "description": "Welcome to the next generation of vaping. Clocking in at up to 95% potency, our live resin melted diamonds pair perfectly with our new hardware, designed to create ultra big clouds and super smooth hits",
+      "pricing": {
+        "1g": "$65"
+      },
+      "stock": 1453,
+      "rating": 4.38,
+      "reviewsCount": 259,
+      "image": "vap12.jpg"
+    },
+    {
+      "id": "HOG0103",
+      "name": "Vape Cartridge - PINEAPPLE EXPRESS",
+      "category": "Vape Pens",
+      "description": "Extracted from a variety of natural flora, STIIIZY’s naturally derived terpenes offer balanced aroma and taste to deliver a consistent experience every time. Our premium quality concentrates uphold a high level of purity, setting the industry standard to influence and inspire through innovative methods.",
+      "pricing": {
+        "1g": "$35"
+      },
+      "stock": 1704,
+      "rating": 4.4,
+      "reviewsCount": 773,
+      "image": "vap13.jpg"
+    },
+    {
+      "id": "HOG0104",
+      "name": "Vape Cartridge - KING LOUIS",
+      "category": "Vape Pens",
+      "description": "Extracted from a variety of natural flora, STIIIZY’s naturally derived terpenes offer balanced aroma and taste to deliver a consistent experience every time. Our premium quality concentrates uphold a high level of purity, setting the industry standard to influence and inspire through innovative methods.",
+      "pricing": {
+        "1g": "$23"
+      },
+      "stock": 1514,
+      "rating": 4.22,
+      "reviewsCount": 748,
+      "image": "vap14.jpg"
+    },
+    {
+      "id": "HOG0105",
+      "name": "Dream Cartridge | ROVE Classics",
+      "category": "Vape Pens",
+      "description": "This Blue Dream, Strawberry Cough cross is a sativa dominant hybrid. It balances full-body relaxation with gentle cerebral invigoration. With a sweet strawberry aroma, it delivers swift symptom relief without heavy sedative effects. The high THC content will awaken your senses and may relieve symptoms of pain, depression, and nausea",
+      "pricing": {
+        "1g": "$50"
+      },
+      "stock": 2413,
+      "rating": 4.18,
+      "reviewsCount": 231,
+      "image": "vap15.jpg"
+    },
+    {
+      "id": "HOG0106",
+      "name": "Vape Cartridge - GRANDADDY PURP",
+      "category": "Vape Pens",
+      "description": "Extracted from a variety of natural flora, STIIIZY’s naturally derived terpenes offer balanced aroma and taste to deliver a consistent experience every time. Our premium quality concentrates uphold a high level of purity, setting the industry standard to influence and inspire through innovative methods.",
+      "pricing": {
+        "1g": "$25"
+      },
+      "stock": 2074,
+      "rating": 4.57,
+      "reviewsCount": 112,
+      "image": "vap16.jpg"
+    },
+    {
+      "id": "HOG0107",
+      "name": "Vape Cartridge - HARDCORE",
+      "category": "Vape Pens",
+      "description": "Extracted from a variety of natural flora, STIIIZY’s naturally derived terpenes offer balanced aroma and taste to deliver a consistent experience every time. Our premium quality concentrates uphold a high level of purity, setting the industry standard to influence and inspire through innovative methods.",
+      "pricing": {
+        "1g": "$34"
+      },
+      "stock": 1028,
+      "rating": 4.67,
+      "reviewsCount": 139,
+      "image": "vap17.jpg"
+    },
+    {
+      "id": "HOG0108",
+      "name": "Skywalker Cartridge | ROVE Classics",
+      "category": "Vape Pens",
+      "description": "ROVE Skywalker Cartridge sends your body to a galaxy of bliss that's far, far away. Skywalker is a soothing Indica cultivar with physical relaxation and gentle ease that lasts for hours on end. Indulge in Skywalker's berry-spiced flavors and pungently fruity aroma wherever life takes you, thanks to the ROVE Skywalker Cartridge.",
+      "pricing": {
+        "1g": "$65"
+      },
+      "stock": 1258,
+      "rating": 4.61,
+      "reviewsCount": 780,
+      "image": "vap18.jpg"
+    },
+    {
+      "id": "HOG0109",
+      "name": "Vape Cartridge - SOUR DIESEL ",
+      "category": "Vape Pens",
+      "description": "Extracted from a variety of natural flora, STIIIZY’s naturally derived terpenes offer balanced aroma and taste to deliver a consistent experience every time. Our premium quality concentrates uphold a high level of purity, setting the industry standard to influence and inspire through innovative methods.",
+      "pricing": {
+        "1g": "$50"
+      },
+      "stock": 1980,
+      "rating": 4.42,
+      "reviewsCount": 198,
+      "image": "vap19.jpg"
+    },
+    {
+      "id": "HOG0110",
+      "name": "Vape Cartridge - STRAWNANA",
+      "category": "Vape Pens",
+      "description": "Extracted from a variety of natural flora, STIIIZY’s naturally derived terpenes offer balanced aroma and taste to deliver a consistent experience every time. Our premium quality concentrates uphold a high level of purity, setting the industry standard to influence and inspire through innovative methods.",
+      "pricing": {
+        "1g": "$50"
+      },
+      "stock": 1133,
+      "rating": 4.38,
+      "reviewsCount": 85,
+      "image": "vap20.jpg"
+    },
+    {
+      "id": "HOG0111",
+      "name": "Grape Limeade Live Reserve",
+      "category": "Vape Pens",
+      "description": "This hybrid strain produces a rich, sweet aroma you can enjoy day or night. With uplifting and arousing effects, this strain offers a body and head high that’s perfect for weekend downtime. For full effects, we recommend not smoking this alone! Powered by Dime Industries hardware, this device offers 3 heat settings, pre-heat function, easy air flow, and is USB-C rechargeable. Give your buds a delicious treat backed by the industry's most powerful battery!",
+      "pricing": {
+        "1g": "$60"
+      },
+      "stock": 2152,
+      "rating": 4.9,
+      "reviewsCount": 97,
+      "image": "vap21.jpg"
+    },
+    {
+      "id": "HOG0112",
+      "name": "Vape Cartridge - SOUR TANGIE ",
+      "category": "Vape Pens",
+      "description": "Extracted from a variety of natural flora, STIIIZY’s naturally derived terpenes offer balanced aroma and taste to deliver a consistent experience every time. Our premium quality concentrates uphold a high level of purity, setting the industry standard to influence and inspire through innovative methods.",
+      "pricing": {
+        "1g": "$50"
+      },
+      "stock": 2266,
+      "rating": 4.21,
+      "reviewsCount": 545,
+      "image": "vap22.jpg"
+    },
+    {
+      "id": "HOG0113",
+      "name": "Apple Jack | Melted Diamond Live Resin Vaporize",
+      "category": "Vape Pens",
+      "description": "Apple Jack is a Jack-of-all-trades kinda strain. Delivering a mix of head and body effects, with a relaxing physical high balanced by a euphoric cerebral sensation, this sour apple tasting strain is great for those who want to get creative and relieve stress. ",
+      "pricing": {
+        "1g": "$90"
+      },
+      "stock": 1878,
+      "rating": 4.29,
+      "reviewsCount": 645,
+      "image": "vap23.jpg"
+    },
+    {
+      "id": "HOG0114",
+      "name": "Fruit Punch | Melted Diamond Live Resin Vaporizer",
+      "category": "Vape Pens",
+      "description": "Welcome to the next generation of vaping. Clocking in at up to 95% potency, our live resin melted diamonds pair perfectly with our new hardware, designed to create ultra big clouds and super smooth hits",
+      "pricing": {
+        "1g": "$85"
+      },
+      "stock": 1425,
+      "rating": 4.59,
+      "reviewsCount": 280,
+      "image": "vap24.jpg"
+    },
+    {
+      "id": "HOG0115",
+      "name": "Vape Cartridge - STRAWBERRY COUGH",
+      "category": "Vape Pens",
+      "description": "Extracted from a variety of natural flora, STIIIZY’s naturally derived terpenes offer balanced aroma and taste to deliver a consistent experience every time. Our premium quality concentrates uphold a high level of purity, setting the industry standard to influence and inspire through innovative methods.",
+      "pricing": {
+        "1g": "$55"
+      },
+      "stock": 1320,
+      "rating": 4.0,
+      "reviewsCount": 471,
+      "image": "vap25.jpg"
+    },
+    {
+      "id": "HOG0116",
+      "name": "Fruit Punch | Melted Diamond Live Resin Vaporizer",
+      "category": "Vape Pens",
+      "description": "Welcome to the next generation of vaping. Clocking in at up to 95% potency, our live resin melted diamonds pair perfectly with our new hardware, designed to create ultra big clouds and super smooth hits.",
+      "pricing": {
+        "1g": "$88"
+      },
+      "stock": 2447,
+      "rating": 4.27,
+      "reviewsCount": 474,
+      "image": "vap26.jpg"
+    },
+    {
+      "id": "HOG0117",
+      "name": "Vape Cartridge - OG KUSH",
+      "category": "Vape Pens",
+      "description": "Extracted from a variety of natural flora, STIIIZY’s naturally derived terpenes offer balanced aroma and taste to deliver a consistent experience every time. Our premium quality concentrates uphold a high level of purity, setting the industry standard to influence and inspire through innovative methods.",
+      "pricing": {
+        "1g": "$40"
+      },
+      "stock": 2280,
+      "rating": 4.56,
+      "reviewsCount": 212,
+      "image": "vap27.jpg"
+    },
+    {
+      "id": "HOG0118",
+      "name": "Vape Cartridge - BLUE BURST",
+      "category": "Vape Pens",
+      "description": "Extracted from a variety of natural flora, STIIIZY’s naturally derived terpenes offer balanced aroma and taste to deliver a consistent experience every time. Our premium quality concentrates uphold a high level of purity, setting the industry standard to influence and inspire through innovative methods.",
+      "pricing": {
+        "1g": "$45"
+      },
+      "stock": 1544,
+      "rating": 4.79,
+      "reviewsCount": 83,
+      "image": "vap28.jpg"
+    },
+    {
+      "id": "HOG0119",
+      "name": "Apple Jack | Melted Diamond Live Resin Vaporize",
+      "category": "Vape Pens",
+      "description": "Apple Jack is a Jack-of-all-trades kinda strain. Delivering a mix of head and body effects, with a relaxing physical high balanced by a euphoric cerebral sensation, this sour apple tasting strain is great for those who want to get creative and relieve stress. ",
+      "pricing": {
+        "1g": "$75"
+      },
+      "stock": 2165,
+      "rating": 4.88,
+      "reviewsCount": 459,
+      "image": "vap29.jpg"
+    },
+    {
+      "id": "HOG0120",
+      "name": "Blue Dream | Melted Diamond Live Resin Vaporizer",
+      "category": "Vape Pens",
+      "description": "Welcome to the next generation of vaping. Clocking in at up to 95% potency, our live resin melted diamonds pair perfectly with our new hardware, designed to create ultra big clouds and super smooth hits.",
+      "pricing": {
+        "1g": "$55"
+      },
+      "stock": 1557,
+      "rating": 4.48,
+      "reviewsCount": 515,
+      "image": "vap30.jpg"
+    },
+    {
+      "id": "HOG0121",
+      "name": "Blue Dream",
+      "category": "Strains",
+      "description": "Blue Dream is a popular strain with various sources of origin. Below are several anecdotes about the strain's inception.",
+      "pricing": {
+        "From": "$150"
+      },
+      "stock": 1660,
+      "rating": 4.57,
+      "reviewsCount": 36,
+      "image": "str1.jpg"
+    },
+    {
+      "id": "HOG0122",
+      "name": "Sour Diesel",
+      "category": "Strains",
+      "description": "Also known as Sour D and East Coast Sour Diesel (or ECSD,) Sour Diesel is a prolific strain with somewhat tumultuous origins.",
+      "pricing": {
+        "From": "$150"
+      },
+      "stock": 2202,
+      "rating": 4.9,
+      "reviewsCount": 793,
+      "image": "str2.jpg"
+    },
+    {
+      "id": "HOG0123",
+      "name": "OG #8",
+      "category": "Strains",
+      "description": "OG #18 (also known as Private Reserve,) is a sour phenotype of OG Kush from Reserva Privada, a subdivision of Amsterdam’s DNA Genetics.",
+      "pricing": {
+        "From": "$130"
+      },
+      "stock": 1358,
+      "rating": 4.45,
+      "reviewsCount": 677,
+      "image": "str3.jpg"
+    },
+    {
+      "id": "HOG0124",
+      "name": "Wedding Cake",
+      "category": "Strains",
+      "description": "Wedding Cake, also known as Pink Cookies, is a rare phenotype created by Seed Junky Genetics when the breeder crossed a mother Triangle Kush with Animal Mints pollen. The L.A. based Jungle Boys named Wedding Cake because of its sparkling resin and vanilla cake frosting aroma.",
+      "pricing": {
+        "From": "$150"
+      },
+      "stock": 2007,
+      "rating": 4.92,
+      "reviewsCount": 491,
+      "image": "str4.jpg"
+    },
+    {
+      "id": "HOG0125",
+      "name": "5G",
+      "category": "Strains",
+      "description": "We're still gathering information about the 5G strain. If you've had edibles, flower, joints, or other cannabis products of this strain, please let us know by leaving a review.",
+      "pricing": {
+        "From": "$150"
+      },
+      "stock": 1329,
+      "rating": 4.31,
+      "reviewsCount": 720,
+      "image": "str5.jpg"
+    },
+    {
+      "id": "HOG0126",
+      "name": "Gelato",
+      "category": "Strains",
+      "description": "Gelato is a cross between Sunset Sherbet and Thin Mint Girl Scout Cookies, named in homage to its sweet aroma. Also known as Larry Bird, Gelato (#33) was first cultivated in Northern California's Bay Area and is derived from a deep bank of genetics created by the Cookie Family, the Sherbinskis family, and cultivator Mario Guzman.",
+      "pricing": {
+        "From": "$120"
+      },
+      "stock": 1075,
+      "rating": 4.43,
+      "reviewsCount": 332,
+      "image": "str6.jpg"
+    },
+    {
+      "id": "HOG0127",
+      "name": "OG Kush",
+      "category": "Strains",
+      "description": "OG Kush is a world-famous strain first propagated by Matt Berger in Florida. The strain was later popularized after Josh Del Rosso, aka JoshD, was able to perfect the growing conditions and introduce the variety into the Los Angeles market. JoshD Farms reports OG Kush users can expect long-lasting, heavy, yet versatile euphoria and skunky-citrus flavor and aroma. The company is now focused exclusively on developing OG Kush-derived strains and products.",
+      "pricing": {
+        "From": "$150"
+      },
+      "stock": 1002,
+      "rating": 4.62,
+      "reviewsCount": 565,
+      "image": "str7.jpg"
+    },
+    {
+      "id": "HOG0128",
+      "name": "Pineapple Express",
+      "category": "Strains",
+      "description": "According to actor and comedian Seth Rogen, the Pineapple Express cultivar didn’t exist until after the 2008 movie of the same name brought the name into the spotlight. Inspired by the film, growers took it upon themselves to create a potent cultivar that the film described as the dopest dope.",
+      "pricing": {
+        "From": "$140"
+      },
+      "stock": 2020,
+      "rating": 4.59,
+      "reviewsCount": 788,
+      "image": "str8.jpg"
+    },
+    {
+      "id": "HOG0129",
+      "name": "GSC",
+      "category": "Strains",
+      "description": "GSC, which was originally known as the Girl Scout Cookies strain, was first bred by Northern California's Cookie Family sometime about 2012. A Sativa-leaning hybrid cross between a cutting of OG Kush and the breeder’s own F1 Durban Poison strain, GSC produces a plant with multiple branches and a powerful flower.",
+      "pricing": {
+        "From": "$140"
+      },
+      "stock": 1897,
+      "rating": 4.84,
+      "reviewsCount": 506,
+      "image": "str9.jpg"
+    },
+    {
+      "id": "HOG0130",
+      "name": "Jack Herer",
+      "category": "Strains",
+      "description": "Named after the late, legendary cannabis activist and author of the 1985 book “The Emperor Wears No Clothes,” Jack Herer has achieved a lofty, heavily proliferated status among modern cannabis strains. Its flavor is reportedly a composite of citrus, pine, wood and spice.",
+      "pricing": {
+        "From": "$150"
+      },
+      "stock": 2453,
+      "rating": 4.15,
+      "reviewsCount": 574,
+      "image": "str10.jpg"
+    },
+    {
+      "id": "HOG0131",
+      "name": "Skywalker Kush",
+      "category": "Strains",
+      "description": "Skywalker Kush is the creation of the breeders at Reserva Privada, and was first grown in Southern California. The team dusted a female Skywalker OG, which is itself OG Kush crossed with Skywalker, with pollen from OG Kush, which boasts Chemdawg and Lemon Thai in its lineage.",
+      "pricing": {
+        "From": "$150"
+      },
+      "stock": 1232,
+      "rating": 4.44,
+      "reviewsCount": 130,
+      "image": "str11.jpg"
+    },
+    {
+      "id": "HOG0132",
+      "name": "Green Crack",
+      "category": "Strains",
+      "description": "The strain was reportedly named Cush by its original breeder, Cecil C., then renamed Green Crack by Snoop Dogg to refer to what the rapper and cannabis activist perceived as potent, sativa-like effects.",
+      "pricing": {
+        "From": "$120"
+      },
+      "stock": 2042,
+      "rating": 4.67,
+      "reviewsCount": 435,
+      "image": "str12.jpg"
+    },
+    {
+      "id": "HOG0133",
+      "name": "Strawberry Cough",
+      "category": "Strains",
+      "description": " Strawberry Cough’s story begins with breeder and former High Times cultivation editor Kyle Kushman, who claims to have sourced the clone-only strain — reportedly a cross of Haze and Strawberry Fields — from a novice grower in Connecticut. The grower gave Kushman a tiny Strawberry Cough clone from his small basement garden. Kushman accepted the clone, mostly for the sake of politeness, and nearly threw it away before he noticed an overwhelming smell of fresh strawberries emanating from the clone. Kushman decided to keep the strain and began to share it freely among New York growers",
+      "pricing": {
+        "From": "$150"
+      },
+      "stock": 1296,
+      "rating": 4.36,
+      "reviewsCount": 623,
+      "image": "str13.jpg"
+    },
+    {
+      "id": "HOG0134",
+      "name": "Granddaddy Purple",
+      "category": "Strains",
+      "description": "Granddaddy Purple, also known as Grandaddy Purp or GDP, is a hybrid that was first propagated in Northern California in 2003 by breeder Ken Estes. A cross between Purple Urkle and Big Bud, GDP was then backcrossed into itself.",
+      "pricing": {
+        "From": "$130"
+      },
+      "stock": 1849,
+      "rating": 4.32,
+      "reviewsCount": 529,
+      "image": "str14.jpg"
+    },
+    {
+      "id": "HOG0135",
+      "name": "Watermelon",
+      "category": "Strains",
+      "description": "Watermelon is an all-around mystery strain created from unknown parents in an anonymous breeder’s garden. It reportedly tastes and smells like sweet tropical fruit with an earthy background. The cultivar also reportedly tests at an average of 17% THC and 3-10% CBD.",
+      "pricing": {
+        "From": "$150"
+      },
+      "stock": 2202,
+      "rating": 4.55,
+      "reviewsCount": 685,
+      "image": "str15.jpg"
+    },
+    {
+      "id": "HOG0136",
+      "name": "Blueberry",
+      "category": "Strains",
+      "description": "Blueberry, commonly known as DJ Short Blueberry, is an Indica-leaning hybrid strain created by legendary breeder DJ Short. The strain was bred by crossing a male Afghani landrace, only one generation removed from Afghanistan, with two Thai females — Highland Thai (aka Juicy Fruit) and Purple Thai — which he claims produced virtually identical results.",
+      "pricing": {
+        "From": "$130"
+      },
+      "stock": 1680,
+      "rating": 4.52,
+      "reviewsCount": 566,
+      "image": "str16.jpg"
+    },
+    {
+      "id": "HOG0137",
+      "name": "Super Lemon Haze",
+      "category": "Strains",
+      "description": "Super Lemon Haze (SLH) is a Sativa-dominant hybrid that resulted from crossing a Lemon Skunk with Green House Seed Company’s Super Silver Haze.",
+      "pricing": {
+        "From": "$150"
+      },
+      "stock": 2428,
+      "rating": 4.23,
+      "reviewsCount": 402,
+      "image": "str17.jpg"
+    },
+    {
+      "id": "HOG0138",
+      "name": "Sherbet",
+      "category": "Strains",
+      "description": "Also known as Sherbert or Sunset Sherbert, this strain is an Indica-leaning hybrid that crosses a female GSC (Girl Scout Cookies) with a Pink Panties male.",
+      "pricing": {
+        "From": "$120"
+      },
+      "stock": 1968,
+      "rating": 4.67,
+      "reviewsCount": 400,
+      "image": "str18.jpg"
+    },
+    {
+      "id": "HOG0139",
+      "name": "Louis XIII",
+      "category": "Strains",
+      "description": "Also known as King Louis XIII, the strain is named for its royal caliber of THC, reportedly 20-to-28 percent based on weight. Growers report the strain comes from a rare cut of the Los Angeles-based OG Kush that was specially bred for higher potency. The cultivar features unmistakable OG characteristics -- a powerful diesel and skunk aroma, and sticky buds littered with trichomes. ",
+      "pricing": {
+        "From": "$120"
+      },
+      "stock": 1311,
+      "rating": 4.47,
+      "reviewsCount": 47,
+      "image": "str19.jpg"
+    },
+    {
+      "id": "HOG0140",
+      "name": "Strawberry",
+      "category": "Strains",
+      "description": "Strawberry is an enigma of a cultivar with unknown genetics and an unknown breeder, though most online sources agree this strain was born in the Netherlands. Those who have sampled Strawberry claim it tastes like sweet, fresh berries with an earthy finish and smells of pungent fruit.",
+      "pricing": {
+        "From": "$120"
+      },
+      "stock": 1901,
+      "rating": 4.09,
+      "reviewsCount": 477,
+      "image": "str20.jpg"
+    },
+    {
+      "id": "HOG0141",
+      "name": "Purple Punch",
+      "category": "Strains",
+      "description": "A cross between Granddaddy Purple and Larry OG, the original Purple Punch strain was claimed to be bred by the Hawaiian breeders at Supernova Gardens. Regardless of its origins, Purple Punch has made its way into the hands of the world’s most renowned growers, such as the Los Angeles-based Jungle Boys.",
+      "pricing": {
+        "From": "$140"
+      },
+      "stock": 1316,
+      "rating": 4.07,
+      "reviewsCount": 281,
+      "image": "str21.jpg"
+    },
+    {
+      "id": "HOG0142",
+      "name": "Strawberry Banana",
+      "category": "Strains",
+      "description": "Bred in Amsterdam by Reserva Privada -- a subdivision of DNA Genetics -- Strawberry Banana’s (also referred to as Strawnana) mother is a female Banana Kush from Crockett Family Farms crossed with a male Bubblegum selected from a pack of seeds originally bred by Serious Seeds.",
+      "pricing": {
+        "From":"$120"
+      },
+      "stock": 1672,
+      "rating": 4.81,
+      "reviewsCount": 556,
+      "image": "str22.jpg"
+    },
+    {
+      "id": "HOG0143",
+      "name": "Northern Lights",
+      "category": "Strains",
+      "description": "Northern Lights is one of the most famous and sought-after “Indica” strains of all time. Considered a descendant of Afghani and Thai landrace strains, the exact origin of Northern Lights remains a bit of a mystery. It may have originated in Washington in the 1970s, prior to reaching the Netherlands, where breeder Neville Schoenmaker pioneered several Northern Lights phenotypes in the ’80s for The Seed Bank, an early iteration of Sensi Seeds.",
+      "pricing": {
+        "From":"$100"
+      },
+      "stock": 1999,
+      "rating": 4.83,
+      "reviewsCount": 46,
+      "image": "str23.jpg"
+    },
+    {
+      "id": "HOG0144",
+      "name": "GMO Cookies",
+      "category": "Strains",
+      "description": "LContrary to what you might think, GMO Cookies is not a genetically modified organism but a cross between Chemdawg D and a GSC (formerly Girl Scout Cookies) Forum cut. Also known as GMO or Garlic Cookies, GMO Cookies has been attributed to the breeder Mamiko Seeds, but this skunky phenotype has also been said to have been discovered by a breeder named skunkmasterflex.",
+      "pricing": {
+        "From":"$100"
+      },
+      "stock": 1465,
+      "rating": 4.71,
+      "reviewsCount": 454,
+      "image": "str24.jpg"
+    },
+    {
+      "id": "HOG0145",
+      "name": "Lemon OG",
+      "category": "Strains",
+      "description": "Lemon OG is a cross between Lemon and OG that offers a “heavy high” and a taste with sweet lemon and pine.",
+      "pricing": {
+        "1g": "$12.01",
+        "1/8oz": "$40.03",
+        "1/2oz": "$165.14"
+      },
+      "stock": 1340,
+      "rating": 4.66,
+      "reviewsCount": 39,
+      "image": "str25.jpg"
+    },
+    {
+      "id": "HOG0146",
+      "name": "Wax",
+      "category": "Strains",
+      "description": "Hey bud, the strain Wax is new to us and we're still gathering information about it. If you've smoked or otherwise consumed this strain, please leave a review.",
+      "pricing": {
+        "From":"$110"
+      },
+      "stock": 1882,
+      "rating": 4.14,
+      "reviewsCount": 553,
+      "image": "str26.jpg"
+    },
+    {
+      "id": "HOG0147",
+      "name": "SFV OG",
+      "category": "Strains",
+      "description": "SFV OG - or San Fernando Valley OG - began as a phenotype of OG Kush. A grower named Swerve at Cali Connection Farms in Southern California’s San Fernando Valley bred it with an Afghani from Homegrown Fantaseeds. The resulting strain takes its initials from its parent strain, as well as the abbreviated location of its seed bank.",
+      "pricing": {
+        "From":"$120"
+      },
+      "stock": 1161,
+      "rating": 4.58,
+      "reviewsCount": 401,
+      "image": "str27.jpg"
+    },
+    {
+      "id": "HOG0148",
+      "name": "Durban Poison",
+      "category": "Strains",
+      "description": "Durban Poison has deep roots in the Sativa landrace gene pool. The strain’s historic phenotypes were first noticed in the late 1970s by one of America’s first International strain hunters, Ed Rosenthal. According to cultivation legend, Rosenthal was in South Africa in search of new genetics and ran across a fast flowering strain in the port city of Durban. After arriving home in the U.S., Rosenthal conducted his own selective breeding process on his recently imported seeds, then begin sharing. Rosenthal gave Mel Frank some of his new South African seeds, and the rest was cannabis history.",
+      "pricing": {
+        "From":"$100"
+      },
+      "stock": 1475,
+      "rating": 4.44,
+      "reviewsCount": 270,
+      "image": "str28.jpg"
+    },
+    {
+      "id": "HOG0149",
+      "name": "Ice Cream Cake",
+      "category": "Strains",
+      "description": "Ice Cream Cake by Mad Scientist Genetics is a cross of Cheesecake and Dream Cookie, two cultivars with GSC (formerly known as Girl Scout Cookies) and Blue Dream in their genetics. The strain has a sweet, sour, and nutty flavor profile with hints of vanilla, according to the breeder. Per Mad Scientist Genetics, Ice Cream Cake has tested at 23% THC content. ",
+      "pricing": {
+        "From":"$100"
+      },
+      "stock": 1589,
+      "rating": 4.64,
+      "reviewsCount": 171,
+      "image": "str29.jpg"
+    },
+    {
+      "id": "HOG0150",
+      "name": "Tangie",
+      "category": "Strains",
+      "description": "Inspired by the popular ’90s strain Tangerine Dream, Tangie is a distinctly aromatic bud with strong, unmistakable notes of citrus and tangerine.",
+      "pricing": {
+        "From":"$100"
+      },
+      "stock": 1868,
+      "rating": 4.66,
+      "reviewsCount": 477,
+      "image": "str30.jpg"
+    }
+  ],
+  "generatedAt": "2025-11-03T12:36:57.700398Z",
+  "count": 150
+}

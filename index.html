@@ -1,0 +1,570 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>House of Greens — Home</title>
+<style>
+:root{
+  --accent:#1fb6a5; --accent-dark:#179483; --bg:#fff; --muted:#6b7280;
+  --card:#f6f9f8; --text:#0f1724; --muted-light:#e6efec;
+  --accent-strong: #0ea08e;
+}
+*{box-sizing:border-box}
+body{margin:0;font-family:Inter,system-ui,Arial,sans-serif;background:var(--bg);color:var(--text);-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+
+/* Header */
+header{display:flex;align-items:center;justify-content:space-between;padding:14px 20px;border-bottom:1px solid var(--muted-light);position:sticky;top:0;background:rgba(255,255,255,0.98);backdrop-filter:blur(6px);z-index:200}
+.logo{font-weight:800;color:var(--accent);font-size:1.05rem}
+nav{display:flex;gap:12px;align-items:center}
+nav a{padding:6px 8px;border-radius:8px}
+.icons{display:flex;gap:10px;align-items:center}
+.icon{padding:6px;border-radius:8px;border:1px solid var(--muted-light);background:#fff;cursor:pointer}
+
+/* ---------- Shipping banner attached under header ---------- */
+.shipping-banner {
+  width:100%;
+  background: linear-gradient(90deg, rgba(31,182,165,0.06), rgba(31,182,165,0.03));
+  border-top:1px solid rgba(31,182,165,0.06);
+  border-bottom:1px solid rgba(31,182,165,0.06);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:10px 12px;
+  gap:12px;
+  position: sticky;
+  top:64px; /* sits just under the header */
+  z-index:180;
+  font-size:0.95rem;
+  color:var(--text);
+}
+.shipping-banner .text { display:flex; gap:10px; align-items:center; }
+.shipping-banner .icon { background:var(--accent); color:#fff; width:36px; height:36px; display:flex; align-items:center; justify-content:center; border-radius:8px; font-weight:800; }
+.shipping-banner .cta { margin-left:10px; background:var(--accent); color:#fff; border:0; padding:8px 12px; border-radius:8px; cursor:pointer; font-weight:700; text-decoration:none; }
+
+/* allow dismiss */
+.shipping-banner .dismiss { margin-left:8px; background:transparent; border:0; cursor:pointer; color:var(--muted); font-size:14px; }
+
+/* Age gate */
+#age-popup{position:fixed;inset:0;background:rgba(6,10,12,0.78);display:flex;align-items:center;justify-content:center;z-index:200}
+#age-popup .panel{background:#fff;padding:22px;border-radius:12px;text-align:center;max-width:420px}
+.btn{background:var(--accent);color:#fff;border:0;padding:10px 14px;border-radius:10px;cursor:pointer;font-weight:700}
+.btn-ghost{background:transparent;border:1px solid var(--muted-light);padding:8px 12px;border-radius:10px;cursor:pointer}
+
+/* Hero */
+.hero{min-height:300px;background-image:url(hero.jpg);background-size:cover;background-position:center;display:flex;align-items:center;justify-content:center;padding:36px 18px;color:#fff;text-align:center}
+.hero .inner{background:linear-gradient(180deg, rgba(0,0,0,0.18), rgba(0,0,0,0));padding:26px;border-radius:12px;max-width:940px}
+.hero h1{font-size:2.2rem;margin:0 0 10px;text-shadow:0 8px 30px rgba(0,0,0,0.45)}
+.hero p{margin:0 0 16px;color:#e6fbf7}
+.hero .cta { background:#fff;color:var(--accent-strong);padding:12px 18px;border-radius:999px;border:0;font-weight:800;cursor:pointer; margin-right:8px; }
+.hero .cta.secondary{ background:transparent;border:1px solid rgba(255,255,255,0.28); color:#fff; }
+
+/* Search */
+.search-wrap{display:flex;justify-content:center;padding:14px}
+.search{width:100%;max-width:920px;background:#fff;border-radius:999px;padding:8px 12px;display:flex;gap:8px;align-items:center;box-shadow:0 10px 30px rgba(31,182,165,0.06)}
+.search input{flex:1;border:0;outline:none;padding:10px;border-radius:999px}
+.suggest-items{position:absolute;left:0;right:0;top:44px;background:#fff;border:1px solid var(--muted-light);border-radius:10px;max-height:260px;overflow:auto;display:none;z-index:120}
+.suggest-item{padding:10px;border-bottom:1px solid #f1f6f5;cursor:pointer}
+
+/* Categories circular */
+.categories{display:flex;gap:12px;flex-wrap:wrap;justify-content:center;padding:14px}
+.cat{width:86px;height:86px;border-radius:50%;background:linear-gradient(180deg,#fff,#f7fdfb);display:flex;align-items:center;flex-direction:column;justify-content:center;border:1px solid var(--muted-light);cursor:pointer;transition:transform .18s}
+.cat:hover{transform:translateY(-6px)}
+.cat img{width:46px;height:46px;border-radius:50%;object-fit:cover}
+.cat span{font-size:12px;margin-top:8px;font-weight:700;color:var(--text)}
+
+/* Featured grid and cards */
+.section{max-width:1200px;margin:0 auto;padding:20px}
+.section h2{color:var(--accent);margin-bottom:12px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:14px}
+.card{background:var(--card);border-radius:12px;padding:10px;border:1px solid var(--muted-light);display:flex;flex-direction:column;gap:8px;align-items:stretch;transition:box-shadow .16s,transform .16s}
+.card:hover{box-shadow:0 10px 24px rgba(31,182,165,0.06);transform:translateY(-4px)}
+.media{cursor:pointer;border-radius:8px;overflow:hidden}
+.card img{width:100%;height:150px;object-fit:cover;display:block}
+.title{font-weight:700;font-size:0.95rem;margin-top:6px;color:var(--text)}
+.price-row{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.price-pill{padding:6px 8px;border-radius:999px;border:1px solid var(--muted-light);background:#fff;font-weight:700;cursor:pointer;transition:transform .12s}
+.price-pill:hover{transform:translateY(-3px)}
+.price-pill.active{background:var(--accent);color:#fff;border-color:var(--accent);box-shadow:0 6px 18px rgba(31,182,165,0.08)}
+.price-pill .flash{display:inline-block;opacity:0;transition:opacity .25s}
+
+/* ---------- Enhanced Why Choose Us section ---------- */
+.why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:12px}
+.why-card{background:linear-gradient(180deg, #fff, #f8fffb);border:1px solid var(--muted-light);padding:18px;border-radius:12px;display:flex;gap:12px;align-items:flex-start;transition:transform .18s,box-shadow .18s}
+.why-card:hover{transform:translateY(-6px);box-shadow:0 12px 36px rgba(31,182,165,0.06)}
+.why-icon{width:60px;height:60px;border-radius:12px;background:var(--accent);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:800;font-size:20px}
+.why-body h3{margin:0 0 6px;font-size:1.05rem}
+.why-body p{margin:0;color:var(--muted);font-size:0.95rem}
+
+/* Social proof / counters */
+.social-proof{display:flex;gap:18px;align-items:center;justify-content:center;padding:18px}
+.counter{background:linear-gradient(180deg,#fff,#f7fdfb);padding:18px;border-radius:12px;border:1px solid var(--muted-light);text-align:center;min-width:160px}
+.counter h3{margin:0;font-size:2rem;color:var(--accent)}
+.counter p{margin:6px 0 0;color:var(--muted)}
+
+/* Reviews carousel */
+.reviews-wrap{max-width:1000px;margin:18px auto;padding:10px}
+.reviews-carousel{position:relative;overflow:hidden;border-radius:12px;border:1px solid var(--muted-light);background:#fff}
+.reviews-track{display:flex;transition:transform .5s ease}
+.review{min-width:100%;padding:22px;box-sizing:border-box;display:flex;gap:18px;align-items:center}
+.review .avatar{width:64px;height:64px;border-radius:999px;background:#f1f6f5;flex:0 0 64px;display:flex;align-items:center;justify-content:center;font-weight:700;color:var(--accent)}
+.review .content{flex:1}
+.review .stars{color:goldenrod;font-weight:700}
+.review p{margin:8px 0 0;color:var(--muted)}
+.carousel-dots{display:flex;gap:8px;justify-content:center;padding:10px}
+.dot{width:10px;height:10px;border-radius:50%;background:#e6efec;cursor:pointer}
+.dot.active{background:var(--accent)}
+
+/* FAQ accordion */
+.faq{max-width:900px;margin:18px auto;padding:0 12px}
+.faq-item{border-bottom:1px solid #eef7f3}
+.faq-q{padding:14px;display:flex;justify-content:space-between;align-items:center;cursor:pointer}
+.faq-a{padding:0 14px 14px;color:var(--muted);display:none}
+
+/* Footer */
+footer{padding:28px 18px;background:#f7fbfb;color:var(--muted);text-align:center;margin-top:28px}
+
+/* responsive */
+@media(max-width:980px){
+  .shipping-banner { top:56px; }
+  .why-grid{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:760px){
+  .grid{grid-template-columns:repeat(2,1fr)}
+  .card img{height:120px}
+  .hero h1{font-size:1.6rem}
+  .social-proof{flex-direction:column;gap:8px}
+  .review{flex-direction:column;align-items:flex-start}
+  .reviews-track{min-height:160px}
+  .why-grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<!-- AGE POPUP -->
+<div id="age-popup" role="dialog" aria-modal="true">
+  <div class="panel">
+    <h2>Are you 21 or older?</h2>
+    <p>You must confirm your age to enter House of Greens.</p>
+    <div style="display:flex;gap:10px;justify-content:center;margin-top:12px">
+      <button id="age-yes" class="btn">Yes — Enter</button>
+    </div>
+  </div>
+</div>
+
+<header>
+  <div class="logo">House of Greens</div>
+  <nav>
+    <a href="#">Home</a>
+    <a href="search.html">Store</a>
+    <a href="#why">Why</a>
+    <a href="#touchdown">Touchdown</a>
+    <a href="#faq">FAQ</a>
+  </nav>
+  <div class="icons" aria-hidden="false">
+    <div class="icon" onclick="document.getElementById('search-input').focus()">🔍</div>
+    <div class="icon">🛒 <span id="cart-count" class="cart-bubble">0</span></div>
+  </div>
+</header>
+
+<!-- SHIPPING BANNER (attached just below navbar) -->
+<div id="shipping-banner" class="shipping-banner" role="region" aria-label="Shipping information">
+  <div class="text">
+    <div class="icon">🚚</div>
+    <div>
+      <strong>We offer nationwide shipping & discreet delivery.</strong>
+      <div style="font-size:13px;color:var(--muted)">Fast, reliable, and secure — track every order.</div>
+    </div>
+  </div>
+  <div style="margin-left:12px">
+    <!--<a class="cta" href="search.html#touchdown" aria-label="View shipping details">View shipping</a>-->
+    <button class="dismiss" title="Dismiss banner" onclick="document.getElementById('shipping-banner').style.display='none'">✕</button>
+  </div>
+</div>
+
+<section class="hero">
+  <div class="inner">
+    <h1>Luxury Natural Wellness</h1>
+    <p>Premium herbal products — curated, tested, and delivered discreetly.</p>
+    <div style="display:flex;gap:10px;justify-content:center;margin-top:12px">
+      <button class="cta" onclick="location.href='search.html'">Shop Store</button>
+      <button class="cta secondary" onclick="document.getElementById('why').scrollIntoView({behavior:'smooth'})">Learn More</button>
+    </div>
+  </div>
+</section>
+
+<!-- Search -->
+<div class="search-wrap">
+  <div class="search" style="position:relative">
+    <div style="font-size:18px;color:var(--muted)">🔎</div>
+    <div style="flex:1;position:relative;margin-left:6px;margin-right:6px">
+      <input id="search-input" placeholder="Search products, strains or categories..." autocomplete="off" />
+      <div id="suggest" class="suggest-items" role="listbox" aria-expanded="false"></div>
+    </div>
+    <button class="btn" id="search-go">Search</button>
+  </div>
+</div>
+
+<!-- Categories -->
+<div class="categories" id="category-row"></div>
+
+<!-- Featured -->
+<section class="section" id="featured">
+  <h2>Featured Products</h2>
+  <div id="featured-grid" class="grid" aria-live="polite"></div>
+</section>
+
+<!-- Why (nicer) -->
+<section id="why" class="section">
+  <h2>Why Choose Us</h2>
+  <div class="why-grid">
+    <div class="why-card">
+      <div class="why-icon">✓</div>
+      <div class="why-body">
+        <h3>Premium, Lab-Tested Products</h3>
+        <p>All items are lab tested for potency & contaminants — we prioritize safety and quality.</p>
+      </div>
+    </div>
+    <div class="why-card">
+      <div class="why-icon">🔒</div>
+      <div class="why-body">
+        <h3>Discreet & Secure Shipping</h3>
+        <p>Secure packaging, discrete labeling, and reliable tracking from our door to yours.</p>
+      </div>
+    </div>
+    <div class="why-card">
+      <div class="why-icon">🤝</div>
+      <div class="why-body">
+        <h3>Expert Guidance</h3>
+        <p>Our team helps you pick the right product — personalized recommendations for your needs.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Social proof counters -->
+<section style="padding:4px 18px">
+  <div class="social-proof">
+    <div class="counter">
+      <h3 id="count-customers">0</h3>
+      <p>Satisfied customers</p>
+    </div>
+    <div class="counter">
+      <h3 id="count-years">0</h3>
+      <p>Years in business</p>
+    </div>
+    <div class="counter">
+      <h3 id="count-ship">Nationwide</h3>
+      <p>Delivery available</p>
+    </div>
+  </div>
+</section>
+
+<!-- Reviews carousel -->
+<section class="reviews-wrap" aria-label="Customer reviews">
+  <div class="section">
+    <h2>What Our Customers Say</h2>
+  </div>
+  <div class="reviews-carousel" id="reviews-carousel">
+    <div class="reviews-track" id="reviews-track">
+      <!-- reviews injected here -->
+    </div>
+    <div class="carousel-dots" id="carousel-dots"></div>
+  </div>
+</section>
+
+<!-- Touchdown -->
+<section id="touchdown" class="section">
+  <h2>Touchdown — Behind the Scenes</h2>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:10px">
+    <img src="pack1.jpg" alt="pack" style="width:100%;height:120px;object-fit:cover;border-radius:8px">
+    <img src="pack2.jpg" alt="pack" style="width:100%;height:120px;object-fit:cover;border-radius:8px">
+    <img src="pack3.jpg" alt="pack" style="width:100%;height:120px;object-fit:cover;border-radius:8px">
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq" class="faq" aria-label="Frequently asked questions">
+  <h2 style="text-align:center;color:var(--accent);margin-top:16px">Frequently Asked Questions</h2>
+
+  <div class="faq-item">
+    <div class="faq-q" data-key="q1">
+      <div>Do you deliver nationwide?</div>
+      <div class="small">+</div>
+    </div>
+    <div class="faq-a" id="a-q1">Yes — we offer discreet nationwide delivery. Timelines vary by location; tracking is provided for all orders.</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q" data-key="q2">
+      <div>How discrete is the packaging?</div>
+      <div class="small">+</div>
+    </div>
+    <div class="faq-a" id="a-q2">Completely discrete — outer packages have no branding and are designed for privacy.</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q" data-key="q3">
+      <div>Do you offer refunds?</div>
+      <div class="small">+</div>
+    </div>
+    <div class="faq-a" id="a-q3">Yes we offer full refund on delivery if the client is not satisfied with what he sees.</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q" data-key="q4">
+      <div>How are products tested?</div>
+      <div class="small">+</div>
+    </div>
+    <div class="faq-a" id="a-q4">All products are lab-tested for potency and contaminants. Lab results are available upon request for transparency.</div>
+  </div>
+</section>
+
+<footer>
+  <div style="max-width:1100px;margin:0 auto">
+    <p>&copy; 2025 House of Greens — All rights reserved.</p>
+    <p style="font-size:0.9rem;color:var(--muted)">Follow us on social media for updates and new arrivals.</p>
+  </div>
+</footer>
+
+<!-- existing product modal (kept for compatibility - not modified) -->
+<div id="modal-backdrop" class="modal-backdrop" style="display:none"></div>
+
+<script>
+/* ----------------- Shared page script (unchanged behavior) ----------------- */
+let products = [];
+let categories = [];
+const pricingKeys = ['1g','1/8oz','1/2oz'];
+const byId = id => document.getElementById(id);
+
+/* Fetch products.json and init */
+async function init(){
+  try{
+    const res = await fetch('products.json',{cache:'no-store'});
+    const j = await res.json();
+    products = Array.isArray(j) ? j : (j.products || []);
+    categories = (j.categories && j.categories.length) ? j.categories : Array.from(new Set(products.map(p=>p.category)));
+  }catch(e){
+    console.error('Could not load products.json', e);
+    products = [];
+    categories = ['Flower','Concentrates','Edibles','Vape Pens','Strains'];
+  }
+  renderCategories();
+  renderFeatured();
+  bindSearch();
+  loadCart();
+  setupCounters();
+  renderReviewsCarousel();
+  bindFAQ();
+  setupAutoAdvanceReviews();
+}
+
+/* Age gate */
+const ageYes = document.getElementById('age-yes');
+ageYes.addEventListener('click', ()=> {
+  document.getElementById('age-popup').style.display = 'none';
+  try{ localStorage.setItem('hog_age_verified','1'); }catch(e){}
+  showDeliveryToast();
+});
+window.addEventListener('load', ()=> {
+  if(localStorage.getItem('hog_age_verified')==='1') document.getElementById('age-popup').style.display='none';
+});
+function showDeliveryToast(){
+  const t = document.createElement('div'); t.textContent='We offer reliable nationwide delivery. Orders are discreetly packaged.'; Object.assign(t.style,{position:'fixed',left:'50%',transform:'translateX(-50%)',bottom:'18px',background:'#fff',padding:'12px 16px',borderRadius:'10px',boxShadow:'0 8px 20px rgba(0,0,0,0.08)',zIndex:999}); document.body.appendChild(t); setTimeout(()=> t.remove(),5000);
+}
+
+/* render categories circular */
+function renderCategories(){
+  const row = byId('category-row'); row.innerHTML='';
+  categories.forEach((c, idx)=>{
+    const img = `${c.slice(0,3).toLowerCase()}${(idx%12)+1}.jpg`;
+    const el = document.createElement('div'); el.className='cat';
+    el.innerHTML = `<img src="${img}" alt="${c}"><span>${c}</span>`;
+    el.addEventListener('click', ()=> {
+      const q = encodeURIComponent(c);
+      window.location.href = `search.html?cat=${q}`;
+    });
+    row.appendChild(el);
+  });
+}
+
+/* featured grid: show up to 8 featured (top rated) */
+function defaultSizeFor(p){
+  for(const k of pricingKeys) if(p.pricing && p.pricing[k]) return k;
+  if(p.pricing){ const ks = Object.keys(p.pricing); return ks.length? ks[0]:null; }
+  return null;
+}
+function renderFeatured(){
+  const featured = products.slice().sort((a,b)=> (b.rating||0)-(a.rating||0)).slice(0,8);
+  const grid = byId('featured-grid'); grid.innerHTML='';
+  if(!featured.length){ grid.innerHTML = '<div style="color:var(--muted)">No products</div>'; return; }
+  featured.forEach(p=>{
+    const def = defaultSizeFor(p);
+    const priceButtons = pricingKeys.map(k=> p.pricing && p.pricing[k] ? `<div class="price-pill ${k===def?'active':''}" data-size="${k}" data-id="${p.id}">${k} ${p.pricing[k]}<span class="flash"> ✓</span></div>` : '').join('');
+    const fallback = (!priceButtons.trim() && p.pricing) ? `<div class="price-pill active" data-size="${Object.keys(p.pricing)[0]}" data-id="${p.id}">${Object.keys(p.pricing)[0]} ${p.pricing[Object.keys(p.pricing)[0]]}</div>` : '';
+    const card = document.createElement('div'); card.className='card';
+    card.innerHTML = `
+      <div class="media" data-id="${p.id}"><img src="${p.image}" alt="${p.name}"></div>
+      <div class="title" data-id="${p.id}">${escapeHtml(p.name)}</div>
+      <div class="price-row">${priceButtons || fallback}</div>
+      <div class="meta-row"><div style="color:var(--muted);font-size:13px">${p.category||''}</div><div>${(p.badges||[]).slice(0,2).map(b=>`<span style="background:var(--accent);color:#fff;padding:3px 6px;border-radius:8px;font-size:12px;margin-left:6px">${b}</span>`).join('')}</div></div>
+    `;
+    // open product page on click
+    card.querySelectorAll('.media, .title').forEach(el=> el.addEventListener('click', ()=> {
+      const id = el.dataset.id || p.id;
+      window.location.href = `product.html?id=${encodeURIComponent(id)}`;
+    }));
+    // size button click toggles visual active
+    card.querySelectorAll('.price-pill').forEach(btn=>{
+      btn.addEventListener('click', (ev)=>{
+        ev.stopPropagation();
+        const parent = btn.parentElement;
+        parent.querySelectorAll('.price-pill').forEach(pp=> pp.classList.remove('active'));
+        btn.classList.add('active');
+        const f = btn.querySelector('.flash'); if(f){ f.style.opacity='1'; setTimeout(()=> f.style.opacity='0',700); }
+      });
+    });
+    grid.appendChild(card);
+  });
+}
+
+/* search autosuggest (top search) */
+function bindSearch(){
+  const input = byId('search-input'), suggest = byId('suggest'), go = byId('search-go');
+  input.addEventListener('input', (e)=>{
+    const q = (e.target.value||'').trim().toLowerCase();
+    suggest.innerHTML='';
+    if(!q){ suggest.style.display='none'; suggest.setAttribute('aria-expanded','false'); return; }
+    const matches = products.filter(p => (p.name||'').toLowerCase().includes(q) || (p.category||'').toLowerCase().includes(q)).slice(0,8);
+    matches.forEach(m=>{
+      const d = document.createElement('div'); d.className='suggest-item'; d.textContent = `${m.name} — ${m.pricing && (m.pricing['1g']||m.pricing['1/8oz']||m.pricing['1/2oz']||'')}`;
+      d.addEventListener('click', ()=> { window.location.href = `search.html?q=${encodeURIComponent(m.name)}`; });
+      suggest.appendChild(d);
+    });
+    suggest.style.display = matches.length ? 'block' : 'none';
+    suggest.setAttribute('aria-expanded', matches.length ? 'true' : 'false');
+  });
+  go.addEventListener('click', ()=> {
+    const q = encodeURIComponent(byId('search-input').value.trim());
+    if(q) window.location.href = `search.html?q=${q}`;
+  });
+  document.addEventListener('click', (e)=>{
+    if(!byId('search-input').contains(e.target) && !byId('suggest').contains(e.target)) { byId('suggest').style.display='none'; byId('suggest').setAttribute('aria-expanded','false'); }
+  });
+}
+
+/* cart */
+function loadCart(){ try{ const c = JSON.parse(localStorage.getItem('hog_cart')||'[]'); byId('cart-count').textContent = c.length; }catch(e){} }
+
+/* counters (satisfied customers and years) */
+function setupCounters(){
+  const customersTarget = 5000;
+  const yearsTarget = 10;
+  animateCount(byId('count-customers'), customersTarget, 1200);
+  animateCount(byId('count-years'), yearsTarget, 1000);
+}
+function animateCount(el, target, duration){
+  let start = 0;
+  const stepTime = Math.max(20, Math.floor(duration / target));
+  const increment = Math.ceil(target / (duration / stepTime));
+  const t = setInterval(()=> {
+    start += increment;
+    if(start >= target){ start = target; clearInterval(t); }
+    el.textContent = (target >= 1000) ? formatThousands(start) : start;
+  }, stepTime);
+  function formatThousands(v){ return v.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","); }
+}
+
+/* Reviews carousel */
+const reviews = [
+  {name:'Alex M.', rating:5, text:'Excellent quality products and fast shipping. Packaged discreetly and arrived on time.'},
+  {name:'Sarah L.', rating:5, text:'The strains are top-tier. I felt the relaxation immediately. Support was very helpful.'},
+  {name:'James T.', rating:4, text:'Great experience overall. Wide selection and quick delivery. I will order again.'},
+  {name:'Priya R.', rating:5, text:'Premium feel and consistent results. Love the customer care and discreet packaging.'},
+  {name:'Marcus D.', rating:4, text:'Good potency and fair prices. Smooth buying experience and delivery.'}
+];
+
+function renderReviewsCarousel(){
+  const track = byId('reviews-track');
+  const dots = byId('carousel-dots');
+  track.innerHTML=''; dots.innerHTML='';
+  reviews.forEach((r, i)=>{
+    const div = document.createElement('div'); div.className='review';
+    div.innerHTML = `<div class="avatar">${r.name.split(' ').map(s=>s[0]).slice(0,2).join('').toUpperCase()}</div>
+      <div class="content">
+        <div style="display:flex;align-items:center;gap:10px"><strong>${r.name}</strong><div class="stars">${'★'.repeat(Math.round(r.rating))}${'☆'.repeat(5-Math.round(r.rating))}</div></div>
+        <p>${r.text}</p>
+      </div>`;
+    track.appendChild(div);
+
+    const dot = document.createElement('div'); dot.className='dot'; dot.dataset.index = i;
+    dot.addEventListener('click', ()=> { goToReview(i); resetReviewTimer(); });
+    dots.appendChild(dot);
+  });
+  setActiveReview(0);
+}
+
+let currentReview = 0;
+let reviewTimer = null;
+function setActiveReview(index){
+  const track = byId('reviews-track');
+  const dots = Array.from(document.querySelectorAll('.dot'));
+  track.style.transform = `translateX(-${index * 100}%)`;
+  dots.forEach(d => d.classList.remove('active'));
+  if(dots[index]) dots[index].classList.add('active');
+  currentReview = index;
+}
+function goToReview(i){ const n = Math.max(0, Math.min(reviews.length-1, i)); setActiveReview(n); }
+function nextReview(){ goToReview((currentReview + 1) % reviews.length); }
+function startReviewTimer(){ reviewTimer = setInterval(nextReview, 4500); }
+function resetReviewTimer(){ if(reviewTimer){ clearInterval(reviewTimer); startReviewTimer(); } }
+function setupAutoAdvanceReviews(){
+  const carousel = byId('reviews-carousel');
+  carousel.addEventListener('mouseenter', ()=> { if(reviewTimer) clearInterval(reviewTimer); });
+  carousel.addEventListener('mouseleave', ()=> { resetReviewTimer(); });
+  startReviewTimer();
+}
+
+/* FAQ accordion */
+function bindFAQ(){
+  const items = document.querySelectorAll('.faq-q');
+  items.forEach(q => {
+    q.addEventListener('click', ()=> {
+      const el = q.nextElementSibling;
+      if(!el) return;
+      const open = el.style.display === 'block';
+      // close all
+      document.querySelectorAll('.faq-a').forEach(a=> a.style.display = 'none');
+      document.querySelectorAll('.faq-q .small').forEach(s=> s.textContent = '+');
+      if(!open){
+        el.style.display = 'block'; q.querySelector('.small').textContent = '-';
+      } else {
+        el.style.display = 'none'; q.querySelector('.small').textContent = '+';
+      }
+    });
+  });
+}
+
+/* helpers */
+function escapeHtml(s){ return String(s).replace(/[&<>"']/g, m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m])); }
+
+/* Init */
+init();
+</script>
+<!--Start of Tawk.to Script-->
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/692ca019f557c1197debe808/default';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+<!--End of Tawk.to Script-->
+</body>
+</html>

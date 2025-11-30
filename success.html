@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Order Received — House of Greens</title>
+  <meta name="robots" content="noindex">
+  <style>
+    :root{
+      --accent: #1fb6a5;
+      --accent-dark:#179483;
+      --bg: #f7fbfa;
+      --card:#ffffff;
+      --muted:#6b7280;
+      --text:#042028;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;font-family:Inter,system-ui,Arial,sans-serif;background:var(--bg);color:var(--text);-webkit-font-smoothing:antialiased;display:flex;align-items:center;justify-content:center;height:100vh;padding:20px}
+    .wrap{max-width:900px;width:100%;background:linear-gradient(180deg,var(--card),#fbfffd);border-radius:14px;box-shadow:0 18px 50px rgba(4,32,40,0.08);padding:36px;display:grid;grid-template-columns:1fr 360px;gap:24px;align-items:center}
+    @media(max-width:920px){ .wrap{grid-template-columns:1fr;padding:26px} }
+    .left h1{font-size:1.9rem;margin:0 0 10px;color:var(--accent-dark)}
+    .left p{margin:0 0 14px;color:var(--muted);line-height:1.5}
+    .notice{background:linear-gradient(90deg, rgba(31,182,165,0.06), rgba(23,148,131,0.03));border:1px solid rgba(31,182,165,0.08);padding:12px;border-radius:10px;color:var(--muted);display:flex;gap:10px;align-items:center;margin-bottom:14px}
+    .icon{width:56px;height:56px;border-radius:12px;background:linear-gradient(135deg,var(--accent),var(--accent-dark));display:flex;align-items:center;justify-content:center;color:#fff;font-weight:800;font-size:22px;box-shadow:0 8px 24px rgba(31,182,165,0.14)}
+    .actions{display:flex;gap:12px;align-items:center;margin-top:8px}
+    .btn{background:var(--accent);color:#fff;padding:12px 16px;border-radius:10px;border:0;cursor:pointer;font-weight:700;box-shadow:0 10px 30px rgba(31,182,165,0.12);text-decoration:none;display:inline-flex;align-items:center;gap:8px}
+    .btn-ghost{background:transparent;border:1px solid #e9f6f2;padding:10px 14px;border-radius:10px;color:var(--muted);cursor:pointer;text-decoration:none}
+    .right{display:flex;flex-direction:column;align-items:center;gap:12px}
+    .order-card{background:linear-gradient(180deg,#fff,#fbfffd);padding:16px;border-radius:12px;border:1px solid #eef8f5;width:100%;text-align:center}
+    .order-card h3{margin:0 0 6px;color:var(--text)}
+    .order-card p{margin:0;color:var(--muted);font-size:0.95rem}
+    .tick{width:120px;height:120px;border-radius:999px;background:linear-gradient(135deg,var(--accent),var(--accent-dark));display:flex;align-items:center;justify-content:center;color:white;font-size:42px;box-shadow:0 12px 40px rgba(31,182,165,0.18);transform:scale(0);animation:pop .6s cubic-bezier(.2,.9,.3,1) .08s forwards}
+    @keyframes pop{to{transform:scale(1)}}
+    .subtle{font-size:0.92rem;color:var(--muted);margin-top:8px;text-align:center}
+    footer{grid-column:1/-1;margin-top:8px;text-align:center;color:var(--muted);font-size:13px}
+    /* small pulse for CTA */
+    .btn .dot{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,0.9);box-shadow:0 0 10px rgba(255,255,255,0.18);animation:blink 1.6s infinite}
+    @keyframes blink{0%{opacity:1}50%{opacity:.35}100%{opacity:1}}
+  </style>
+</head>
+<body>
+  <div class="wrap" role="status" aria-live="polite">
+    <div class="left">
+      <div class="notice" aria-hidden="false">
+        <div class="icon">✓</div>
+        <div>
+          <div style="font-weight:700">Order received</div>
+          <div style="font-size:0.95rem;color:var(--muted)">We've started processing your order :Thanks for choosing House of Greens.</div>
+        </div>
+      </div>
+
+      <h1>Congratulations,Your order is confirmed</h1>
+      <p>We are currently processing it. You’ll receive an email confirmation shortly with your order details and tracking (if shipping was requested). For a faster response, open live support with the chat widget and mention your order.</p>
+
+      <div class="actions" role="group" aria-label="Next steps">
+        <a class="btn" href="search.html" id="back-store">
+          <span class="dot" aria-hidden="true"></span>
+          Back to store
+        </a>
+        <a class="btn-ghost" href="javascript:void(0)" id="open-support">Contact live support</a>
+      </div>
+
+      <div class="subtle">If you don't see the confirmation email in a few minutes, please check your spam folder or contact support.</div>
+    </div>
+
+    <div class="right" aria-hidden="false">
+      <div class="tick" aria-hidden="true">✓</div>
+
+      <div class="order-card" role="article" aria-label="Order processing info">
+        <h3>Processing now</h3>
+        <p>We’ll email you when your order is packed and ready to ship.</p>
+      </div>
+
+      <div style="font-size:13px;color:var(--muted);text-align:center;max-width:320px">
+        Need urgent help? Click <strong>Contact live support</strong> above or use the chat widget in the bottom corner.
+      </div>
+    </div>
+
+    <footer>&copy; <span id="year"></span> House of Greens — All rights reserved.</footer>
+  </div>
+
+  <script>
+    // small helper: open support (tries to focus tawk widget if present)
+    document.getElementById('open-support').addEventListener('click', function(){
+      // Try to open Tawk.to if available
+      try {
+        if(window.Tawk_API && typeof window.Tawk_API.maximize === 'function'){
+          window.Tawk_API.maximize();
+        } else {
+          // fallback: inform user
+          alert('Open live support using the chat widget in the bottom corner of the page.');
+        }
+      } catch(e){
+        alert('Open live support using the chat widget in the bottom corner of the page.');
+      }
+    });
+
+    // set year
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

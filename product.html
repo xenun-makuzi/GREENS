@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>House of Greens — Product</title>
+<style>
+:root{--accent:#1fb6a5;--muted:#6b7280;--card:#f6f9f8;--muted-light:#e6efec;--text:#0f1724}
+*{box-sizing:border-box}body{margin:0;font-family:Inter,system-ui,Arial,sans-serif;color:var(--text);background:#fff}
+.container{max-width:1100px;margin:0 auto;padding:18px}
+.header{display:flex;align-items:center;justify-content:space-between;padding:10px 0;border-bottom:1px solid var(--muted-light)}
+.header .logo{font-weight:800;color:var(--accent)}
+.layout{display:grid;grid-template-columns:1fr 380px;gap:18px;margin-top:18px}
+.mainimg{width:100%;height:520px;object-fit:cover;border-radius:12px;background:#f4f6f5;transition:opacity .18s}
+.thumbs{display:flex;gap:8px;margin-top:10px;flex-wrap:wrap}
+.thumbs img{width:80px;height:80px;object-fit:cover;border-radius:8px;cursor:pointer;border:2px solid transparent;transition:box-shadow .14s}
+.thumbs img.active{border-color:var(--accent);box-shadow:0 8px 20px rgba(31,182,165,0.08)}
+.info{background:var(--card);padding:16px;border-radius:12px;border:1px solid var(--muted-light)}
+.info h1{margin:0 0 6px;font-size:1.25rem}
+.meta{color:var(--muted);margin-bottom:10px}
+.price{font-size:1.6rem;font-weight:800;margin:10px 0;transition:transform .18s}
+.size-buttons{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px}
+.size-btn{padding:8px 12px;border-radius:8px;border:1px solid var(--muted-light);cursor:pointer;background:#fff;transition:transform .12s}
+.size-btn:hover{transform:translateY(-3px)}
+.size-btn.active{background:var(--accent);color:#fff;border-color:var(--accent)}
+.add-row{display:flex;gap:10px;align-items:center}
+.similar{margin-top:20px}
+.similar .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:10px}
+.similar .item{background:#fff;border:1px solid var(--muted-light);padding:8px;border-radius:8px;cursor:pointer;transition:transform .12s}
+.similar .item:hover{transform:translateY(-6px)}
+@media(max-width:900px){ .layout{grid-template-columns:1fr;}.mainimg{height:360px} }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <div class="logo">House of Greens</div>
+    <div>
+      <button onclick="location.href='index.html'">Home</button>
+      <button onclick="location.href='search.html'">Store</button>
+      <span id="cart-count" style="margin-left:8px;background:#1fb6a5;color:#fff;padding:6px 8px;border-radius:8px">0</span>
+    </div>
+  </div>
+
+  <div id="content" class="layout">
+    <div>
+      <img id="mainImg" class="mainimg" src="" alt="Product image">
+      <div id="thumbs" class="thumbs"></div>
+    </div>
+
+    <aside class="info">
+      <h1 id="pname">Product</h1>
+      <div class="meta" id="pmeta">Category</div>
+      <div id="rating" style="color:goldenrod">★★★★★</div>
+      <p id="pdesc" style="color:var(--muted)"></p>
+
+      <div style="margin-top:10px"><strong>Select size</strong></div>
+      <div id="sizeButtons" class="size-buttons"></div>
+
+      <div class="price" id="priceDisplay">$0.00</div>
+
+      <div class="add-row">
+        <button id="addBtn" style="background:var(--accent);color:#fff;padding:10px 14px;border-radius:10px;border:0;cursor:pointer">Add to cart</button>
+        <div id="addedNote" style="color:var(--muted);font-weight:700"></div>
+      </div>
+    </aside>
+  </div>
+
+  <section class="similar">
+    <h3>Similar products</h3>
+    <div id="similarGrid" class="grid"></div>
+  </section>
+</div>
+
+<script>
+/* product page with in-place product swapping when clicking similar items or thumbnails that match other product images */
+let products = [];
+const pricingKeys = ['1g','1/8oz','1/2oz'];
+const byId = id=>document.getElementById(id);
+let currentProduct = null;
+let currentSize = null;
+
+function qs(name){ return new URLSearchParams(location.search).get(name); }
+
+async function init(){
+  try{ const res = await fetch('products.json',{cache:'no-store'}); const j = await res.json(); products = Array.isArray(j)? j : (j.products||[]); }catch(e){ console.error(e); products = []; }
+  const id = qs('id');
+  if(!id){ location.href='index.html'; return; }
+  const p = products.find(x=> String(x.id) === String(id));
+  if(!p){ document.body.innerHTML = '<div style="padding:40px;text-align:center">Product not found. <a href=\"index.html\">Go back</a></div>'; return; }
+  loadProduct(p, true);
+  loadCart();
+}
+
+/* loadProduct: render product, optionally pushState to update URL (but do in-place) */
+function loadProduct(p, pushURL=false){
+  currentProduct = p;
+  // update main content
+  byId('pname').textContent = p.name;
+  byId('pmeta').textContent = p.category || '';
+  byId('pdesc').textContent = p.description || '';
+  const imgs = (p.images && p.images.length) ? p.images : (p.image ? [p.image] : []);
+  byId('mainImg').style.opacity = 0;
+  setTimeout(()=>{ byId('mainImg').src = imgs[0] || ''; byId('mainImg').style.opacity = 1; },180);
+
+  // thumbs: render, and allow clicking a thumbnail to either change image or, if that image matches another product's main image, swap to that product
+  const thumbs = byId('thumbs'); thumbs.innerHTML='';
+  imgs.forEach((src, idx)=>{
+    const im = document.createElement('img'); im.src = src;
+    if(idx===0) im.classList.add('active');
+    im.addEventListener('click', ()=> {
+      // quick image swap
+      byId('mainImg').src = src;
+      thumbs.querySelectorAll('img').forEach(x=>x.classList.remove('active'));
+      im.classList.add('active');
+      // check if this image equals another product's main image -> if so, swap to that product in-place
+      const other = products.find(pp=> pp.id !== p.id && ((pp.image && pp.image===src) || (pp.images && pp.images.includes && pp.images.includes(src))));
+      if(other){ // swap in-place
+        loadProduct(other, true);
+      }
+    });
+    thumbs.appendChild(im);
+  });
+
+  // sizes
+  const sizeButtons = byId('sizeButtons'); sizeButtons.innerHTML='';
+  const def = defaultSizeFor(p); currentSize = def;
+  const avail = Object.keys(p.pricing||{});
+  pricingKeys.forEach(k=>{ if(p.pricing && p.pricing[k]){ const b = document.createElement('button'); b.className='size-btn'; b.textContent = `${k} • ${p.pricing[k]}`; b.dataset.size=k; if(k===def) b.classList.add('active'); b.addEventListener('click', ()=> { sizeButtons.querySelectorAll('.size-btn').forEach(x=>x.classList.remove('active')); b.classList.add('active'); currentSize=k; animatePriceChange(); updatePrice(); }); sizeButtons.appendChild(b); }});
+  if(!sizeButtons.children.length && avail.length){ const k = avail[0]; const b = document.createElement('button'); b.className='size-btn active'; b.textContent = `${k} • ${p.pricing[k]}`; b.dataset.size=k; sizeButtons.appendChild(b); currentSize=k; }
+
+  updatePrice();
+  // add to cart
+  byId('addBtn').onclick = ()=> { addToCart(currentProduct, currentSize); byId('addedNote').textContent='Added'; setTimeout(()=> byId('addedNote').textContent='',900); };
+  // similar
+  renderSimilar(p);
+  if(pushURL){ history.replaceState(null,'', `product.html?id=${encodeURIComponent(p.id)}`); }
+}
+
+function defaultSizeFor(p){ for(const k of pricingKeys) if(p.pricing && p.pricing[k]) return k; if(p.pricing){ const ks = Object.keys(p.pricing); return ks.length? ks[0]:null } return null; }
+function updatePrice(){ if(!currentProduct || !currentSize) return; const price = currentProduct.pricing && currentProduct.pricing[currentSize]; byId('priceDisplay').style.transform='scale(1.02)'; byId('priceDisplay').textContent = price || '$0.00'; setTimeout(()=> byId('priceDisplay').style.transform='scale(1)',160); }
+function animatePriceChange(){ byId('priceDisplay').style.opacity='0.4'; setTimeout(()=> byId('priceDisplay').style.opacity='1',160); }
+
+function renderSimilar(p){
+  const grid = byId('similarGrid'); grid.innerHTML='';
+  const similar = products.filter(x=> x.category===p.category && x.id!==p.id).slice(0,8);
+  similar.forEach(s=>{ const d = document.createElement('div'); d.className='item'; d.innerHTML = `<img src="${s.image}" style="width:100%;height:80px;object-fit:cover;border-radius:6px"><div style="font-size:0.9rem;font-weight:700;margin-top:6px">${s.name}</div><div style="color:var(--muted);margin-top:6px">${s.pricing && (s.pricing['1g']||s.pricing['1/8oz']||s.pricing['1/2oz']||'')}</div>`; d.addEventListener('click', ()=> { loadProduct(s, true); window.scrollTo({top:0,behavior:'smooth'}); }); grid.appendChild(d); });
+}
+
+/* cart */
+function addToCart(product,sizeKey){
+  try{ const existing = JSON.parse(localStorage.getItem('hog_cart')||'[]'); existing.push({id:product.id,name:product.name,size:sizeKey,price:product.pricing && product.pricing[sizeKey]}); localStorage.setItem('hog_cart',JSON.stringify(existing)); byId('cart-count').textContent = existing.length; }catch(e){console.error(e);}
+}
+function loadCart(){ try{ const c = JSON.parse(localStorage.getItem('hog_cart')||'[]'); byId('cart-count').textContent = c.length; }catch(e){} }
+
+init();
+</script>
+</body>
+</html>

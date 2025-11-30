@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>House of Greens — Home</title>
+  <style>
+    /* --- Palette --- */
+    :root{
+      --accent: #1fb6a5; /* greenish-blue blend */
+      --accent-dark: #179483;
+      --bg: #ffffff;
+      --muted: #6b7280;
+      --card: #f6f9f8;
+      --text: #0f1724;
+      --muted-light: #e6efec;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;font-family:Inter,system-ui,Arial,sans-serif;background:var(--bg);color:var(--text);-webkit-font-smoothing:antialiased}
+    a{color:inherit;text-decoration:none}
+
+    /* Header */
+    header{display:flex;align-items:center;justify-content:space-between;padding:18px 36px;border-bottom:1px solid var(--muted-light);position:sticky;top:0;background:var(--bg);z-index:60}
+    .logo{font-weight:700;color:var(--accent);font-size:1.25rem}
+    nav{display:flex;gap:18px;align-items:center}
+    nav a{color:var(--text);padding:8px 12px;border-radius:8px;transition:background .15s}
+    nav a:hover{background:rgba(31,182,165,0.08)}
+    .icons{display:flex;gap:12px;align-items:center}
+    .icon{background:#fff;border:1px solid var(--muted-light);padding:8px;border-radius:10px;cursor:pointer;display:flex;align-items:center;justify-content:center}
+    .cart-bubble{background:var(--accent);color:#fff;padding:4px 8px;border-radius:999px;margin-left:6px;font-weight:600;font-size:0.85rem}
+
+    /* Age popup */
+    #age-popup{position:fixed;inset:0;background:rgba(15,23,36,0.85);display:flex;align-items:center;justify-content:center;z-index:200}
+    #age-popup .card{background:#fff;padding:28px;border-radius:12px;text-align:center;max-width:420px;width:92%}
+    #age-popup h2{margin:0 0 8px;color:var(--text)}
+    #age-popup p{margin:0 0 18px;color:var(--muted)}
+    .btn{background:var(--accent);color:#fff;padding:10px 18px;border-radius:10px;border:0;cursor:pointer;font-weight:600}
+    .btn-ghost{background:transparent;border:1px solid var(--muted-light);padding:8px 14px;border-radius:10px;cursor:pointer;color:var(--text)}
+
+    /* Delivery popup */
+    #delivery-popup{position:fixed;left:50%;transform:translateX(-50%);bottom:22px;background:#fff;padding:16px;border-radius:10px;border:1px solid var(--muted-light);box-shadow:0 10px 30px rgba(2,6,23,0.08);display:none;z-index:180}
+
+    /* Hero */
+    .hero{min-height:340px;background-image:url('hero-bg.jpg');background-size:cover;background-position:center;display:flex;align-items:center;justify-content:center;text-align:center;padding:48px 20px;border-bottom:1px solid rgba(15,23,36,0.04)}
+    .hero .inner{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0));padding:28px;border-radius:12px;max-width:980px}
+    .hero h1{font-size:2.4rem;margin:0 0 10px;color:#fff;text-shadow:0 6px 20px rgba(0,0,0,0.35)}
+    .hero p{color:#e9f6f2;margin:0 0 16px}
+    .hero .cta{background:#fff;color:var(--accent-dark);padding:10px 18px;border-radius:999px;border:0;font-weight:700;cursor:pointer}
+
+    /* Search */
+    .search-wrap{display:flex;justify-content:center;padding:18px 20px}
+    .search{width:100%;max-width:820px;background:#fff;border-radius:999px;padding:8px 12px;display:flex;align-items:center;gap:10px;box-shadow:0 6px 18px rgba(31,182,165,0.06)}
+    .search input{flex:1;border:0;outline:none;padding:12px 8px;border-radius:999px;font-size:1rem}
+    .suggestions{position:relative}
+    .suggest-list{position:absolute;left:0;right:0;top:44px;background:#fff;border-radius:10px;border:1px solid var(--muted-light);max-height:260px;overflow:auto;display:none;z-index:80}
+    .suggest-item{padding:10px 14px;border-bottom:1px solid #f1f6f5;cursor:pointer}
+    .suggest-item:hover{background:rgba(31,182,165,0.06)}
+
+    /* Categories */
+    .categories{display:flex;gap:18px;justify-content:center;flex-wrap:wrap;padding:20px 18px}
+    .cat{width:92px;height:92px;border-radius:999px;background:linear-gradient(180deg,#fff,#f7fdfb);display:flex;align-items:center;justify-content:center;flex-direction:column;cursor:pointer;border:1px solid var(--muted-light);box-shadow:0 6px 18px rgba(31,182,165,0.04);transition:transform .2s}
+    .cat img{width:54px;height:54px;border-radius:999px;object-fit:cover}
+    .cat span{font-size:0.85rem;margin-top:8px;color:var(--text);font-weight:600}
+
+    /* Featured grid */
+    .section{max-width:1200px;margin:0 auto;padding:26px 18px}
+    .section h2{color:var(--accent);margin:6px 0 16px;font-size:1.5rem}
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}
+    .card{background:var(--card);border-radius:12px;padding:12px;border:1px solid var(--muted-light);display:flex;flex-direction:column;align-items:center;cursor:pointer;transition:transform .14s,box-shadow .14s}
+    .card:hover{transform:translateY(-6px);box-shadow:0 12px 30px rgba(31,182,165,0.06)}
+    .card img{width:100%;height:160px;object-fit:cover;border-radius:10px}
+    .card .title{margin-top:10px;font-weight:700;text-align:center}
+    .price-row{display:flex;gap:8px;align-items:center;margin-top:8px;flex-wrap:wrap;justify-content:center}
+    .price-pill{background:#fff;border-radius:999px;padding:6px 10px;border:1px solid var(--muted-light);font-weight:700;color:var(--text);font-size:0.92rem}
+    .badges{margin-top:8px;display:flex;gap:6px;flex-wrap:wrap;justify-content:center}
+    .badge{background:var(--accent);color:#fff;padding:4px 8px;border-radius:999px;font-size:0.75rem}
+
+    /* Why Choose Us */
+    .choose-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px;margin-top:10px}
+    .choose-item{background:var(--card);padding:20px;border-radius:12px;border:1px solid var(--muted-light);text-align:center}
+
+    /* modal */
+    .modal-backdrop{position:fixed;inset:0;background:rgba(2,6,23,0.6);display:none;align-items:center;justify-content:center;z-index:190;padding:20px}
+    .modal-backdrop.show{display:flex}
+    .modal{width:100%;max-width:980px;background:#fff;border-radius:12px;padding:18px;display:grid;grid-template-columns:1fr 360px;gap:16px;transform:translateY(-10px);transition:transform .25s,opacity .25s}
+    .modal-backdrop.show .modal{transform:translateY(0)}
+    .modal .bigimg{width:100%;height:420px;object-fit:cover;border-radius:10px;background:#f5f7f6}
+    .meta{color:var(--muted);font-size:0.95rem;margin-bottom:12px}
+    .stars{color:goldenrod;font-weight:700}
+    .thumbs{display:flex;gap:8px;margin-top:10px}
+    .thumbs img{width:72px;height:72px;object-fit:cover;border-radius:8px;border:1px solid var(--muted-light);cursor:pointer}
+
+    .size-select{display:flex;gap:8px;flex-wrap:wrap}
+    .size-btn{padding:8px 12px;border-radius:8px;border:1px solid var(--muted-light);background:#fff;cursor:pointer}
+    .size-btn.active{background:var(--accent);color:#fff;border-color:var(--accent)}
+
+    .similar .sgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(100px,1fr));gap:8px}
+
+    /* Touchdown gallery */
+    .touchdown{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px;margin-top:10px}
+    .touchdown img{width:100%;height:160px;object-fit:cover;border-radius:10px}
+
+    /* FAQs */
+    .faq{max-width:900px;margin:18px auto}
+    .faq-item{border-bottom:1px solid #eef7f3;padding:12px 0}
+    .faq-item h4{margin:0;font-size:1rem}
+    .faq-item p{margin:8px 0 0;color:var(--muted)}
+
+    footer{padding:28px 18px;background:#f7fbfb;color:var(--muted);text-align:center;margin-top:28px}
+    @media(max-width:880px){ .modal{grid-template-columns:1fr} .modal .bigimg{height:260px} }
+  </style>
+</head>
+<body>
+
+  <!-- AGE POPUP (inside body) -->
+  <div id="age-popup" role="dialog" aria-modal="true">
+    <div class="card" role="document">
+      <h2>Are you 21 or older?</h2>
+      <p>Please confirm your age to enter House of Greens.</p>
+      <div style="display:flex;gap:10px;justify-content:center">
+        <button id="age-confirm" class="btn">Yes — Enter</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="delivery-popup" role="status" aria-hidden="true">We offer reliable nationwide delivery. Orders are discreetly packaged.</div>
+
+  <header>
+    <div class="logo">House of Greens</div>
+    <nav>
+      <a href="#categories">Categories</a>
+      <a href="#featured">Featured</a>
+      <a href="#touchdown">Touchdown</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <div class="icons" aria-hidden="false">
+      <div class="icon" title="Search" onclick="document.getElementById('search-input').focus()">🔍</div>
+      <div class="icon" title="Account">👤</div> <!-- person icon fixed -->
+      <div class="icon" title="Cart">🛒 <span class="cart-bubble" id="cart-count">0</span></div>
+    </div>
+  </header>
+
+  <section class="hero" aria-hidden="false">
+    <div class="inner">
+      <h1>Luxury Natural Wellness</h1>
+      <p>Premium herbal products — curated, tested, and delivered.</p>
+      <div style="display:flex;gap:8px;justify-content:center">
+        <button class="cta" onclick="location.href='search.html'">Shop Store</button>
+        <button class="btn-ghost" onclick="document.getElementById('why').scrollIntoView({behavior:'smooth'})">Learn More</button>
+      </div>
+    </div>
+  </section>
+
+  <div class="search-wrap">
+    <div class="search" role="search" aria-label="Search products">
+      <div style="font-size:1.05rem;color:var(--muted)">🔎</div>
+      <div class="suggestions" style="flex:1;position:relative">
+        <input id="search-input" placeholder="Search products, strains or categories..." aria-autocomplete="list" />
+        <div id="suggest-list" class="suggest-list" role="listbox" aria-expanded="false"></div>
+      </div>
+      <button class="btn" id="search-go">Search</button>
+    </div>
+  </div>
+
+  <div class="categories" id="category-row"></div>
+
+  <section class="section">
+    <h2>Featured Products</h2>
+    <div id="featured-grid" class="grid" aria-live="polite"></div>
+  </section>
+
+  <section id="why" class="section">
+    <h2>Why Choose Us</h2>
+    <div class="choose-grid">
+      <div class="choose-item"><h3>Premium Quality</h3><p>We source from trusted growers and test for purity.</p></div>
+      <div class="choose-item"><h3>Discreet Packaging</h3><p>Your privacy matters — packages are shipped discreetly.</p></div>
+      <div class="choose-item"><h3>Expert Support</h3><p>Our team helps you pick the right product for your needs.</p></div>
+    </div>
+  </section>
+
+  <section id="touchdown" class="section">
+    <h2>Touchdown — Behind the Scenes</h2>
+    <div class="touchdown" id="touchdown-gallery">
+      <img src="pack1.jpg" alt="Packing">
+      <img src="pack2.jpg" alt="Shipping">
+      <img src="pack3.jpg" alt="Delivery">
+      <img src="pack4.jpg" alt="Team">
+    </div>
+  </section>
+
+  <section class="section reviews">
+    <h2>What Our Customers Say</h2>
+    <p style="color:var(--muted)">Over 5000 satisfied customers!</p>
+    <div class="choose-grid" id="reviews-grid"></div>
+  </section>
+
+  <section id="faq" class="section faq">
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-item"><h4>Do you deliver nationwide?</h4><p>Yes — we offer shipping. Delivery timelines depend on your location.</p></div>
+    <div class="faq-item"><h4>How discrete is the packaging?</h4><p>Completely discrete — no product branding on the outer packaging.</p></div>
+    <div class="faq-item"><h4>What if I'm under 21?</h4><p>You'll be redirected away from the site. We only serve adults 21+.</p></div>
+    <div class="faq-item"><h4>How are products tested?</h4><p>Products are lab-tested for potency and contaminants. Lab results available on request.</p></div>
+  </section>
+
+  <footer>
+    <div style="max-width:1100px;margin:0 auto">
+      <p>&copy; 2025 House of Greens — All rights reserved.</p>
+      <p style="font-size:0.9rem;color:var(--muted)">Follow us on social media for updates and new arrivals.</p>
+    </div>
+  </footer>
+
+  <!-- PRODUCT MODAL -->
+  <div id="modal-backdrop" class="modal-backdrop" aria-hidden="true">
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+      <div>
+        <img id="modal-bigimg" class="bigimg" src="" alt="">
+        <div class="thumbs" id="modal-thumbs"></div>
+      </div>
+      <aside>
+        <h3 id="modal-title">Product name</h3>
+        <div class="meta" id="modal-meta">Category • Type</div>
+        <div class="stars" id="modal-stars">★★★★★</div>
+        <p id="modal-desc" style="color:var(--muted);margin-top:12px"></p>
+
+        <div style="margin-top:14px">
+          <strong>Select size</strong>
+          <div class="size-select" id="size-select"></div>
+        </div>
+
+        <div style="margin-top:12px" id="modal-price-row">
+          <div style="font-weight:800;font-size:1.3rem" id="modal-price">$0.00</div>
+        </div>
+
+        <div style="margin-top:12px;display:flex;gap:8px">
+          <button id="modal-add" class="btn">Add to Cart</button>
+          <button id="modal-search" class="btn-ghost">Search similar</button>
+        </div>
+
+        <div class="similar">
+          <h4 style="margin:12px 0 6px 0">Similar products</h4>
+          <div class="sgrid" id="similar-grid"></div>
+        </div>
+      </aside>
+    </div>
+  </div>
+
+<script>
+/* ----------------- Utilities & state ----------------- */
+let products = [];
+let categories = [];
+let cart = [];
+const pricingKeys = ['1g','1/8oz','1/2oz'];
+const byId = id => document.getElementById(id);
+
+/* fetch products.json and bootstrap the page */
+async function init(){
+  try {
+    const res = await fetch('products.json', {cache:'no-store'});
+    const j = await res.json();
+    products = Array.isArray(j) ? j : (j.products || []);
+    categories = (j.categories && j.categories.length) ? j.categories : Array.from(new Set(products.map(p=>p.category)));
+  } catch(e){
+    console.error('Could not load products.json', e);
+    products = [];
+    categories = ['Flower','Concentrates','Edibles','Vape Pens','Strains'];
+  }
+  renderCategories();
+  renderFeatured();
+  renderReviews();
+  loadCart();
+  checkQuery(); // run deep-link check after products are loaded
+}
+
+/* Age gate & delivery */
+const agePopup = byId('age-popup');
+const ageConfirm = byId('age-confirm');
+const deliveryPopup = byId('delivery-popup');
+
+function showDeliveryPopup(){
+  deliveryPopup.style.display='block';
+  deliveryPopup.setAttribute('aria-hidden','false');
+  setTimeout(()=> { deliveryPopup.style.display='none'; deliveryPopup.setAttribute('aria-hidden','true'); }, 6000);
+}
+
+ageConfirm.addEventListener('click', ()=>{
+  agePopup.style.display = 'none';
+  try { localStorage.setItem('hog_age_verified','1'); } catch(e){}
+  setTimeout(showDeliveryPopup, 700);
+});
+try { if(localStorage.getItem('hog_age_verified')==='1'){ agePopup.style.display='none'; setTimeout(showDeliveryPopup,500);} } catch(e){}
+
+/* Render categories */
+function renderCategories(){
+  const row = byId('category-row');
+  row.innerHTML = '';
+  categories.forEach((c, idx)=>{
+    const prefix = c.slice(0,3).toLowerCase();
+    const img = `${prefix}${(idx%12)+1}.jpg`;
+    const el = document.createElement('div');
+    el.className = 'cat';
+    el.innerHTML = `<img src="${img}" alt="${c}"><span>${c}</span>`;
+    el.addEventListener('click', ()=> handleCategoryClick(c));
+    row.appendChild(el);
+  });
+}
+
+/* Category click */
+function handleCategoryClick(category){
+  const filtered = products.filter(p => p.category === category);
+  renderGrid(filtered.slice(0,12));
+  history.replaceState(null,'',`?cat=${encodeURIComponent(category)}`);
+}
+
+/* Featured */
+function renderFeatured(){
+  const featured = products.slice().sort((a,b)=> (b.rating||0)-(a.rating||0)).slice(0,5);
+  renderGrid(featured);
+}
+function renderGrid(list){
+  const grid = byId('featured-grid');
+  grid.innerHTML = '';
+  if(!list.length){ grid.innerHTML='<p style="color:var(--muted)">No products found.</p>'; return; }
+  list.forEach(p=>{
+    const card = document.createElement('div'); card.className='card';
+    const pricePills = pricingKeys.map(k => {
+        const price = p.pricing && p.pricing[k];
+        return price ? `<div class="price-pill">${k} ${price}</div>` : '';
+    }).join('');
+    card.innerHTML = `
+      <img src="${p.image}" alt="${p.name}">
+      <div class="title">${escapeHtml(p.name)}</div>
+      <div class="price-row">${pricePills}</div>
+      <div class="badges">${(p.badges||[]).map(b=>`<span class="badge">${b}</span>`).join('')}</div>
+    `;
+    card.addEventListener('click', ()=> openProductModal(p));
+    grid.appendChild(card);
+  });
+}
+
+/* Modal */
+const modalBackdrop = byId('modal-backdrop');
+const modalBig = byId('modal-bigimg');
+const modalTitle = byId('modal-title');
+const modalMeta = byId('modal-meta');
+const modalDesc = byId('modal-desc');
+const modalStars = byId('modal-stars');
+const sizeSelect = byId('size-select');
+const modalPrice = byId('modal-price');
+const modalThumbs = byId('modal-thumbs');
+const similarGrid = byId('similar-grid');
+const modalAdd = byId('modal-add');
+const modalSearchBtn = byId('modal-search');
+
+let currentProduct = null;
+let currentSizeKey = '1g';
+
+function openProductModal(p){
+  currentProduct = p;
+  modalBackdrop.classList.add('show');
+  modalBackdrop.setAttribute('aria-hidden','false');
+  modalBig.src = p.image;
+  modalTitle.textContent = p.name;
+  modalMeta.textContent = `${p.category}`;
+  modalDesc.textContent = p.description || '';
+  modalStars.innerHTML = renderStars(p.rating || 0) + ` <span style="color:var(--muted);font-weight:600">(${p.reviewsCount||0})</span>`;
+  // thumbs
+  modalThumbs.innerHTML = '';
+  const thumbs = products.filter(x=>x.category===p.category && x.id!==p.id).slice(0,4);
+  thumbs.unshift(p);
+  thumbs.forEach(t=>{
+    const im = document.createElement('img'); im.src = t.image; im.alt = t.name;
+    im.addEventListener('click', ()=> { modalBig.src = t.image; });
+    modalThumbs.appendChild(im);
+  });
+  // sizes
+  sizeSelect.innerHTML = '';
+  pricingKeys.forEach(k=>{
+    if(p.pricing && p.pricing[k]){
+      const b = document.createElement('button'); b.className='size-btn'; b.textContent = k + ' ' + p.pricing[k];
+      b.addEventListener('click', ()=> { document.querySelectorAll('.size-btn').forEach(x=>x.classList.remove('active')); b.classList.add('active'); currentSizeKey = k; updateModalPrice(); });
+      sizeSelect.appendChild(b);
+    }
+  });
+  setTimeout(()=>{ const first = sizeSelect.querySelector('.size-btn'); if(first) first.click(); },10);
+  // similar
+  similarGrid.innerHTML = '';
+  const similar = products.filter(x=>x.category===p.category && x.id!==p.id).slice(0,6);
+  similar.forEach(s=>{
+    const d = document.createElement('div'); d.style.cursor='pointer';
+    d.innerHTML = `<img src="${s.image}" alt="${s.name}" style="width:100%;height:80px;object-fit:cover;border-radius:8px"><div style="font-size:0.9rem;margin-top:6px">${s.name}</div>`;
+    d.addEventListener('click', ()=> openProductModal(s));
+    similarGrid.appendChild(d);
+  });
+  modalAdd.onclick = ()=> {
+    addToCart(currentProduct, currentSizeKey);
+    modalAdd.textContent = 'Added';
+    setTimeout(()=> modalAdd.textContent='Add to Cart',900);
+  };
+  modalSearchBtn.onclick = ()=> {
+    const q = encodeURIComponent(p.name);
+    window.location.href = `search.html?q=${q}`;
+  };
+}
+function closeProductModal(){ modalBackdrop.classList.remove('show'); modalBackdrop.setAttribute('aria-hidden','true'); }
+modalBackdrop.addEventListener('click', (e)=>{ if(e.target===modalBackdrop) closeProductModal(); });
+document.addEventListener('keydown', (e)=>{ if(e.key==='Escape') closeProductModal(); });
+
+/* Cart */
+function loadCart(){ try{ cart = JSON.parse(localStorage.getItem('hog_cart')) || []; }catch(e){ cart = []; } updateCartBubble(); }
+function addToCart(product, sizeKey){ const item = { id:product.id, name:product.name, size:sizeKey, price:product.pricing[sizeKey], image:product.image, qty:1 }; cart.push(item); updateCartBubble(); try{ localStorage.setItem('hog_cart', JSON.stringify(cart)); }catch(e){} }
+function updateCartBubble(){ byId('cart-count').textContent = cart.length; }
+
+/* Search suggestions */
+const searchInput = byId('search-input');
+const suggestList = byId('suggest-list');
+const searchGo = byId('search-go');
+
+searchInput.addEventListener('input', handleSuggest);
+searchGo.addEventListener('click', ()=> { const q = encodeURIComponent(searchInput.value.trim()); if(q) location.href = `search.html?q=${q}`; });
+
+function handleSuggest(e){
+  const q = (e.target.value||'').trim().toLowerCase();
+  suggestList.innerHTML = '';
+  if(!q){ suggestList.style.display='none'; suggestList.setAttribute('aria-expanded','false'); return; }
+  const matches = products.filter(p => (p.name||'').toLowerCase().includes(q) || (p.category||'').toLowerCase().includes(q)).slice(0,8);
+  matches.forEach(m=>{
+    const div = document.createElement('div'); div.className='suggest-item'; div.textContent = m.name + ' — ' + (m.pricing && m.pricing['1g'] || '');
+    div.addEventListener('click', ()=> { location.href = `search.html?q=${encodeURIComponent(m.name)}`; });
+    suggestList.appendChild(div);
+  });
+  suggestList.style.display = matches.length ? 'block' : 'none';
+  suggestList.setAttribute('aria-expanded', matches.length ? 'true' : 'false');
+}
+
+// hide suggestions when clicking outside
+document.addEventListener('click', (e)=> {
+  const s = byId('search-input');
+  if(!s) return;
+  if(e.target !== s && !byId('suggest-list').contains(e.target)) {
+    byId('suggest-list').style.display = 'none';
+    byId('suggest-list').setAttribute('aria-expanded','false');
+  }
+});
+
+/* Reviews */
+function renderReviews(){
+  const el = document.getElementById('reviews-grid');
+  el.innerHTML = '';
+  const sample = [
+    {text:'Excellent quality products and fast shipping!', by:'Alex M.'},
+    {text:'Best herbal products I’ve tried. Highly recommend.', by:'Sarah L.'},
+    {text:'Luxury experience from start to finish. Will buy again.', by:'James T.'}
+  ];
+  sample.forEach(s=>{
+    const d = document.createElement('div'); d.className='choose-item'; d.innerHTML = `<p>${s.text}</p><strong style="display:block;margin-top:8px">${s.by}</strong>`;
+    el.appendChild(d);
+  });
+}
+
+/* Helpers */
+function renderStars(r){ const full = Math.round(r || 0); return '★'.repeat(full) + '☆'.repeat(5-full); }
+function escapeHtml(s){ return String(s).replace(/[&<>"']/g, m => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m])); }
+
+/* Deep-link */
+function checkQuery(){
+  const params = new URLSearchParams(location.search);
+  const cat = params.get('cat');
+  if(cat){ setTimeout(()=> handleCategoryClick(cat), 600); }
+}
+
+/* Init */
+init();
+</script>
+</body>
+</html>
