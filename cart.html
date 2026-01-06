@@ -1,436 +1,277 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>House of Greens — Cart</title>
-<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
-<style>
-:root{
-  --accent:#1fb6a5; --accent-dark:#179483; --bg:#fff; --muted:#6b7280;
-  --card:#f6f9f8; --text:#0f1724; --muted-light:#e6efec;
-  --danger:#ef4444;
-}
-*{box-sizing:border-box}
-body{margin:0;font-family:Inter,system-ui,Arial,sans-serif;background:var(--bg);color:var(--text);-webkit-font-smoothing:antialiased}
-a{color:inherit;text-decoration:none}
-.header{display:flex;align-items:center;justify-content:space-between;padding:14px 20px;border-bottom:1px solid var(--muted-light);background:rgba(255,255,255,0.98);position:sticky;top:0;z-index:50}
-.logo{font-weight:800;color:var(--accent);font-size:1.05rem}
-.header .actions{display:flex;gap:10px;align-items:center}
-.container{max-width:1100px;margin:22px auto;padding:0 16px}
-.grid{display:grid;grid-template-columns:1fr 380px;gap:20px}
-@media(max-width:980px){ .grid{grid-template-columns:1fr} }
-.cart-list{background:var(--card);border-radius:12px;padding:14px;border:1px solid var(--muted-light)}
-.cart-item{display:flex;gap:12px;padding:12px;border-bottom:1px dashed #e9f6f2;align-items:center}
-.cart-item:last-child{border-bottom:none}
-.thumb{width:120px;height:88px;border-radius:8px;overflow:hidden;flex:0 0 120px}
-.thumb img{width:100%;height:100%;object-fit:cover}
-.item-body{flex:1;display:flex;flex-direction:column;gap:6px}
-.item-title{font-weight:700}
-.item-meta{font-size:13px;color:var(--muted)}
-.item-controls{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
-.size-select{padding:6px;border-radius:8px;border:1px solid var(--muted-light);background:#fff}
-.qty-box{display:flex;align-items:center;border:1px solid var(--muted-light);border-radius:8px;overflow:hidden}
-.qty-box button{background:#fff;border:0;padding:8px 10px;cursor:pointer}
-.qty-box input{width:52px;text-align:center;border:0;padding:8px}
-.price{font-weight:800;font-size:1.05rem;min-width:110px;text-align:right}
-.summary{background:var(--card);border-radius:12px;padding:18px;border:1px solid var(--muted-light)}
-.summary h3{margin:0 0 10px;color:var(--text)}
-.summary-row{display:flex;justify-content:space-between;padding:8px 0;color:var(--muted)}
-.total{font-weight:900;font-size:1.25rem}
-.btn{background:var(--accent);color:#fff;border:0;padding:10px 14px;border-radius:10px;cursor:pointer;font-weight:700}
-.btn-ghost{background:transparent;border:1px solid var(--muted-light);padding:8px 12px;border-radius:10px;cursor:pointer}
-.remove{background:transparent;color:var(--danger);border:0;cursor:pointer;font-weight:700}
-.empty{padding:40px;text-align:center;color:var(--muted)}
-.checkout-form{display:flex;flex-direction:column;gap:10px}
-.checkout-form input, .checkout-form textarea, .checkout-form select{padding:10px;border-radius:8px;border:1px solid var(--muted-light);outline:none}
-.checkout-form label{font-size:13px;color:var(--muted)}
-.small{font-size:13px;color:var(--muted)}
-button:focus, input:focus, select:focus { box-shadow:0 0 0 3px rgba(31,182,165,0.12); outline:none; }
-@media(max-width:520px){ .thumb{width:86px;height:64px} .price{min-width:80px;font-size:1rem} .grid{gap:14px} }
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>House of Greens — Checkout</title>
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+  <style>
+    :root {
+      --accent: #1fb6a5; --accent-dark: #179483; --bg: #fff; --muted: #6b7280;
+      --card: #f6f9f8; --text: #0f1724; --muted-light: #e6efec; --danger: #ef4444;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: Inter, system-ui, sans-serif; background: var(--bg); color: var(--text); -webkit-font-smoothing: antialiased; }
+    .container { max-width: 1100px; margin: 28px auto; padding: 0 18px; }
+    header { display: flex; align-items: center; justify-content: space-between; padding: 14px 20px; border-bottom: 1px solid var(--muted-light); background: #fff; position: sticky; top: 0; z-index: 50; }
+    .logo { font-weight: 800; color: var(--accent); font-size: 1.15rem; text-decoration: none; }
+    .grid { display: grid; grid-template-columns: 1fr 380px; gap: 24px; }
+    .card { background: var(--card); padding: 20px; border-radius: 12px; border: 1px solid var(--muted-light); margin-bottom: 16px; }
+    h3 { margin-top: 0; font-size: 1.1rem; border-bottom: 1px solid #eee; padding-bottom: 10px; margin-bottom: 15px; }
 
-/* small loader indicator for send button */
-.sending { opacity: 0.7; pointer-events: none; }
-</style>
+    /* Cart Item Styles */
+    .cart-item { display: flex; gap: 15px; padding: 15px 0; border-bottom: 1px solid #eee; align-items: center; }
+    .item-img { width: 70px; height: 70px; object-fit: cover; border-radius: 8px; background: #eee; }
+    .item-info { flex: 1; }
+    .qty-ctrl { display: flex; align-items: center; gap: 8px; margin-top: 5px; }
+    .qty-btn { width: 26px; height: 26px; border: 1px solid var(--muted-light); background: #fff; border-radius: 4px; cursor: pointer; }
+    .remove-btn { color: var(--danger); font-size: 0.75rem; cursor: pointer; background: none; border: none; text-decoration: underline; margin-left: 10px; }
+
+    /* Payment Styles */
+    .pay-opt { border: 1px solid var(--muted-light); padding: 15px; border-radius: 10px; margin-bottom: 10px; cursor: pointer; background: #fff; position: relative; }
+    .pay-opt.active { border-color: var(--accent); background: #f0f9f8; }
+    .copy-row { display: flex; align-items: center; justify-content: space-between; background: #f9f9f9; padding: 8px; border-radius: 6px; margin-top: 8px; border: 1px solid #eee; }
+    .copy-addr { font-family: monospace; font-size: 0.85rem; word-break: break-all; font-weight: bold; }
+    .copy-btn { background: var(--accent); color: #fff; border: none; padding: 5px 10px; border-radius: 4px; cursor: pointer; font-size: 0.75rem; }
+
+    input, textarea { width: 100%; padding: 12px; margin: 8px 0; border: 1px solid var(--muted-light); border-radius: 8px; font-family: inherit; }
+    .btn { background: var(--accent); color: #fff; border: none; padding: 14px; border-radius: 10px; font-weight: 700; cursor: pointer; width: 100%; font-size: 1rem; }
+    .hidden { display: none; }
+    .summary-row { display: flex; justify-content: space-between; margin-bottom: 8px; }
+    .total-row { display: flex; justify-content: space-between; font-weight: 900; font-size: 1.2rem; border-top: 1px solid #ddd; padding-top: 12px; color: var(--accent); }
+    
+    #success-overlay { position: fixed; inset: 0; background: #fff; display: none; flex-direction: column; align-items: center; justify-content: center; z-index: 1000; text-align: center; padding: 20px; }
+  </style>
 </head>
 <body>
 
-<header class="header">
-  <div class="logo">House of Greens</div>
-  <div class="actions">
-    <a href="index.html" class="btn-ghost">Continue shopping</a>
-    <div style="padding:8px;border-radius:8px;border:1px solid var(--muted-light)">&nbsp;🛒&nbsp;Cart&nbsp;</div>
-  </div>
+<header>
+  <a href="index.html" class="logo">HOUSE OF GREENS</a>
 </header>
 
-<main class="container" id="app">
+<div class="container">
   <div class="grid">
-    <div>
-      <div class="cart-list" id="cart-list"></div>
+    <div class="left-col">
+      <div class="card">
+        <h3>1. Your Items</h3>
+        <div id="cart-container">Loading products...</div>
+      </div>
 
-      <div id="empty-state" class="empty" style="display:none">
-        <h3>Your cart is empty</h3>
-        <p class="small">Add products from the store and they'll appear here. <a href="search.html">Browse products →</a></p>
+      <div class="card">
+        <h3>2. Delivery Information</h3>
+        <input type="text" id="cust_name" placeholder="Full Name *" required>
+        <div style="display:grid; grid-template-columns: 1fr 1fr; gap:10px;">
+          <input type="email" id="cust_email" placeholder="Email Address *" required>
+          <input type="tel" id="cust_tel" placeholder="Phone Number *" required>
+        </div>
+        
+        <div style="margin:15px 0; display:flex; align-items:center; gap:10px; background: #f0f9f8; padding: 12px; border-radius: 8px;">
+          <input type="checkbox" id="need_shipping" style="width:auto; margin:0; cursor:pointer;">
+          <label for="need_shipping" style="font-weight:600; cursor:pointer;">Require Shipping? (+$20.00)</label>
+        </div>
+
+        <div id="shipping-section" class="hidden">
+          <input type="text" id="cust_address" placeholder="Street Address">
+          <div style="display:grid; grid-template-columns: 1fr 1fr; gap:10px;">
+            <input type="text" id="cust_city" placeholder="City">
+            <input type="text" id="cust_postal" placeholder="Postal Code">
+          </div>
+        </div>
+        <textarea id="cust_notes" placeholder="Order notes (optional)"></textarea>
+      </div>
+
+      <div class="card">
+        <h3>3. Payment Method</h3>
+        <div class="pay-opt active" onclick="setPay('BTC', this)">
+          <strong>Bitcoin (BTC)</strong>
+          <input type="radio" name="pay_mode" checked style="float:right">
+          <div id="btc-box" class="copy-row">
+            <span id="btc-addr" class="copy-addr">1H7QyCp7Htpf329CEb2pzj6a4JYGHtm6bD</span>
+            <button class="copy-btn" onclick="copyAddr('btc-addr')">COPY</button>
+          </div>
+        </div>
+        
+        <div class="pay-opt" onclick="setPay('CashApp/Zelle', this)">
+          <strong>CashApp / Zelle</strong>
+          <input type="radio" name="pay_mode" style="float:right">
+          <div id="other-pay-box" class="hidden" style="margin-top:10px; font-size:0.9rem; color:var(--muted);">
+            <p>Please place your order first. After clicking "Place Order", contact our <strong>Live Chat Support</strong> to receive the payment handles.</p>
+          </div>
+        </div>
       </div>
     </div>
 
     <aside>
-      <div class="summary" aria-live="polite">
-        <h3>Order summary</h3>
-        <div class="summary-row"><div>Subtotal</div><div id="subtotal">$0.00</div></div>
-        <div class="summary-row"><div>Shipping</div><div id="shipping-amt">$0.00</div></div>
-        <div class="summary-row total"><div>Total</div><div id="grand-total">$0.00</div></div>
-
-        <div style="margin-top:12px;display:flex;gap:8px">
-          <button id="checkout-btn" class="btn" style="flex:1">Proceed to payout</button>
-          <button id="clear-btn" class="btn-ghost">Clear</button>
-        </div>
-
-        <p class="note">Free shipping for orders over <strong>$1,000.00</strong>.</p>
-      </div>
-
-      <div style="height:18px"></div>
-
-      <div class="summary" aria-labelledby="checkout-form-heading">
-        <h3 id="checkout-form-heading">Contact & Shipping</h3>
-        <form id="checkout-form" class="checkout-form" onsubmit="return false;">
-          <label for="c-email">Email *</label>
-          <input id="c-email" type="email" required placeholder="you@example.com" />
-          <label for="c-tel">Telephone *</label>
-          <input id="c-tel" type="tel" required placeholder="+1 555 555 5555" />
-          <label style="display:flex;align-items:center;gap:8px;"><input id="c-need-ship" type="checkbox"> Require shipping?</label>
-
-          <div id="shipping-fields" style="display:none">
-            <label for="c-address">Street address *</label>
-            <input id="c-address" placeholder="Street address" />
-            <label for="c-city">City *</label>
-            <input id="c-city" placeholder="City" />
-            <label for="c-postal">Postal / ZIP *</label>
-            <input id="c-postal" placeholder="Postal code" />
-          </div>
-
-          <label for="c-note" class="small">Order notes (optional)</label>
-          <textarea id="c-note" rows="2" placeholder="Any delivery instructions"></textarea>
-
-          <div id="checkout-msg" style="display:none;margin-top:8px;color:var(--muted)"></div>
-        </form>
+      <div class="card" style="position: sticky; top: 100px;">
+        <h3>Order Summary</h3>
+        <div class="summary-row"><span>Subtotal:</span> <span id="sum-sub">$0.00</span></div>
+        <div class="summary-row"><span>Shipping:</span> <span id="sum-ship">$0.00</span></div>
+        <div class="total-row"><span>Total:</span> <span id="sum-total">$0.00</span></div>
+        <button class="btn" id="finalize-btn" style="margin-top:20px;" onclick="submitOrder()">PLACE ORDER</button>
       </div>
     </aside>
   </div>
-</main>
+</div>
 
-<!-- no-inline EmailJS script tag here — we'll load it dynamically and await it -->
+<div id="success-overlay">
+  <div style="font-size: 60px;">✅</div>
+  <h1 style="color:var(--accent)">Order Received!</h1>
+  <p style="font-size: 1.1rem;">Support will contact you shortly to confirm your order.</p>
+  <p><strong>Please contact Support via Live Chat now for immediate confirmation.</strong></p>
+  <button class="btn" onclick="location.href='index.html'" style="max-width:220px; margin-top:30px;">Back to Homepage</button>
+</div>
 
 <script>
-/*
-  Robust cart page with dynamic EmailJS loader.
-  Replace EMAILJS_USER_ID, EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID with your real values.
-*/
+const EMAILJS_USER_ID     = 'uxpve7I9VNOBYVeuT';
+const EMAILJS_SERVICE_ID  = 'Testing';
+const EMAILJS_TEMPLATE_ID = 'Testing911';
 
-const EMAILJS_USER_ID    = 'uxpve7I9VNOBYVeuT'; // <- put your EmailJS user ID
-const EMAILJS_SERVICE_ID = 'Testing';           // <- put your EmailJS service id
-const EMAILJS_TEMPLATE_ID= 'Testing911';        // <- put your EmailJS template id
-const EMAILJS_USER    = 'NHFB-BLLpTMnFelp_';
-const EMAILJS_SERVICE = 'Payment911';
-const EMAILJS_TEMPLATE= 'template_fe4tcxu';
-
-/* initialize EmailJS */
-try{ emailjs.init(EMAILJS_USER); } catch(e){ /* will surface later if invalid */ }
+(function() { emailjs.init(EMAILJS_USER_ID); })();
 
 const CART_KEY = 'hog_cart';
 let products = [];
-let cart = [];
+let selectedMethod = 'BTC';
 
-const FREE_SHIPPING_THRESHOLD = 1000.00;
-const DEFAULT_SHIPPING = 60.00; // matches your earlier shipping fee
-
-const $ = id => document.getElementById(id);
-const formatPrice = v => '$' + Number(v).toLocaleString(undefined, {minimumFractionDigits:2, maximumFractionDigits:2});
-const parsePrice = (s) => {
-  if (typeof s === 'number') return s;
-  if (!s) return 0;
-  return Number(String(s).replace(/[^0-9.-]+/g,"")) || 0;
-};
-
-/* Load EmailJS SDK dynamically and return the global emailjs object (or null) */
-function loadEmailJsSdk(timeout = 8000){
-  return new Promise((resolve) => {
-    if(window.emailjs){ return resolve(window.emailjs); }
-    const script = document.createElement('script');
-    script.src = 'https://cdn.emailjs.com/sdk/3.2.0/email.min.js';
-    script.async = true;
-    let done = false;
-    script.onload = () => {
-      done = true;
-      // emailjs (global) should now exist
-      setTimeout(()=> resolve(window.emailjs || null), 0);
-    };
-    script.onerror = () => { if(!done){ done = true; resolve(null); } };
-    document.head.appendChild(script);
-    // timeout fallback
-    setTimeout(()=> { if(!done){ done = true; resolve(window.emailjs || null); } }, timeout);
-  });
-}
-
-/* Products loader */
-async function loadProducts(){
+async function init() {
   try {
-    const res = await fetch('products.json', {cache:'no-store'});
-    const j = await res.json();
-    products = Array.isArray(j) ? j : (j.products || []);
-  } catch (e) {
-    console.error('Could not load products.json', e);
-    products = [];
-  }
+    const res = await fetch('products.json');
+    const data = await res.json();
+    products = Array.isArray(data) ? data : (data.products || []);
+    renderCart();
+  } catch (e) { console.error("Error loading products", e); }
 }
 
-function loadCartFromStorage(){
-  try { cart = JSON.parse(localStorage.getItem(CART_KEY) || '[]'); } catch(e){ cart = []; }
-}
-function saveCart(){ try { localStorage.setItem(CART_KEY, JSON.stringify(cart)); updateCartBadge(); } catch(e){} }
-function updateCartBadge(){ const el = document.querySelector('#cart-count'); if(el) el.textContent = cart.length; }
-function getProductById(id){ return products.find(p => String(p.id) === String(id)); }
-function computeLinePrice(item){
-  const prod = getProductById(item.id);
-  if(!prod) return 0;
-  const priceStr = (prod.pricing && prod.pricing[item.size]) ? prod.pricing[item.size] : item.price;
-  return parsePrice(priceStr) * (item.qty || 1);
-}
-
-function renderCart(){
-  const list = $('cart-list'); list.innerHTML = '';
-  if(!cart.length){ $('empty-state').style.display = 'block'; list.style.display = 'none'; updateSummary(0); return; }
-  else { $('empty-state').style.display = 'none'; list.style.display = 'block'; }
-
-  cart.forEach((item, idx) => {
-    const prod = getProductById(item.id) || {};
-    const image = prod.image || item.image || 'placeholder.jpg';
-    const name = prod.name || item.name || 'Product';
-    const category = prod.category || '';
-    const availablePricing = prod.pricing || item.pricing || {};
-
-    const wrapper = document.createElement('div'); wrapper.className = 'cart-item';
-    wrapper.dataset.index = idx;
-    const thumb = document.createElement('div'); thumb.className='thumb';
-    thumb.innerHTML = `<img src="${image}" alt="${escapeHtml(name)}">`;
-
-    const body = document.createElement('div'); body.className = 'item-body';
-    const title = document.createElement('div'); title.className='item-title'; title.textContent = name;
-    const meta = document.createElement('div'); meta.className='item-meta'; meta.textContent = category;
-
-    const sizeRow = document.createElement('div'); sizeRow.className = 'item-controls';
-    const sizeSelect = document.createElement('select'); sizeSelect.className = 'size-select';
-    const sizeOrder = ['1g','1/8oz','1/2oz','1oz','1/4oz'];
-    let sizes = Object.keys(availablePricing);
-    if(item.size && !sizes.includes(item.size)) sizes.unshift(item.size);
-    sizes = sizes.sort((a,b)=>{
-      const ai = sizeOrder.indexOf(a), bi = sizeOrder.indexOf(b);
-      if(ai === -1 && bi === -1) return a.localeCompare(b);
-      if(ai === -1) return 1;
-      if(bi === -1) return -1;
-      return ai - bi;
-    });
-    if(sizes.length === 0 && item.size) sizes = [item.size];
-    sizes.forEach(s => {
-      const opt = document.createElement('option');
-      const priceStr = (availablePricing && availablePricing[s]) ? availablePricing[s] : (item.price || '');
-      opt.value = s; opt.text = `${s} ${priceStr}`; if(s === item.size) opt.selected = true; sizeSelect.appendChild(opt);
-    });
-    sizeSelect.addEventListener('change', (e) => {
-      item.size = e.target.value;
-      const p = getProductById(item.id);
-      if(p && p.pricing && p.pricing[item.size]) item.price = p.pricing[item.size];
-      saveCart(); renderCart();
-    });
-
-    const qtyBox = document.createElement('div'); qtyBox.className = 'qty-box';
-    const minus = document.createElement('button'); minus.type='button'; minus.textContent='−';
-    const qtyInput = document.createElement('input'); qtyInput.type='number'; qtyInput.min=1; qtyInput.value = item.qty || 1;
-    const plus = document.createElement('button'); plus.type='button'; plus.textContent='+';
-    qtyBox.appendChild(minus); qtyBox.appendChild(qtyInput); qtyBox.appendChild(plus);
-
-    minus.addEventListener('click', ()=> { let v=Math.max(1,(Number(qtyInput.value)||1)-1); qtyInput.value=v; item.qty=v; saveCart(); renderCart(); });
-    plus.addEventListener('click', ()=> { let v=Math.max(1,(Number(qtyInput.value)||1)+1); qtyInput.value=v; item.qty=v; saveCart(); renderCart(); });
-    qtyInput.addEventListener('change', ()=> { let v=Math.max(1,Number(qtyInput.value)||1); qtyInput.value=v; item.qty=v; saveCart(); renderCart(); });
-
-    const removeBtn = document.createElement('button'); removeBtn.className = 'remove'; removeBtn.textContent = 'Remove';
-    removeBtn.addEventListener('click', ()=> { cart.splice(idx,1); saveCart(); renderCart(); });
-
-    sizeRow.appendChild(sizeSelect); sizeRow.appendChild(qtyBox); sizeRow.appendChild(removeBtn);
-
-    body.appendChild(title); body.appendChild(meta); body.appendChild(sizeRow);
-
-    const priceDiv = document.createElement('div'); priceDiv.className = 'price';
-    const linePrice = computeLinePrice(item);
-    priceDiv.textContent = formatPrice(linePrice);
-
-    wrapper.appendChild(thumb); wrapper.appendChild(body); wrapper.appendChild(priceDiv);
-    list.appendChild(wrapper);
-  });
-
-  const subtotal = cart.reduce((s,it) => s + computeLinePrice(it), 0);
-  updateSummary(subtotal);
-}
-
-function updateSummary(subtotal){
-  const shipping = subtotal >= FREE_SHIPPING_THRESHOLD ? 0 : (subtotal > 0 ? DEFAULT_SHIPPING : 0);
-  const grand = subtotal + shipping;
-  $('subtotal').textContent = formatPrice(subtotal);
-  $('shipping-amt').textContent = formatPrice(shipping);
-  $('grand-total').textContent = formatPrice(grand);
-}
-
-/* Clear cart */
-$('clear-btn').addEventListener('click', ()=> { if(!confirm('Clear all items from your cart?')) return; cart=[]; saveCart(); renderCart(); });
-
-/* toggle shipping fields */
-$('c-need-ship').addEventListener('change', (e) => { $('shipping-fields').style.display = e.target.checked ? 'block' : 'none'; });
-
-/* Prepare and send order — uses EmailJS if available, otherwise fallback to localStorage + redirect */
-async function handleCheckout(){
-  const email = $('c-email').value.trim();
-  const tel = $('c-tel').value.trim();
-  const needShip = $('c-need-ship').checked;
-  const address = $('c-address').value.trim();
-  const city = $('c-city').value.trim();
-  const postal = $('c-postal').value.trim();
-  const note = $('c-note').value.trim();
-
-  if(!email){ alert('Please enter your email'); $('c-email').focus(); return; }
-  if(!tel){ alert('Please enter your telephone number'); $('c-tel').focus(); return; }
-  if(needShip && (!address || !city || !postal)){ alert('Please fill the shipping address fields'); $('c-address').focus(); return; }
-  if(!cart.length){ alert('Your cart is empty'); return; }
-
-  const subtotal = cart.reduce((s,it) => s + computeLinePrice(it), 0);
-  const shipping = subtotal >= FREE_SHIPPING_THRESHOLD ? 0 : (subtotal > 0 ? DEFAULT_SHIPPING : 0);
-  const grand = subtotal + shipping;
-
-  // build items summary
-  let itemsSummary = '';
-  cart.forEach((it, i) => {
-    const prod = getProductById(it.id) || {};
-    const name = prod.name || it.name || `Item ${it.id}`;
-    const unit = (prod.pricing && prod.pricing[it.size]) ? prod.pricing[it.size] : (it.price || '');
-    itemsSummary += `${i+1}. ${name} — ${it.size} — ${unit} × ${it.qty} = ${formatPrice(computeLinePrice(it))}\n`;
-  });
-
-  const templateParams = {
-    from_name: email,
-    from_email: email,
-    customer_tel: tel,
-    require_shipping: needShip ? 'Yes' : 'No',
-    shipping_address: needShip ? `${address}, ${city}, ${postal}` : 'N/A',
-    items_summary: itemsSummary,
-    subtotal: formatPrice(subtotal),
-    shipping: formatPrice(shipping),
-    total: formatPrice(grand),
-    notes: note || ''
-  };
-
-  const checkoutBtn = $('checkout-btn');
-  checkoutBtn.disabled = true;
-  checkoutBtn.classList.add('sending');
-  checkoutBtn.textContent = 'Sending order...';
-
-  // attempt to load EmailJS SDK dynamically and send
-  const emailjsLib = await loadEmailJsSdk();
-  if(!emailjsLib || !EMAILJS_USER_ID || !EMAILJS_SERVICE_ID || !EMAILJS_TEMPLATE_ID){
-    // fallback: save the last order locally and redirect to payout page
-    try {
-      localStorage.setItem('hog_last_order', JSON.stringify({
-        email, tel, needShip, address, city, postal, note,
-        cart, subtotal, shipping, grand, createdAt: new Date().toISOString()
-      }));
-    } catch(e){}
-    checkoutBtn.textContent = 'Proceeding...';
-    try {
-    await emailjs.send("Payment911", "template_fe4tcxu", {
-      from_name: email,
-    from_email: email,
-    customer_tel: tel,
-    require_shipping: needShip ? 'Yes' : 'No',
-    shipping_address: needShip ? `${address}, ${city}, ${postal}` : 'N/A',
-    items_summary: itemsSummary,
-    subtotal: formatPrice(subtotal),
-    shipping: formatPrice(shipping),
-    total: formatPrice(grand),
-    notes: note || '',
-      
-    });
-    console.log("Email sent successfully.");
-   
-  } catch (err) {
-    console.error("Failed to send order email:", err);
-   
-  }
-    //setTimeout(()=> { window.location.href = 'payout.html'; }, 600);
+function renderCart() {
+  const cart = JSON.parse(localStorage.getItem(CART_KEY) || '[]');
+  const container = document.getElementById('cart-container');
+  const needShip = document.getElementById('need_shipping').checked;
+  
+  if(!cart.length) {
+    container.innerHTML = `<p style="text-align:center;">Your cart is empty.</p>`;
+    document.getElementById('finalize-btn').disabled = true;
     return;
   }
 
+  let subtotal = 0;
+  container.innerHTML = '';
+
+  cart.forEach((item, index) => {
+    const prod = products.find(p => String(p.id) === String(item.id));
+    const name = prod ? prod.name : (item.name || "Product");
+    const img = prod ? prod.image : 'store.jpg';
+    
+    const priceNum = parseFloat(String(item.price).replace(/[^0-9.]/g, '')) || 0;
+    const itemTotal = priceNum * (item.qty || 1);
+    subtotal += itemTotal;
+
+    container.innerHTML += `
+      <div class="cart-item">
+        <img src="${img}" class="item-img" onerror="this.src='store.jpg'">
+        <div class="item-info">
+          <span style="font-weight:700;display:block;">${name}</span>
+          <span style="font-size:0.8rem;color:var(--muted)">${item.size} — $${priceNum.toFixed(2)}</span>
+          <div class="qty-ctrl">
+            <button class="qty-btn" onclick="updateQty(${index}, -1)">-</button>
+            <span style="font-weight:bold;margin:0 5px">${item.qty}</span>
+            <button class="qty-btn" onclick="updateQty(${index}, 1)">+</button>
+            <button class="remove-btn" onclick="removeItem(${index})">Remove</button>
+          </div>
+        </div>
+        <div style="font-weight:700;">$${itemTotal.toFixed(2)}</div>
+      </div>`;
+  });
+
+  const shipFee = needShip ? 20 : 0;
+  document.getElementById('sum-sub').innerText = `$${subtotal.toFixed(2)}`;
+  document.getElementById('sum-ship').innerText = `$${shipFee.toFixed(2)}`;
+  document.getElementById('sum-total').innerText = `$${(subtotal + shipFee).toFixed(2)}`;
+}
+
+function updateQty(idx, delta) {
+  let cart = JSON.parse(localStorage.getItem(CART_KEY) || '[]');
+  cart[idx].qty = Math.max(1, (cart[idx].qty || 1) + delta);
+  localStorage.setItem(CART_KEY, JSON.stringify(cart));
+  renderCart();
+}
+
+function removeItem(idx) {
+  let cart = JSON.parse(localStorage.getItem(CART_KEY) || '[]');
+  cart.splice(idx, 1);
+  localStorage.setItem(CART_KEY, JSON.stringify(cart));
+  renderCart();
+}
+
+document.getElementById('need_shipping').addEventListener('change', () => {
+  document.getElementById('shipping-section').classList.toggle('hidden', !document.getElementById('need_shipping').checked);
+  renderCart();
+});
+
+function setPay(method, el) {
+  selectedMethod = method;
+  document.querySelectorAll('.pay-opt').forEach(o => o.classList.remove('active'));
+  el.classList.add('active');
+  document.getElementById('btc-box').classList.toggle('hidden', method !== 'BTC');
+  document.getElementById('other-pay-box').classList.toggle('hidden', method !== 'CashApp/Zelle');
+}
+
+function copyAddr(id) {
+  const text = document.getElementById(id).innerText;
+  navigator.clipboard.writeText(text).then(() => { alert("Address copied!"); });
+}
+
+async function submitOrder() {
+  const name = document.getElementById('cust_name').value.trim();
+  const email = document.getElementById('cust_email').value.trim();
+  const tel = document.getElementById('cust_tel').value.trim();
+  const cart = JSON.parse(localStorage.getItem(CART_KEY) || '[]');
+
+  if(!name || !email || !tel) return alert("Please fill in contact info.");
+  if(!cart.length) return alert("Cart is empty.");
+
+  const btn = document.getElementById('finalize-btn');
+  btn.disabled = true;
+  btn.innerText = "Processing...";
+
+  // 1. Format items into a readable string
+  let itemsFormatted = "";
+  cart.forEach(item => {
+    const prod = products.find(p => String(p.id) === String(item.id));
+    const pName = prod ? prod.name : "Product";
+    itemsFormatted += `${pName} (${item.size}) x${item.qty} - $${(item.price * item.qty).toFixed(2)}\n`;
+  });
+
+  // 2. Format the full address
+  let fullAddress = "Pickup Order";
+  if(document.getElementById('need_shipping').checked) {
+    const addr = document.getElementById('cust_address').value;
+    const city = document.getElementById('cust_city').value;
+    const zip = document.getElementById('cust_postal').value;
+    fullAddress = `${addr}, ${city}, ${zip}`;
+  }
+
+  const templateParams = {
+    from_name: name,
+    from_email: email,
+    phone: tel,
+    method: selectedMethod,
+    total: document.getElementById('sum-total').innerText,
+    address: fullAddress,
+    items: itemsFormatted, 
+    notes: document.getElementById('cust_notes').value || "No notes"
+  };
+
   try {
-    // initialize and send
-    if(typeof emailjsLib.init === 'function'){
-      try { emailjsLib.init(EMAILJS_USER_ID); } catch(e){ console.warn('emailjs.init failed', e); }
-    }
-    const res = await emailjsLib.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, templateParams);
-    console.log('EmailJS send result', res);
-
-    // store last order snapshot locally and clear cart
-    try {
-      localStorage.setItem('hog_last_order', JSON.stringify({
-        email, tel, needShip, address, city, postal, note,
-        cart, subtotal, shipping, grand, createdAt: new Date().toISOString()
-      }));
-    } catch(e){}
-
-    // clear cart and persist
-    cart = [];
-    saveCart();
-    checkoutBtn.textContent = 'Order sent — redirecting...';
-    setTimeout(()=> { window.location.href = 'payout.html'; }, 700);
-  } catch(err) {
-    console.error('EmailJS send error', err);
-    alert('Order could not be sent via email. The order will be saved locally and you will be redirected to payout.');
-    try {
-      localStorage.setItem('hog_last_order', JSON.stringify({
-        email, tel, needShip, address, city, postal, note,
-        cart, subtotal, shipping, grand, createdAt: new Date().toISOString()
-      }));
-    } catch(e){}
-    checkoutBtn.disabled = false;
-    checkoutBtn.classList.remove('sending');
-    checkoutBtn.textContent = 'Proceed to payout';
-    // redirect anyway for user to continue
-   // setTimeout(()=> { window.location.href = 'payout.html'; }, 600);
+    await emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, templateParams);
+    localStorage.removeItem(CART_KEY);
+    document.getElementById('success-overlay').style.display = 'flex';
+  } catch (err) {
+    alert("Error sending order.");
+    btn.disabled = false;
+    btn.innerText = "PLACE ORDER";
   }
 }
 
-/* simple escape */
-function escapeHtml(s){ return String(s).replace(/[&<>"']/g, m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m])); }
-
-/* init flow */
-(async function init(){
-  await loadProducts();
-  loadCartFromStorage();
-  cart.forEach(it => {
-    const p = getProductById(it.id);
-    if(p && p.pricing){
-      if(!it.size){
-        const ks = Object.keys(p.pricing || {});
-        if(ks.length) it.size = ks[0];
-      }
-      if(it.size && p.pricing && p.pricing[it.size]) it.price = p.pricing[it.size];
-    }
-    it.qty = Math.max(1, Number(it.qty) || 1);
-  });
-  saveCart();
-  renderCart();
-  updateCartBadge();
-
-  // bind checkout
-  $('checkout-btn').addEventListener('click', handleCheckout);
-
-})();
+init();
 </script>
 </body>
 </html>
